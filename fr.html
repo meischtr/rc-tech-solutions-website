@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow, noarchive">
+<title>RC-Tech Solutions — Engineering that delivers.</title>
+<meta name="description" content="RC-Tech Solutions — Entreprise informatique suisse. Développement logiciel, infrastructure cloud, hébergement SaaS. Conforme au RGPD, centres de données UE.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;background:#09090b;color:#fafafa;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+::selection{background:rgba(99,102,241,.3);}
+
+/* --- ACCENT --- */
+.acc{color:#6366f1;}
+.acc-line{width:32px;height:2px;background:linear-gradient(90deg,#6366f1,#a78bfa);border-radius:1px;}
+.acc-bar{height:3px;background:linear-gradient(90deg,transparent,#6366f1 20%,#a78bfa 80%,transparent);opacity:.4;}
+
+/* --- HERO BG --- */
+.hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.hero-bg::before{content:'';position:absolute;top:60px;right:0;width:50%;height:100%;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px;mask-image:radial-gradient(ellipse at 70% 40%,black 15%,transparent 55%);}
+.hero-bg::after{content:'';position:absolute;top:15%;right:10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.05),transparent 65%);}
+
+/* --- REVEAL --- */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.22,1,.36,1);}
+.rv.v{opacity:1;transform:none;}
+.rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}.rv-d4{transition-delay:.32s}.rv-d5{transition-delay:.4s}
+
+/* --- NAV --- */
+header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px;display:flex;align-items:center;background:rgba(9,9,11,.6);backdrop-filter:blur(16px) saturate(1.8);border-bottom:1px solid rgba(255,255,255,.06);}
+.n{max-width:1140px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center;}
+.n-logo{font-size:15px;font-weight:700;letter-spacing:-.4px;display:flex;align-items:center;gap:0;}
+.n-logo img{height:44px;width:auto;}
+.n-links{display:flex;gap:24px;align-items:center;}
+.n-links a{font-size:13px;color:rgba(255,255,255,.45);font-weight:500;transition:color .2s;}
+.n-links a:hover{color:#fff;}
+.n-btn{color:#fff !important;padding:7px 18px;border-radius:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-weight:600;transition:all .15s;}
+.n-btn:hover{background:#6366f1;border-color:#6366f1;}
+
+/* --- HERO --- */
+.hero-wrap{padding:0 48px;}
+.hero{max-width:1140px;margin:0 auto;padding:160px 0 80px;position:relative;display:grid;grid-template-columns:1fr 440px;gap:48px;align-items:start;}
+.hero-content{}
+.hero-brand{font-size:14px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:24px;}
+.hero-brand strong{color:rgba(255,255,255,.5);}
+.hero-trust{display:flex;gap:20px;margin-top:32px;flex-wrap:wrap;}
+.hero-trust span{font-size:12px;color:rgba(255,255,255,.3);font-weight:500;display:flex;align-items:center;gap:6px;}
+.hero-trust span::before{content:'';width:5px;height:5px;border-radius:50%;background:rgba(99,102,241,.5);}
+.hero-top{font-size:13px;color:rgba(255,255,255,.3);font-weight:500;letter-spacing:.5px;margin-bottom:28px;display:none;}
+.hero h1{font-size:clamp(36px,4.2vw,58px);font-weight:800;line-height:1.06;letter-spacing:-2.5px;margin-bottom:28px;}
+.hero h1 em{font-style:normal;color:rgba(255,255,255,.25);}
+.hero-p{font-size:17px;color:rgba(255,255,255,.4);line-height:1.75;max-width:520px;margin-bottom:44px;}
+.hero-btns{display:flex;gap:12px;}
+.b1{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:8px;background:#fafafa;color:#09090b;font-size:14px;font-weight:700;transition:all .15s;border:none;cursor:pointer;}
+.b1:hover{background:#e4e4e7;}
+.b1 svg{width:16px;height:16px;}
+.b2{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:8px;color:rgba(255,255,255,.6);font-size:14px;font-weight:500;border:1px solid rgba(255,255,255,.1);transition:all .15s;cursor:pointer;background:0;}
+.b2:hover{color:#fff;border-color:rgba(255,255,255,.25);}
+
+/* Hero visual — code window */
+.hero-vis{padding-top:20px;}
+.cw{background:#111113;border:1px solid rgba(255,255,255,.08);border-radius:10px;overflow:hidden;box-shadow:0 32px 64px rgba(0,0,0,.5),0 0 0 1px rgba(99,102,241,.08);}
+.cw-bar{height:36px;background:#161618;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;padding:0 14px;gap:6px;}
+.cw-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.08);}
+.cw-tab{margin-left:12px;font-size:11px;color:rgba(255,255,255,.25);font-weight:500;}
+.cw-body{padding:20px;font-family:'SF Mono','Fira Code','Courier New',monospace;font-size:12px;line-height:2;color:rgba(255,255,255,.3);}
+.cw-body .w{color:rgba(255,255,255,.8);font-weight:600;}
+.cw-body .g{color:#4ade80;}
+.cw-body .p{color:#a78bfa;}
+.cw-body .o{color:#fb923c;}
+.cw-body .b{color:#60a5fa;}
+.cw-body .c{color:rgba(255,255,255,.15);}
+
+/* --- METRICS --- */
+.metrics{border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);}
+.m-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);padding:0 48px;}
+.m-item{padding:40px 0;text-align:center;position:relative;}
+.m-item:not(:last-child)::after{content:'';position:absolute;right:0;top:25%;height:50%;width:1px;background:rgba(255,255,255,.06);}
+.m-item{transition:transform .2s;}.m-item:hover{transform:translateY(-2px);}
+.m-num{font-size:40px;font-weight:800;letter-spacing:-2px;line-height:1;background:linear-gradient(135deg,#e2e8f0,#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.m-lab{font-size:12px;color:rgba(255,255,255,.3);margin-top:6px;font-weight:500;}
+
+/* --- SECTIONS --- */
+.s{padding:96px 48px;}
+.s-inner{max-width:1140px;margin:0 auto;}
+.s-head{margin-bottom:56px;max-width:520px;}
+.s-label{font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#6366f1;font-weight:600;margin-bottom:14px;}
+.s-title{font-size:36px;font-weight:700;letter-spacing:-1.2px;line-height:1.15;margin-bottom:14px;}
+.s-desc{font-size:15px;color:rgba(255,255,255,.35);line-height:1.7;}
+
+/* --- SERVICES --- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;}
+.svc{padding:36px;border-right:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);background:#09090b;transition:background .3s;}
+.svc:nth-child(3n){border-right:none;}
+.svc:nth-child(n+4){border-bottom:none;}
+.svc:hover{background:#111113;}.svc:hover h3{color:#a5b4fc;}
+.svc-num{font-size:11px;color:rgba(255,255,255,.12);font-weight:800;letter-spacing:1px;margin-bottom:14px;transition:color .3s;}
+.svc:hover .svc-num{color:rgba(99,102,241,.4);}
+.svc h3{font-size:16px;font-weight:700;margin-bottom:8px;letter-spacing:-.2px;transition:color .3s;}
+.svc p{font-size:13px;color:rgba(255,255,255,.35);line-height:1.65;}
+.svc-t{margin-top:16px;font-size:11px;color:rgba(255,255,255,.2);font-weight:500;line-height:2;}
+
+/* --- EXPERTISE --- */
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;}
+.exp-item{padding:28px 32px;background:#09090b;border-right:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s;}
+.exp-item:nth-child(2n){border-right:none;}
+.exp-item:nth-child(n+3){border-bottom:none;}
+.exp-item:hover{background:#111113;}
+.exp-cat{font-size:14px;font-weight:700;margin-bottom:4px;transition:color .3s;}
+.exp-item:hover .exp-cat{color:#a5b4fc;}
+.exp-desc{font-size:12px;color:rgba(255,255,255,.3);line-height:1.6;}
+
+/* --- SAASIRO --- */
+.saas{background:#111113;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);}
+.saas-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.saas-feat{margin-bottom:20px;}
+.saas-feat h4{font-size:14px;font-weight:600;margin-bottom:4px;}
+.saas-feat p{font-size:13px;color:rgba(255,255,255,.3);line-height:1.55;}
+.saas-btn{display:inline-flex;align-items:center;gap:8px;margin-top:28px;padding:12px 24px;border-radius:8px;background:#fafafa;color:#09090b;font-size:13px;font-weight:700;transition:all .15s;}
+.saas-btn:hover{background:#e4e4e7;}
+/* Terminal for saasiro */
+.term{background:#0a0a0c;border:1px solid rgba(255,255,255,.06);border-radius:10px;overflow:hidden;}
+.term-bar{height:32px;background:#111113;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;padding:0 12px;gap:5px;}
+.term-d{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.07);}
+.term-body{padding:18px 20px;font-family:'SF Mono','Courier New',monospace;font-size:11.5px;line-height:2;color:rgba(255,255,255,.25);white-space:pre;}
+.term-body .w{color:rgba(255,255,255,.7);}
+.term-body .g{color:#4ade80;}
+.term-body .p{color:#a78bfa;}
+
+/* --- TECH --- */
+.tech-wrap{display:flex;flex-wrap:wrap;gap:6px;}
+.tp{padding:8px 16px;border-radius:6px;font-size:13px;font-weight:500;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.06);transition:all .2s;cursor:default;}
+.tp:hover{color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.03);}
+
+/* --- APPROACH --- */
+.app-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;}
+.app-step{padding:32px;border-right:1px solid rgba(255,255,255,.06);background:#09090b;transition:background .3s;}
+.app-step:last-child{border-right:none;}
+.app-step:hover{background:#111113;}
+.app-num{font-size:32px;font-weight:800;color:rgba(99,102,241,.2);letter-spacing:-1px;margin-bottom:16px;transition:color .3s;}
+.app-step:hover .app-num{color:rgba(99,102,241,.4);}
+.app-step h4{font-size:14px;font-weight:700;margin-bottom:6px;}
+.app-step p{font-size:12px;color:rgba(255,255,255,.3);line-height:1.6;}
+
+/* --- WHY --- */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.why-item h3{font-size:15px;font-weight:700;margin-bottom:6px;}
+.why-item p{font-size:13px;color:rgba(255,255,255,.3);line-height:1.65;}
+.why-line{width:24px;height:2px;background:linear-gradient(90deg,#6366f1,#a78bfa);margin-bottom:16px;}
+
+/* --- CTA --- */
+.cta{text-align:center;padding:120px 48px;position:relative;max-width:1236px;margin:0 auto;}
+.cta::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(99,102,241,.04),transparent 70%);pointer-events:none;}
+.cta h2{font-size:44px;font-weight:800;letter-spacing:-2px;margin-bottom:14px;position:relative;}
+.cta p{font-size:16px;color:rgba(255,255,255,.3);margin-bottom:36px;position:relative;}
+.cta-links{margin-top:24px;font-size:13px;color:rgba(255,255,255,.2);position:relative;}
+.cta-links a{color:rgba(255,255,255,.4);border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:1px;transition:all .2s;}
+.cta-links a:hover{color:#fff;border-color:rgba(255,255,255,.4);}
+
+/* --- FOOTER --- */
+footer{border-top:1px solid rgba(255,255,255,.06);padding:40px 48px;}
+.f-inner{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;}
+.f-brand{max-width:260px;}
+.f-brand img{height:24px;width:auto;margin-bottom:8px;}
+.f-brand strong{font-size:14px;font-weight:700;}
+.f-brand p{font-size:12px;color:rgba(255,255,255,.2);line-height:1.6;margin-top:6px;}
+.f-col h4{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.15);margin-bottom:12px;font-weight:600;}
+.f-col a{display:block;font-size:13px;color:rgba(255,255,255,.3);padding:3px 0;transition:color .15s;}
+.f-col a:hover{color:rgba(255,255,255,.7);}
+.f-bottom{max-width:1140px;margin:20px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.12);}
+
+/* --- RESPONSIVE --- */
+@media(max-width:1100px){.hero{grid-template-columns:1fr;}.hero-vis{max-width:480px;}.hero-wrap{padding:0 48px;}}
+@media(max-width:900px){
+  .svc-grid{grid-template-columns:1fr 1fr;}.svc:nth-child(2n){border-right:none;}
+  .svc:nth-child(n+5){border-bottom:none;}.svc:nth-child(4){border-bottom:1px solid rgba(255,255,255,.06);}
+  .saas-grid{grid-template-columns:1fr;}.work-grid{grid-template-columns:1fr;}
+  .app-grid{grid-template-columns:1fr 1fr;}.app-step:nth-child(2n){border-right:none;}
+  .app-step{border-bottom:1px solid rgba(255,255,255,.06);}.app-step:nth-last-child(-n+2){border-bottom:none;}
+  .why-grid{grid-template-columns:1fr 1fr;}.m-inner{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  header{padding:0 20px;}.s{padding:64px 20px;}.hero-wrap{padding:0 20px;}.hero{padding:120px 0 60px;}
+  .hero h1{font-size:32px;letter-spacing:-1.5px;}.s-title{font-size:26px;}
+  .svc-grid,.app-grid{grid-template-columns:1fr;}.svc,.app-step{border-right:none !important;border-bottom:1px solid rgba(255,255,255,.06) !important;}
+  .svc:last-child,.app-step:last-child{border-bottom:none !important;}
+  .why-grid,.projects-grid{grid-template-columns:1fr;}.m-inner{grid-template-columns:1fr 1fr;}
+  .n-links{display:none;}.cta h2{font-size:28px;}.f-inner{flex-direction:column;}
+  .hero-btns{flex-direction:column;}.b1,.b2{width:100%;justify-content:center;}
+}
+/* --- LANG SWITCHER --- */
+.lang-sw{display:flex;gap:2px;align-items:center;margin-left:8px;padding-left:12px;border-left:1px solid rgba(255,255,255,.08);}
+.lang-sw a{font-size:11px;color:rgba(255,255,255,.25);font-weight:500;padding:4px 6px;border-radius:4px;transition:all .15s;}
+.lang-sw a:hover{color:rgba(255,255,255,.6);}
+.lang-sw a.active{color:rgba(255,255,255,.7);background:rgba(255,255,255,.06);}
+</style>
+</head>
+<body>
+
+<header>
+<div class="n">
+  <a href="#" class="n-logo"><img src="logo.png" alt="RC-Tech Solutions"></a>
+  <div class="n-links">
+    <a href="#services">Services</a>
+    <a href="#work">Projets</a>
+    <a href="#saasiro">Saasiro</a>
+    <a href="#approach">Approche</a>
+    <a href="#contact" class="n-btn">Contact</a>
+  </div>
+  <div class="lang-sw"><a href="de.html">DE</a><a href="en.html">EN</a><a href="fr.html" class="active">FR</a><a href="it.html">IT</a><a href="es.html">ES</a><a href="sr.html">SR</a></div>
+</div>
+</header>
+
+<!-- HERO -->
+<div class="hero-wrap">
+<section class="hero">
+  <div class="hero-bg" style="position:absolute;inset:0;pointer-events:none;"></div>
+  <div class="hero-content">
+    <div class="hero-brand"><strong>RC-Tech</strong> Solutions</div>
+    <h1>Nous développons des logiciels<br>et exploitons des <span class="acc">infrastructures.</span><br><em>Fiable. Évolutif. Dans&nbsp;l'UE.</em></h1>
+    <p class="hero-p">Entreprise informatique suisse avec plus de 20 ans d'expérience en gestion de projets, sécurité IT, infrastructure cloud et développement logiciel. Conforme au RGPD, centres de données UE, sur mesure. Pour les entreprises qui attendent des résultats.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="b1">
+        Discuter de votre projet
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="#services" class="b2">Voir nos services</a>
+    </div>
+    <div class="hero-trust">
+      <span>20+ ans d'expérience</span>
+      <span>Centres de données UE</span>
+      <span>Conforme RGPD</span>
+      <span>ISO 27001</span>
+    </div>
+  </div>
+  <div class="hero-vis">
+    <div class="cw">
+      <div class="cw-bar">
+        <div class="cw-dot"></div><div class="cw-dot"></div><div class="cw-dot"></div>
+        <span class="cw-tab">deploy.sh</span>
+      </div>
+      <div class="cw-body">
+<span class="c"># Production deployment</span>
+<span class="p">$</span> <span class="w">saasiro deploy</span> --prod --region eu-de
+
+<span class="g">&#10003;</span> <span class="w">Build successful</span>  <span class="c">12.4s</span>
+<span class="g">&#10003;</span> <span class="w">Tests passed</span>  <span class="c">14/14</span>
+<span class="g">&#10003;</span> <span class="w">Snapshot created</span>
+<span class="g">&#10003;</span> <span class="w">SSL provisioned</span>  <span class="c">Let's Encrypt</span>
+<span class="g">&#10003;</span> <span class="w">Health check OK</span>
+
+<span class="g">&#10003;</span> <span class="w">Deployed</span> <span class="b">app.example.com</span>
+  <span class="c">Hetzner Falkenstein | 47s | SLA 99.9%</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- METRICS -->
+<div class="acc-bar"></div>
+<div class="metrics">
+<div class="m-inner">
+  <div class="m-item rv"><div class="m-num">20+</div><div class="m-lab">Années d'expérience IT</div></div>
+  <div class="m-item rv rv-d1"><div class="m-num">99.9%</div><div class="m-lab">Uptime SLA</div></div>
+  <div class="m-item rv rv-d2"><div class="m-num">100%</div><div class="m-lab">Hébergement de données UE</div></div>
+  <div class="m-item rv rv-d3"><div class="m-num">24/7</div><div class="m-lab">Monitoring</div></div>
+</div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="s">
+<div class="s-inner">
+  <div class="s-head rv">
+    <div class="s-label">Services</div>
+    <div class="s-title">Développement. Infrastructure. Exploitation.</div>
+    <div class="s-desc">De la première ligne de code au système en production. Pas de solutions partielles &mdash; nous prenons en charge l'ensemble du parcours.</div>
+  </div>
+  <div class="svc-grid rv">
+    <div class="svc"><div class="svc-num">01</div><h3>Développement logiciel</h3><p>Applications web, produits SaaS, APIs. Full-Stack, TypeScript-first, conçu pour la maintenabilité.</p><div class="svc-t">React / Next.js / Node.js / PostgreSQL</div></div>
+    <div class="svc"><div class="svc-num">02</div><h3>Infrastructure cloud</h3><p>Architecture serveur, déploiements automatisés, monitoring, sécurité. Sur Hetzner Cloud, dans l'UE.</p><div class="svc-t">Hetzner / Docker / CI/CD / Linux</div></div>
+    <div class="svc"><div class="svc-num">03</div><h3>Hébergement SaaS</h3><p>Hébergement géré via notre plateforme Saasiro. Multi-Tenant, Auto-Scaling, conforme RGPD dès le premier jour.</p><div class="svc-t">Saasiro / Managed / SSL / Backups</div></div>
+    <div class="svc"><div class="svc-num">04</div><h3>Conseil &amp; Architecture</h3><p>Choix de stack technique, conception d'architecture, audits d'infrastructure. Avant d'investir, nous clarifions.</p><div class="svc-t">Architecture / Review / Migration / Audit</div></div>
+    <div class="svc"><div class="svc-num">05</div><h3>Conformité</h3><p>Mise en œuvre technique RGPD/LPD. DPA, mesures techniques et organisationnelles, chiffrement, journalisation d'audit, export de données.</p><div class="svc-t">RGPD / LPD / DPA / AES-256</div></div>
+    <div class="svc"><div class="svc-num">06</div><h3>Maintenance &amp; Support</h3><p>Accompagnement à long terme. Correctifs, monitoring, réponse aux incidents. Avec SLA.</p><div class="svc-t">SLA / Monitoring / Backups / Updates</div></div>
+  </div>
+</div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="work" class="s">
+<div class="s-inner">
+  <div class="s-head rv">
+    <div class="s-label">Expérience</div>
+    <div class="s-title">Ce avec quoi nous travaillons. Au quotidien.</div>
+  </div>
+  <div class="exp-grid rv">
+    <div class="exp-item">
+      <div class="exp-cat">Architectures SaaS</div>
+      <div class="exp-desc">Multi-Tenant, isolation des tenants, basé sur les schémas, API-first</div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-cat">Infrastructure cloud</div>
+      <div class="exp-desc">Hetzner Cloud, déploiements automatisés, Load Balancing, géo-redondance</div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-cat">Sécurité &amp; Conformité</div>
+      <div class="exp-desc">AES-256, TLS 1.3, RBAC, journalisation d'audit, RGPD/LPD, DPA, mesures techniques</div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-cat">Clients internationaux</div>
+      <div class="exp-desc">USA, UE, Suisse &mdash; contrats d'hébergement basés sur SLA, facturation multi-devises</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SAASIRO -->
+<section id="saasiro" class="s saas">
+<div class="s-inner">
+  <div class="saas-grid">
+    <div class="rv">
+      <div class="s-label" style="color:rgba(99,102,241,.4);">Notre produit</div>
+      <div class="s-title">Saasiro <span style="font-size:16px;font-weight:500;color:rgba(255,255,255,.2);vertical-align:middle;margin-left:8px;">saasiro.com</span></div>
+      <div class="s-desc" style="margin-bottom:28px;">Hébergement SaaS géré. Vous construisez le produit &mdash; nous prenons en charge les serveurs, la sécurité, le scaling et la conformité. Sur infrastructure UE.</div>
+      <div class="saas-feat"><h4>Centres de données UE</h4><p>Hetzner Allemagne. ISO 27001. Aucun transfert vers des pays tiers.</p></div>
+      <div class="saas-feat"><h4>Déploiement Zero-Config</h4><p>Git push, c'est tout. Build, Deploy, SSL, DNS &mdash; automatique.</p></div>
+      <div class="saas-feat"><h4>Conformité intégrée</h4><p>RGPD dès le premier jour. DPA, mesures techniques, journal d'audit, export de données &mdash; tout est standard.</p></div>
+      <div class="saas-feat"><h4>Rentable</h4><p>À partir de CHF 29/mois. Des configurations AWS comparables coûtent 4x plus cher.</p></div>
+      <a href="https://saasiro.com" class="saas-btn">saasiro.com <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+    <div class="rv rv-d2">
+      <div class="term">
+        <div class="term-bar"><div class="term-d"></div><div class="term-d"></div><div class="term-d"></div></div>
+        <div class="term-body"><span class="p">$</span> <span class="w">saasiro deploy</span> --prod --region eu-de
+
+<span class="g">&#10003;</span> <span class="w">Build</span>         12.4s
+<span class="g">&#10003;</span> <span class="w">Tests</span>         14/14 passed
+<span class="g">&#10003;</span> <span class="w">Snapshot</span>      created
+<span class="g">&#10003;</span> <span class="w">SSL</span>           Let's Encrypt
+<span class="g">&#10003;</span> <span class="w">DNS</span>           propagated
+<span class="g">&#10003;</span> <span class="w">Health</span>        OK
+
+<span class="g">&#10003;</span> Live  <span class="p">https://app.example.com</span>
+  Region   Hetzner Falkenstein
+  Time     47s
+  SLA      99.9%</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- TECH -->
+<section id="tech" class="s">
+<div class="s-inner">
+  <div class="s-head rv">
+    <div class="s-label">Stack</div>
+    <div class="s-title">Nos outils de travail</div>
+    <div class="s-desc">Éprouvé et moderne. Pas de hype &mdash; uniquement des technologies qui livrent.</div>
+  </div>
+  <div class="tech-wrap rv">
+    <div class="tp">TypeScript</div><div class="tp">React</div><div class="tp">Next.js</div><div class="tp">Astro</div>
+    <div class="tp">Node.js</div><div class="tp">PostgreSQL</div><div class="tp">Docker</div><div class="tp">Hetzner Cloud</div>
+    <div class="tp">Tailwind CSS</div><div class="tp">Caddy</div><div class="tp">PM2</div><div class="tp">Cloudflare</div>
+    <div class="tp">Linux</div><div class="tp">Git</div><div class="tp">CI/CD</div><div class="tp">Terraform</div>
+  </div>
+</div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach" class="s">
+<div class="s-inner">
+  <div class="s-head rv">
+    <div class="s-label">Approche</div>
+    <div class="s-title">Claire. Structurée. Efficace.</div>
+  </div>
+  <div class="app-grid rv">
+    <div class="app-step"><div class="app-num">01</div><h4>Analyse</h4><p>Comprendre les exigences. Définir le problème. Délimiter le périmètre. Pas de code sans concept.</p></div>
+    <div class="app-step"><div class="app-num">02</div><h4>Build</h4><p>Mise en œuvre itérative. Cycles courts, progrès transparents, retours réguliers.</p></div>
+    <div class="app-step"><div class="app-num">03</div><h4>Test</h4><p>Assurance qualité, revue de code, audit de sécurité. Ce qui n'est pas vérifié ne passe pas en production.</p></div>
+    <div class="app-step"><div class="app-num">04</div><h4>Ship</h4><p>Déploiement, monitoring, exploitation. Sur notre infrastructure &mdash; avec un accompagnement à long terme.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- WHY -->
+<section class="s">
+<div class="s-inner">
+  <div class="s-head rv">
+    <div class="s-label">Pourquoi RC-Tech</div>
+    <div class="s-title">Ce qui nous distingue</div>
+  </div>
+  <div class="why-grid rv">
+    <div class="why-item"><div class="why-line"></div><h3>Contact direct</h3><p>Vous parlez directement au développeur. Pas de chefs de projet, pas d'intermédiaires. Des décisions rapides.</p></div>
+    <div class="why-item"><div class="why-line"></div><h3>Code + Hébergement</h3><p>Développement et exploitation d'une seule main. Un seul interlocuteur pour tout.</p></div>
+    <div class="why-item"><div class="why-line"></div><h3>Standard RGPD</h3><p>Serveurs UE, DPA, mesures techniques, chiffrement. La conformité n'est pas une fonctionnalité &mdash; c'est une base.</p></div>
+    <div class="why-item"><div class="why-line"></div><h3>Prix équitables</h3><p>Forfait ou régie. Transparent, sans marge d'agence.</p></div>
+    <div class="why-item"><div class="why-line"></div><h3>Conçu pour durer</h3><p>Architecture propre, maintenable, évolutive. Aucune dette technique.</p></div>
+    <div class="why-item"><div class="why-line"></div><h3>Swiss Engineering</h3><p>Entreprise suisse. Éthique de travail suisse. Fiable et précis.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta">
+  <h2 class="rv">Parlons-en.</h2>
+  <p class="rv">Nouveau développement, migration ou conseil &mdash; écrivez-nous.</p>
+  <a href="mailto:info@rc-tech-solutions.com" class="b1 rv" style="font-size:15px;">
+    info@rc-tech-solutions.com
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+  </a>
+  <div class="cta-links rv">
+    <a href="mailto:info@rc-tech-solutions.com">E-mail</a> &nbsp;&middot;&nbsp;
+    <a href="https://saasiro.com">saasiro.com</a> &nbsp;&middot;&nbsp;
+    Suisse
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="f-inner">
+  <div class="f-brand">
+    <img src="logo.png" alt="RC-Tech Solutions">
+    <p>Développement logiciel, infrastructure cloud, hébergement SaaS. Suisse.</p>
+    <p style="margin-top:4px;font-size:10px;color:rgba(255,255,255,.1);">R. Camathias, Tech Solutions</p>
+  </div>
+  <div class="f-col"><h4>Services</h4><a href="#services">Développement</a><a href="#services">Infrastructure</a><a href="#saasiro">Hébergement SaaS</a><a href="#services">Conseil</a></div>
+  <div class="f-col"><h4>Produit</h4><a href="https://saasiro.com">Saasiro Platform</a><a href="https://saasiro.com">Tarifs &amp; Forfaits</a><a href="https://saasiro.com">Documentation</a></div>
+  <div class="f-col"><h4>Légal</h4><a href="/legal/impressum">Mentions légales</a><a href="/legal/datenschutz">Protection des données</a><a href="/legal/agb">CGV</a></div>
+</div>
+<div class="f-bottom">
+  <span>&copy; 2026 R. Camathias, Tech Solutions</span>
+  <span>Saasiro est un produit de RC-Tech Solutions</span>
+</div>
+</footer>
+
+<script>
+if(!sessionStorage.getItem('rc_auth'))window.location.href='index.html';
+</script>
+<script>
+const o=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('v');});},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>o.observe(el));
+</script>
+
+</body>
+</html>

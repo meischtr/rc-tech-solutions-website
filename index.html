@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow, noarchive">
+<title>RC-Tech Solutions — Coming Soon</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',system-ui,sans-serif;background:#09090b;color:#fafafa;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;position:relative;-webkit-font-smoothing:antialiased;}
+::selection{background:rgba(99,102,241,.3);}
+
+/* BG */
+.bg-orb{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;}
+.bg-orb-1{width:500px;height:500px;top:20%;left:-10%;background:rgba(59,130,246,.06);animation:drift 20s ease-in-out infinite;}
+.bg-orb-2{width:400px;height:400px;bottom:10%;right:-10%;background:rgba(99,102,241,.05);animation:drift 25s ease-in-out infinite 5s;}
+@keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
+
+/* Content */
+.content{text-align:center;padding:32px;max-width:640px;position:relative;z-index:1;}
+.logo{height:72px;width:auto;margin-bottom:40px;}
+h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-2px;line-height:1.1;margin-bottom:12px;}
+h1 span{color:#6366f1;}
+.sub{font-size:17px;color:rgba(255,255,255,.35);line-height:1.7;margin-bottom:48px;}
+
+/* Buttons */
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;}
+.btn-login{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:8px;background:#fafafa;color:#09090b;font-size:14px;font-weight:700;transition:all .15s;border:none;cursor:pointer;text-decoration:none;}
+.btn-login:hover{background:#e4e4e7;transform:translateY(-1px);}
+.btn-login svg{width:16px;height:16px;}
+.btn-saasiro{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:8px;background:transparent;color:rgba(255,255,255,.5);font-size:14px;font-weight:500;border:1px solid rgba(255,255,255,.1);transition:all .15s;text-decoration:none;}
+.btn-saasiro:hover{color:#fff;border-color:rgba(255,255,255,.25);}
+
+/* Saasiro badge */
+.saasiro-badge{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:100px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);margin-bottom:48px;}
+.saasiro-badge .dot{width:6px;height:6px;border-radius:50%;background:#6366f1;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:.5;}50%{opacity:1;}}
+.saasiro-badge span{font-size:12px;color:rgba(255,255,255,.3);font-weight:500;}
+.saasiro-badge a{color:#6366f1;font-weight:600;text-decoration:none;transition:color .15s;}
+.saasiro-badge a:hover{color:#818cf8;}
+
+/* Status */
+.status{display:flex;align-items:center;gap:8px;justify-content:center;}
+.status-dot{width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 2s infinite;}
+.status span{font-size:11px;color:rgba(255,255,255,.2);text-transform:uppercase;letter-spacing:2px;font-weight:500;}
+
+/* Footer */
+.foot{position:absolute;bottom:32px;text-align:center;font-size:11px;color:rgba(255,255,255,.1);}
+
+/* Lang */
+.lang{position:absolute;top:20px;right:24px;display:flex;gap:2px;}
+.lang a{font-size:11px;color:rgba(255,255,255,.2);padding:4px 6px;border-radius:4px;text-decoration:none;font-weight:500;transition:all .15s;}
+.lang a:hover{color:rgba(255,255,255,.5);}
+.lang a.active{color:rgba(255,255,255,.6);background:rgba(255,255,255,.05);}
+
+@media(max-width:640px){
+  .logo{height:52px;}.btns{flex-direction:column;align-items:center;}
+  .btn-login,.btn-saasiro{width:100%;justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+
+<div class="lang">
+  <a href="index.html" class="active">DE</a>
+  <a href="index.html">EN</a>
+  <a href="index.html">FR</a>
+  <a href="index.html">IT</a>
+  <a href="index.html">ES</a>
+  <a href="index.html">SR</a>
+</div>
+
+<div class="content">
+  <img src="logo.png" alt="RC-Tech Solutions" class="logo">
+
+  <h1>Hier entsteht <span>Grosses.</span></h1>
+  <p class="sub">Softwareentwicklung, Cloud-Infrastruktur und Managed SaaS Hosting.<br>Schweizer Qualität. Über 20 Jahre Erfahrung.</p>
+
+  <div class="btns">
+    <a href="login.html" class="btn-login">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg>
+      Login
+    </a>
+    <a href="https://saasiro.com" class="btn-saasiro" target="_blank">
+      Saasiro entdecken →
+    </a>
+  </div>
+
+  <div class="saasiro-badge">
+    <div class="dot"></div>
+    <span>Powered by <a href="https://saasiro.com" target="_blank">Saasiro</a> — Hier entsteht auch Grosses.</span>
+  </div>
+
+  <div class="status">
+    <div class="status-dot"></div>
+    <span>In Entwicklung</span>
+  </div>
+</div>
+
+<div class="foot">&copy; 2026 R. Camathias, Tech Solutions — rc-tech-solutions.com</div>
+
+</body>
+</html>

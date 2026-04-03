@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Kein Crawling, kein Indexing
+# RC-Tech Solutions — Coming Soon
