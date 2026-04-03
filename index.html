@@ -28,10 +28,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:#09090b;color:#fafafa;m
 h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-2px;line-height:1.1;margin-bottom:56px;}
 h1 span{color:#6366f1;}
 
-/* Login - dezent */
-.btn-login{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;border-radius:6px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.3);font-size:12px;font-weight:500;transition:all .15s;border:1px solid rgba(255,255,255,.06);text-decoration:none;margin-bottom:64px;}
-.btn-login:hover{color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.08);}
-.btn-login svg{width:12px;height:12px;}
 
 /* Saasiro link */
 .saasiro-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.15);font-weight:500;text-decoration:none;transition:color .15s;}
@@ -42,11 +38,15 @@ h1 span{color:#6366f1;}
 /* Footer */
 .foot{position:absolute;bottom:32px;text-align:center;font-size:11px;color:rgba(255,255,255,.1);}
 
-/* Lang */
-.lang{position:absolute;top:20px;right:24px;display:flex;gap:2px;}
+/* Top bar */
+.top-bar{position:absolute;top:20px;right:24px;display:flex;align-items:center;gap:12px;}
+.lang{display:flex;gap:2px;}
 .lang a{font-size:11px;color:rgba(255,255,255,.2);padding:4px 6px;border-radius:4px;text-decoration:none;font-weight:500;transition:all .15s;}
 .lang a:hover{color:rgba(255,255,255,.5);}
 .lang a.active{color:rgba(255,255,255,.6);background:rgba(255,255,255,.05);}
+.top-login{font-size:11px;color:rgba(255,255,255,.15);text-decoration:none;padding:4px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.06);transition:all .15s;display:flex;align-items:center;gap:4px;}
+.top-login:hover{color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.12);}
+.top-login svg{width:11px;height:11px;}
 
 @media(max-width:640px){
   .logo{height:52px;}.btns{flex-direction:column;align-items:center;}
@@ -59,24 +59,25 @@ h1 span{color:#6366f1;}
 <div class="bg-orb bg-orb-1"></div>
 <div class="bg-orb bg-orb-2"></div>
 
-<div class="lang">
-  <a href="#" data-lang="de" class="active">DE</a>
-  <a href="#" data-lang="en">EN</a>
-  <a href="#" data-lang="fr">FR</a>
-  <a href="#" data-lang="it">IT</a>
-  <a href="#" data-lang="es">ES</a>
-  <a href="#" data-lang="sr">SR</a>
+<div class="top-bar">
+  <div class="lang">
+    <a href="#" data-lang="de" class="active">DE</a>
+    <a href="#" data-lang="en">EN</a>
+    <a href="#" data-lang="fr">FR</a>
+    <a href="#" data-lang="it">IT</a>
+    <a href="#" data-lang="es">ES</a>
+    <a href="#" data-lang="sr">SR</a>
+  </div>
+  <a href="login.html" class="top-login" id="loginBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg>
+    <span id="loginLabel">Login</span>
+  </a>
 </div>
 
 <div class="content">
   <img src="logo.png" alt="RC-Tech Solutions" class="logo">
 
   <h1 id="headline">hier entsteht <span>Grosses.</span></h1>
-
-  <a href="login.html" class="btn-login" id="loginBtn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg>
-    Login
-  </a>
 
   <a href="https://saasiro.com" class="saasiro-link" target="_blank" id="saasLink">
     <span>saasiro.com</span> — <em id="saasText">hier entsteht auch Grosses.</em>
@@ -100,7 +101,7 @@ document.querySelectorAll('.lang a').forEach(function(a){
     var l=this.dataset.lang;
     document.getElementById('headline').innerHTML=t[l].h;
     document.getElementById('saasText').textContent=t[l].s;
-    document.getElementById('loginBtn').lastChild.textContent=' '+t[l].l;
+    document.getElementById('loginLabel').textContent=t[l].l;
     document.querySelectorAll('.lang a').forEach(function(x){x.classList.remove('active');});
     this.classList.add('active');
   });
