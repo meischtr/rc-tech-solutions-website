@@ -1,1 +1,5 @@
 node_modules/
+.claude/
+robert.png
+.DS_Store
+Thumbs.db

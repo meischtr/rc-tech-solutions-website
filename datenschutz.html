@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#09090b">
+<meta name="robots" content="noindex, nofollow">
+<title>Datenschutz — RC-Tech Solutions GmbH</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden;scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#09090b;color:#fafafa;line-height:1.75;-webkit-font-smoothing:antialiased;min-height:100vh;min-height:-webkit-fill-available;overflow-x:hidden;}
+a{color:#a5b4fc;text-decoration:none;transition:color .15s;}
+a:hover{color:#c7d2fe;}
+img{display:block;max-width:100%;}
+::selection{background:rgba(99,102,241,.3);}
+
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.02;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
+
+header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px;display:flex;align-items:center;background:rgba(9,9,11,.7);-webkit-backdrop-filter:blur(16px) saturate(1.8);backdrop-filter:blur(16px) saturate(1.8);border-bottom:1px solid rgba(255,255,255,.06);}
+.n{max-width:1140px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center;}
+.n-logo img{height:44px;width:auto;}
+.n-back{font-size:13px;color:rgba(255,255,255,.55);font-weight:500;display:flex;align-items:center;gap:6px;}
+.n-back:hover{color:#fff;}
+
+.hero{padding:140px 48px 48px;max-width:860px;margin:0 auto;}
+.hero .crumb{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(99,102,241,.7);margin-bottom:14px;font-weight:600;}
+.hero h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-2px;line-height:1.1;margin-bottom:16px;}
+.hero .sub{font-size:15px;color:rgba(255,255,255,.4);}
+.hero .bar{width:48px;height:2px;background:linear-gradient(90deg,#6366f1,#a78bfa);border-radius:1px;margin-top:28px;}
+
+.content{max-width:780px;margin:0 auto;padding:32px 48px 96px;}
+.stand{font-size:12px;color:rgba(255,255,255,.3);margin-bottom:32px;letter-spacing:.5px;}
+
+.toc{padding:24px 28px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);margin-bottom:48px;}
+.toc h4{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(99,102,241,.7);font-weight:700;margin-bottom:12px;}
+.toc ol{list-style:none;counter-reset:i;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;}
+.toc li{counter-increment:i;font-size:13px;}
+.toc li::before{content:counter(i) ".";color:rgba(255,255,255,.25);margin-right:8px;font-variant-numeric:tabular-nums;}
+.toc a{color:rgba(255,255,255,.6);}
+.toc a:hover{color:#fff;}
+
+section.block{margin-top:40px;}
+section.block h2{font-size:18px;font-weight:700;margin-bottom:14px;letter-spacing:-.3px;display:flex;align-items:baseline;gap:10px;}
+section.block h2 .num{font-size:12px;color:rgba(99,102,241,.6);font-weight:600;font-variant-numeric:tabular-nums;min-width:26px;}
+section.block p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:12px;}
+section.block p strong{color:rgba(255,255,255,.85);font-weight:600;}
+section.block ul{list-style:none;padding:0;margin:12px 0;}
+section.block ul li{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.7;padding-left:18px;position:relative;margin-bottom:6px;}
+section.block ul li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:2px;background:rgba(99,102,241,.5);}
+section.block ul li strong{color:rgba(255,255,255,.85);}
+
+.contact-box{margin-top:48px;padding:28px 32px;border-radius:12px;border:1px solid rgba(99,102,241,.2);background:linear-gradient(135deg,rgba(99,102,241,.06),rgba(167,139,250,.03));}
+.contact-box h3{font-size:15px;font-weight:700;margin-bottom:10px;}
+.contact-box p{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.7;margin:0;}
+
+footer{border-top:1px solid rgba(255,255,255,.06);padding:32px 48px;max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:12px;color:rgba(255,255,255,.3);}
+footer a{color:rgba(255,255,255,.4);}
+footer a:hover{color:#fff;}
+footer .legal{display:flex;gap:24px;}
+
+@media(max-width:640px){
+  header{padding:0 20px;}
+  .hero{padding:100px 20px 32px;}
+  .content{padding:20px 20px 64px;}
+  .toc ol{grid-template-columns:1fr;}
+  footer{padding:24px 20px;flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="n">
+  <a href="de.html" class="n-logo"><img src="logo.png" alt="RC-Tech Solutions"></a>
+  <a href="de.html" class="n-back">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+    Zurück
+  </a>
+</div>
+</header>
+
+<section class="hero">
+  <div class="crumb">Legal</div>
+  <h1>Datenschutz­erklärung</h1>
+  <div class="sub">Transparenz darüber, welche Daten wir erheben, warum, wie lange &mdash; und welche Rechte Sie haben.</div>
+  <div class="bar"></div>
+</section>
+
+<div class="content">
+  <div class="stand">Stand: April 2026 &middot; Version 1.0</div>
+
+  <div class="toc">
+    <h4>Inhalt</h4>
+    <ol>
+      <li><a href="#v1">Verantwortliche Stelle</a></li>
+      <li><a href="#v2">Rechtsgrundlagen</a></li>
+      <li><a href="#v3">Erhobene Daten</a></li>
+      <li><a href="#v4">Hosting &amp; Datenstandort</a></li>
+      <li><a href="#v5">Auftragsverarbeitung</a></li>
+      <li><a href="#v6">Unterauftragsverarbeiter</a></li>
+      <li><a href="#v7">SSL/TLS-Verschlüsselung</a></li>
+      <li><a href="#v8">Cookies</a></li>
+      <li><a href="#v9">Kontaktaufnahme</a></li>
+      <li><a href="#v10">Datensicherheit (TOM)</a></li>
+      <li><a href="#v11">Ihre Rechte</a></li>
+      <li><a href="#v12">Speicherdauer</a></li>
+      <li><a href="#v13">Beschwerderecht</a></li>
+      <li><a href="#v14">Änderungen</a></li>
+    </ol>
+  </div>
+
+  <section id="v1" class="block">
+    <h2><span class="num">1.</span> Verantwortliche Stelle</h2>
+    <p>Verantwortlich für die Datenverarbeitung auf dieser Website und den damit verbundenen Diensten ist:</p>
+    <p>
+      <strong>RC-Tech Solutions GmbH</strong><br>
+      Via Montalin 13, 7013 Domat/Ems, Schweiz<br>
+      Vertretungsberechtigt: Robert Camathias<br>
+      E-Mail: <a href="mailto:datenschutz@rc-tech-solutions.com">datenschutz@rc-tech-solutions.com</a>
+    </p>
+  </section>
+
+  <section id="v2" class="block">
+    <h2><span class="num">2.</span> Rechtsgrundlagen</h2>
+    <p>Als Schweizer Unternehmen unterliegen wir dem <strong>Schweizer Datenschutzgesetz (DSG/nDSG)</strong>. Für Nutzerinnen und Nutzer aus der EU/EWR gelten zusätzlich die Bestimmungen der <strong>EU-Datenschutz-Grundverordnung (DSGVO)</strong>. Wir verarbeiten personenbezogene Daten auf folgenden Rechtsgrundlagen:</p>
+    <ul>
+      <li><strong>Vertragserfüllung</strong> (Art. 6 Abs. 1 lit. b DSGVO / Art. 31 Abs. 1 DSG)</li>
+      <li><strong>Berechtigtes Interesse</strong> (Art. 6 Abs. 1 lit. f DSGVO / Art. 31 Abs. 1 DSG) &mdash; insbesondere IT-Sicherheit und Betriebsfähigkeit</li>
+      <li><strong>Rechtliche Verpflichtung</strong> (Art. 6 Abs. 1 lit. c DSGVO) &mdash; insbesondere Buchhaltungs- und Aufbewahrungspflichten</li>
+      <li><strong>Einwilligung</strong> (Art. 6 Abs. 1 lit. a DSGVO / Art. 31 Abs. 1 DSG) &mdash; sofern ausdrücklich erteilt</li>
+    </ul>
+  </section>
+
+  <section id="v3" class="block">
+    <h2><span class="num">3.</span> Erhobene Daten</h2>
+    <p>Beim Besuch unserer Website werden automatisch folgende Informationen durch den Webserver erfasst (Server-Logfiles):</p>
+    <ul>
+      <li>Browsertyp und -version</li>
+      <li>Verwendetes Betriebssystem</li>
+      <li>Referrer-URL</li>
+      <li>IP-Adresse (nach 30 Tagen anonymisiert)</li>
+      <li>Uhrzeit der Serveranfrage</li>
+    </ul>
+    <p>Diese Daten werden nicht mit anderen Datenquellen zusammengeführt und nach 30 Tagen automatisch gelöscht. Eine Auswertung erfolgt ausschliesslich zum Zweck der IT-Sicherheit und Fehlerdiagnose.</p>
+  </section>
+
+  <section id="v4" class="block">
+    <h2><span class="num">4.</span> Hosting &amp; Datenstandort</h2>
+    <p>Diese Website wird bei der <strong>Hetzner Online GmbH</strong>, Industriestr. 25, 91710 Gunzenhausen, Deutschland gehostet. Die Server befinden sich ausschliesslich in Rechenzentren in <strong>Deutschland (Falkenstein / Nürnberg)</strong>.</p>
+    <p>Hetzner ist <strong>ISO/IEC 27001 zertifiziert</strong> und betreibt die Rechenzentren nach höchsten Sicherheitsstandards. Es findet keine Übertragung personenbezogener Daten in Drittstaaten statt, mit Ausnahme der unter Abschnitt 6 genannten Dienste.</p>
+  </section>
+
+  <section id="v5" class="block">
+    <h2><span class="num">5.</span> Auftragsverarbeitung (Saasiro &amp; EASB)</h2>
+    <p>Im Rahmen unserer SaaS-Hosting-Plattform <strong>Saasiro</strong> und der Branchenlösung <strong>Easy &amp; Smart Booking</strong> verarbeiten wir personenbezogene Daten im Auftrag unserer Kunden (Auftragsverarbeitung gemäss Art. 28 DSGVO / Art. 9 DSG). Mit jedem Kunden wird ein separater Auftragsverarbeitungsvertrag (AVV) geschlossen.</p>
+    <p>Die Datenverarbeitung umfasst:</p>
+    <ul>
+      <li>Hosting und Speicherung von Kundendaten sowie Endkunden-Daten (Tenants)</li>
+      <li>Technisches Monitoring und Logging für Betrieb und Sicherheit</li>
+      <li>Automatisierte Backups und Wiederherstellungsdienste</li>
+      <li>DNS-Verwaltung und SSL/TLS-Zertifikatsmanagement</li>
+    </ul>
+    <p>Alle Daten werden ausschliesslich auf Servern in Deutschland verarbeitet. Wir haben keinen inhaltlichen Zugriff auf die Endkunden-Daten und handeln ausschliesslich auf Weisung des jeweiligen Kunden.</p>
+  </section>
+
+  <section id="v6" class="block">
+    <h2><span class="num">6.</span> Unterauftragsverarbeiter</h2>
+    <p><strong>Cloudflare Inc.</strong> &mdash; Wir nutzen Cloudflare als DNS-Provider, CDN und DDoS-Schutz. Cloudflare erhält technisch bedingt Zugriff auf Ihre IP-Adresse. Rechtsgrundlage: berechtigtes Interesse an einer sicheren und effizienten Bereitstellung (Art. 6 Abs. 1 lit. f DSGVO). Cloudflare ist unter dem <strong>EU-US Data Privacy Framework</strong> zertifiziert und unterliegt Standardvertragsklauseln (SCC).</p>
+    <p><strong>Stripe Inc.</strong> &mdash; Für die Zahlungsabwicklung nutzen wir Stripe. Stripe verarbeitet Zahlungsdaten als eigenständiger Verantwortlicher. Rechtsgrundlage: Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO). Stripe ist <strong>PCI DSS Level 1</strong> zertifiziert und unter dem EU-US Data Privacy Framework registriert.</p>
+    <p><strong>Google Fonts (self-hosted möglich)</strong> &mdash; Die Website lädt Schriften ggf. von Google Fonts (Google Ireland Limited). Dabei wird die IP-Adresse an Google übertragen. Rechtsgrundlage: berechtigtes Interesse an einer einheitlichen Darstellung.</p>
+  </section>
+
+  <section id="v7" class="block">
+    <h2><span class="num">7.</span> SSL/TLS-Verschlüsselung</h2>
+    <p>Alle unsere Websites und Plattformen nutzen <strong>TLS 1.2 / 1.3</strong> Verschlüsselung. <strong>HSTS</strong> (HTTP Strict Transport Security) ist auf allen Domains aktiviert. Es gibt keine unverschlüsselten Endpoints.</p>
+  </section>
+
+  <section id="v8" class="block">
+    <h2><span class="num">8.</span> Cookies</h2>
+    <p>Diese Website verwendet <strong>keine Tracking-Cookies</strong> und <strong>keine Analytics-Dienste</strong> Dritter (kein Google Analytics, Meta Pixel, etc.). Es werden ausschliesslich technisch notwendige Cookies eingesetzt (z. B. Session-Cookies für eingeloggte Nutzer, Spracheinstellungen). Diese Cookies erfordern keine Einwilligung, da sie für den Betrieb der Website zwingend erforderlich sind.</p>
+  </section>
+
+  <section id="v9" class="block">
+    <h2><span class="num">9.</span> Kontaktaufnahme</h2>
+    <p>Wenn Sie uns per E-Mail oder Kontaktformular kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage gespeichert. Rechtsgrundlage: Vertragserfüllung bzw. vorvertragliche Massnahmen (Art. 6 Abs. 1 lit. b DSGVO) oder berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO). Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Kontaktdaten werden gelöscht, sobald die Anfrage abschliessend bearbeitet ist, spätestens nach 12 Monaten, sofern kein Vertragsverhältnis besteht.</p>
+  </section>
+
+  <section id="v10" class="block">
+    <h2><span class="num">10.</span> Datensicherheit (TOM)</h2>
+    <p>Wir setzen umfangreiche <strong>technische und organisatorische Massnahmen</strong> zum Schutz Ihrer Daten ein:</p>
+    <ul>
+      <li><strong>AES-256-GCM</strong> Verschlüsselung für sensible Daten (API-Keys, Credentials)</li>
+      <li><strong>bcrypt</strong>-Hashing für Passwörter (12 Rounds)</li>
+      <li><strong>SSH-Key</strong>-basierter Serverzugang (kein Passwort-Login)</li>
+      <li>Rollenbasierte Zugriffskontrolle (RBAC) mit Audit-Logging</li>
+      <li>Automatisierte tägliche Backups mit verschlüsselter Speicherung</li>
+      <li>Firewall mit Whitelist-Prinzip und DDoS-Schutz</li>
+      <li>Fail2Ban gegen Brute-Force-Angriffe</li>
+      <li>Regelmässige Sicherheits-Updates und Vulnerability-Scans</li>
+    </ul>
+    <p>Detaillierte Informationen zu unseren TOM werden auf Anfrage zur Verfügung gestellt.</p>
+  </section>
+
+  <section id="v11" class="block">
+    <h2><span class="num">11.</span> Ihre Rechte</h2>
+    <p>Sie haben folgende Rechte bezüglich Ihrer personenbezogenen Daten:</p>
+    <ul>
+      <li><strong>Auskunftsrecht</strong> (Art. 15 DSGVO / Art. 25 DSG)</li>
+      <li><strong>Berichtigungsrecht</strong> (Art. 16 DSGVO / Art. 32 Abs. 1 DSG)</li>
+      <li><strong>Löschungsrecht</strong> (Art. 17 DSGVO / Art. 32 Abs. 2 lit. c DSG) &mdash; Recht auf Vergessenwerden</li>
+      <li><strong>Einschränkungsrecht</strong> (Art. 18 DSGVO)</li>
+      <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO / Art. 28 DSG) &mdash; Recht auf Herausgabe in maschinenlesbarem Format</li>
+      <li><strong>Widerspruchsrecht</strong> (Art. 21 DSGVO)</li>
+      <li><strong>Widerruf von Einwilligungen</strong> (Art. 7 Abs. 3 DSGVO) &mdash; jederzeit mit Wirkung für die Zukunft</li>
+    </ul>
+    <p>Zur Ausübung Ihrer Rechte kontaktieren Sie uns unter: <a href="mailto:datenschutz@rc-tech-solutions.com">datenschutz@rc-tech-solutions.com</a></p>
+  </section>
+
+  <section id="v12" class="block">
+    <h2><span class="num">12.</span> Speicherdauer</h2>
+    <p>Wir speichern personenbezogene Daten nur so lange, wie es für die jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungsfristen dies verlangen. Konkret:</p>
+    <ul>
+      <li><strong>Server-Logs:</strong> 30 Tage (danach anonymisiert)</li>
+      <li><strong>Kontaktanfragen:</strong> bis zu 12 Monate</li>
+      <li><strong>Kundendaten:</strong> für die Dauer des Vertrags + 30 Tage Gnadenfrist zur Rückgewinnung</li>
+      <li><strong>Buchhaltungsrelevante Daten:</strong> 10 Jahre (Schweizer OR Art. 958f)</li>
+    </ul>
+  </section>
+
+  <section id="v13" class="block">
+    <h2><span class="num">13.</span> Beschwerderecht</h2>
+    <p>Sie haben das Recht, sich bei einer Aufsichtsbehörde zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer Daten gegen geltendes Recht verstösst.</p>
+    <ul>
+      <li><strong>Schweiz:</strong> Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter (EDÖB), <a href="https://www.edoeb.admin.ch" target="_blank" rel="noopener">edoeb.admin.ch</a></li>
+      <li><strong>EU:</strong> Zuständige Datenschutzbehörde Ihres Wohnsitzlandes</li>
+    </ul>
+  </section>
+
+  <section id="v14" class="block">
+    <h2><span class="num">14.</span> Änderungen</h2>
+    <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich rechtliche Anforderungen oder unsere Datenverarbeitungspraxis ändern. Die jeweils aktuelle Version ist stets auf dieser Seite abrufbar.</p>
+  </section>
+
+  <div class="contact-box">
+    <h3>Fragen zum Datenschutz?</h3>
+    <p>Wir nehmen Datenschutz ernst und beantworten Ihre Fragen gern persönlich. Schreiben Sie uns an <a href="mailto:datenschutz@rc-tech-solutions.com">datenschutz@rc-tech-solutions.com</a> &mdash; wir antworten werktags innerhalb von 24 Stunden.</p>
+  </div>
+</div>
+
+<footer>
+  <span>&copy; 2026 RC-Tech Solutions GmbH &mdash; Schweiz</span>
+  <div class="legal">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+</footer>
+
+</body>
+</html>
