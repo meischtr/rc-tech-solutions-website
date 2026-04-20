@@ -37,11 +37,6 @@ h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-2px;line-heigh
 h1 span{color:#6366f1;}
 
 
-/* Saasiro link */
-.saasiro-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.15);font-weight:500;text-decoration:none;transition:color .15s;}
-.saasiro-link:hover{color:rgba(255,255,255,.35);}
-.saasiro-link span{color:#6366f1;opacity:.4;transition:opacity .15s;}
-.saasiro-link:hover span{opacity:.7;}
 
 /* Footer */
 .foot{position:absolute;bottom:32px;text-align:center;font-size:11px;color:rgba(255,255,255,.1);}
@@ -58,7 +53,7 @@ h1 span{color:#6366f1;}
 
 @media(max-width:640px){
   .logo{height:52px;}.btns{flex-direction:column;align-items:center;}
-  .btn-login,.btn-saasiro{width:100%;justify-content:center;}
+  .btn-login{width:100%;justify-content:center;}
 }
 </style>
 </head>
@@ -87,28 +82,24 @@ h1 span{color:#6366f1;}
 
   <h1 id="headline">hier entsteht <span>Grosses.</span></h1>
 
-  <a href="https://saasiro.com" class="saasiro-link" target="_blank" id="saasLink">
-    <span>saasiro.com</span> — <em id="saasText">hier entsteht auch Grosses.</em>
-  </a>
 </div>
 
 <div class="foot">&copy; 2026 RC-Tech Solutions GmbH — rc-tech-solutions.com</div>
 
 <script>
 var t={
-  de:{h:'hier entsteht <span>Grosses.</span>',s:'hier entsteht auch Grosses.',l:'Login'},
-  en:{h:'something big is <span>coming.</span>',s:'something big is coming here too.',l:'Login'},
-  fr:{h:'quelque chose de grand <span>arrive.</span>',s:'ici aussi, quelque chose de grand arrive.',l:'Connexion'},
-  it:{h:'qualcosa di grande <span>sta arrivando.</span>',s:'anche qui sta arrivando qualcosa di grande.',l:'Accedi'},
-  es:{h:'algo grande está <span>llegando.</span>',s:'aquí también está llegando algo grande.',l:'Acceso'},
-  sr:{h:'nešto veliko <span>dolazi.</span>',s:'i ovde nastaje nešto veliko.',l:'Prijava'}
+  de:{h:'hier entsteht <span>Grosses.</span>',l:'Login'},
+  en:{h:'something big is <span>coming.</span>',l:'Login'},
+  fr:{h:'quelque chose de grand <span>arrive.</span>',l:'Connexion'},
+  it:{h:'qualcosa di grande <span>sta arrivando.</span>',l:'Accedi'},
+  es:{h:'algo grande está <span>llegando.</span>',l:'Acceso'},
+  sr:{h:'nešto veliko <span>dolazi.</span>',l:'Prijava'}
 };
 document.querySelectorAll('.lang a').forEach(function(a){
   a.addEventListener('click',function(e){
     e.preventDefault();
     var l=this.dataset.lang;
     document.getElementById('headline').innerHTML=t[l].h;
-    document.getElementById('saasText').textContent=t[l].s;
     document.getElementById('loginLabel').textContent=t[l].l;
     document.querySelectorAll('.lang a').forEach(function(x){x.classList.remove('active');});
     this.classList.add('active');

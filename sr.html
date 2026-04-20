@@ -134,7 +134,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px
 .exp-item:hover .exp-cat{color:#a5b4fc;}
 .exp-desc{font-size:12px;color:rgba(255,255,255,.35);line-height:1.6;}
 
-/* --- PRODUCTS (Saasiro + EASB) --- */
+/* --- PRODUCTS (Atlas + EASB) --- */
 .prod{background:#0b0b0e;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);}
 .prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .prod-card{position:relative;padding:40px;border-radius:16px;background:linear-gradient(180deg,#111113,#0d0d10);border:1px solid rgba(255,255,255,.06);transition:all .3s;overflow:hidden;}
@@ -149,6 +149,13 @@ header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px
 .prod-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#a5b4fc;transition:gap .2s,color .2s;}
 .prod-link:hover{gap:10px;color:#c7d2fe;}
 .prod-link svg{width:14px;height:14px;}
+.prod-veiled{filter:blur(7px);user-select:none;pointer-events:none;}
+.prod-stealth-badge{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#a5b4fc;padding:5px 11px;border-radius:5px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);margin-bottom:14px;}
+.prod-stealth-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#a5b4fc;animation:stealthPulse 2s ease-in-out infinite;}
+@keyframes stealthPulse{0%,100%{opacity:.4;box-shadow:0 0 0 0 rgba(165,180,252,.6);}50%{opacity:1;box-shadow:0 0 0 6px rgba(165,180,252,0);}}
+.prod-stealth-cta{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#a5b4fc;padding:10px 16px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);transition:all .2s;}
+.prod-stealth-cta:hover{gap:12px;color:#c7d2fe;background:rgba(99,102,241,.14);border-color:rgba(99,102,241,.35);}
+.prod-stealth-cta svg{width:14px;height:14px;}
 
 /* --- TECH --- */
 .tech-wrap{display:flex;flex-wrap:wrap;gap:6px;}
@@ -316,7 +323,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
   <div class="hero-content">
     <div class="hero-brand"><strong>RC-Tech</strong> Solutions GmbH</div>
     <h1>Softver koji isporučuje.<br>Infrastruktura koja <span class="acc">drži.</span><br><em>Švajcarski inženjering.</em></h1>
-    <p class="hero-p">Razvijamo SaaS proizvode i upravljamo njihovom infrastrukturom &mdash; od prvog sprinta do produkcionog rada. Preko 20 godina iskustva u upravljanju projektima, IT bezbednosti i cloud tehnologijama. Usklađeno sa GDPR, u EU data centrima, uz direktnu podršku.</p>
+    <p class="hero-p">Razvijamo SaaS proizvode i upravljamo njihovom infrastrukturom &mdash; od prvog sprinta do produkcionog rada. Preko 20 godina iskustva u upravljanju projektima, IT bezbednosti, mrežnoj infrastrukturi i cloud tehnologijama. Usklađeno sa GDPR, u EU data centrima, uz direktnu podršku.</p>
     <div class="hero-btns">
       <a href="#contact" class="b1">
         Razgovarajmo o projektu
@@ -369,8 +376,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     <div class="svc">
       <svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.602H7.923a3.375 3.375 0 00-3.285 2.602l-2.268 9.64a4.5 4.5 0 00-.12 1.03v.228m19.5 0a3 3 0 01-3 3H5.25a3 3 0 01-3-3m19.5 0a3 3 0 00-3-3H5.25a3 3 0 00-3 3m16.5 0h.008v.008h-.008v-.008zm-3 0h.008v.008h-.008v-.008z"/></svg>
       <h3>SaaS hosting</h3>
-      <p>Managed hosting preko naše Saasiro platforme. Multi-tenant, auto-scaling, GDPR od prvog dana.</p>
-      <div class="svc-t">Saasiro · Managed · SSL · Backups</div>
+      <p>Managed SaaS hosting na sopstvenoj infrastrukturi. Multi-tenant, auto-scaling, GDPR od prvog dana.</p>
+      <div class="svc-t">Managed · SSL · Backups · EU</div>
     </div>
     <div class="svc">
       <svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/></svg>
@@ -432,25 +439,25 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
   </div>
   <div class="prod-grid rv">
     <div class="prod-card">
-      <div class="prod-tag">Platforma</div>
-      <div class="prod-name">Saasiro</div>
-      <div class="prod-desc">Managed SaaS hosting i razvojna platforma. Git push, build, deploy, SSL, DNS &mdash; automatski. Multi-tenant, EU infrastruktura, ugrađena usklađenost.</div>
-      <div class="prod-feat">
-        <span>Zero-Config Deploy</span>
-        <span>Multi-Tenant</span>
-        <span>Auto-SSL</span>
-        <span>AVV / TOM</span>
-        <span>Od 9 EUR mesečno</span>
+      <div class="prod-stealth-badge">Stealth Mode</div>
+      <div class="prod-name">Projekat Atlas</div>
+      <div class="prod-desc prod-veiled">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</div>
+      <div class="prod-feat prod-veiled">
+        <span>Lorem ipsum</span>
+        <span>Dolor sit</span>
+        <span>Consectetur</span>
+        <span>Adipiscing</span>
+        <span>Incididunt</span>
       </div>
-      <a href="https://saasiro.com" class="prod-link" target="_blank" rel="noopener">
-        saasiro.com
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h6v6M13 3L3 13"/></svg>
+      <a href="#contact" class="prod-stealth-cta">
+        Zatraži rani pristup
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
     </div>
     <div class="prod-card">
       <div class="prod-tag">Rešenje za branšu</div>
       <div class="prod-name">Easy &amp; Smart Booking</div>
-      <div class="prod-desc">Sistem za rezervacije i kasu za beauty, wellness, fitnes i zdravstvo. 220+ funkcija, AI chatbot, multi-tenant, tablet-first &mdash; radi na Saasiru.</div>
+      <div class="prod-desc">Sistem za rezervacije i kasu za beauty, wellness, fitnes i zdravstvo. 220+ funkcija, AI chatbot, multi-tenant, tablet-first &mdash; radi na sopstvenoj infrastrukturi.</div>
       <div class="prod-feat">
         <span>Online rezervacije</span>
         <span>POS / kasa</span>
@@ -556,8 +563,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     </div>
     <div class="about-text rv rv-d1">
       <h3>Softver nije sam sebi svrha. <em>Mora da isporučuje.</em></h3>
-      <p>Iza RC-Tech Solutions ne stoji agencija, već inženjer sa preko <strong>20 godina iskustva</strong> u upravljanju projektima, IT bezbednosti i razvoju softvera. Od velikih enterprise rolloutova do kompaktnih SaaS proizvoda &mdash; poznajem obe strane.</p>
-      <p><strong>RC-Tech Solutions GmbH</strong> je osnovan da ovo iskustvo pretoči u sopstvene proizvode: hosting platformu (Saasiro), rešenje za branšu za MSP (Easy &amp; Smart Booking) i fokusirani konsalting za kompanije kojima treba pravi inženjering, a ne PowerPoint prezentacije.</p>
+      <p>Iza RC-Tech Solutions ne stoji agencija, već inženjer sa preko <strong>20 godina iskustva</strong> u upravljanju projektima, IT bezbednosti, mrežnoj infrastrukturi i razvoju softvera. Od velikih enterprise rolloutova do kompaktnih SaaS proizvoda &mdash; poznajem obe strane.</p>
+      <p><strong>RC-Tech Solutions GmbH</strong> je osnovan da ovo iskustvo pretoči u sopstvene proizvode: sopstvenu hosting platformu (u razvoju), rešenje za branšu za MSP (Easy &amp; Smart Booking) i fokusirani konsalting za kompanije kojima treba pravi inženjering, a ne PowerPoint prezentacije.</p>
+      <p>Duboko smo <strong>ukorenjeni u svetu veštačke inteligencije</strong> &mdash; svakodnevno angažovanje s novim modelima, LLM-ovima i alatima za automatizaciju. Naš razvoj je AI-native. Spremni smo da s vama napravimo sledeće korake.</p>
       <p>Ono što kod nas dobijate: <strong>direktan kontakt</strong> sa tehničkim rukovodstvom, čistu arhitekturu bez tehničkog duga i infrastrukturu koja radi i kada više niko na nju ne obraća pažnju. Bez outsourcinga. Bez junior timova. Bez marketinških fraza.</p>
       <div class="about-values">
         <div class="about-val">
@@ -593,7 +601,6 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
   <div class="cta-links rv">
     <a href="tel:+41815528008">+41 (0)81 552 80 08</a> &nbsp;&middot;&nbsp;
     <a href="mailto:info@rc-tech-solutions.com">E-mail</a> &nbsp;&middot;&nbsp;
-    <a href="https://saasiro.com" target="_blank" rel="noopener">saasiro.com</a> &nbsp;&middot;&nbsp;
     <a href="https://easyandsmartbooking.com" target="_blank" rel="noopener">easyandsmartbooking.com</a>
   </div>
 </section>
@@ -621,7 +628,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
   </div>
   <div class="f-col">
     <h4>Proizvodi</h4>
-    <a href="https://saasiro.com" target="_blank" rel="noopener">Saasiro</a>
+    <a href="#produkte">Projekat Atlas</a>
     <a href="https://easyandsmartbooking.com" target="_blank" rel="noopener">Easy &amp; Smart Booking</a>
     <a href="#contact">Kontakt</a>
   </div>
