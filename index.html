@@ -11,7 +11,11 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"></noscript>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
@@ -19,10 +23,12 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#09090b;c
 ::selection{background:rgba(99,102,241,.3);}
 
 /* BG */
-.bg-orb{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;}
+.bg-orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;will-change:transform;}
 .bg-orb-1{width:500px;height:500px;top:20%;left:-10%;background:rgba(59,130,246,.06);animation:drift 20s ease-in-out infinite;}
 .bg-orb-2{width:400px;height:400px;bottom:10%;right:-10%;background:rgba(99,102,241,.05);animation:drift 25s ease-in-out infinite 5s;}
 @keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
+@media(max-width:640px){.bg-orb{display:none;}}
+@media(prefers-reduced-motion:reduce){.bg-orb{animation:none;}}
 
 /* Content */
 .content{text-align:center;padding:32px;max-width:640px;position:relative;z-index:1;}
@@ -41,7 +47,7 @@ h1 span{color:#6366f1;}
 .foot{position:absolute;bottom:32px;text-align:center;font-size:11px;color:rgba(255,255,255,.1);}
 
 /* Top bar */
-.top-bar{position:absolute;top:20px;right:24px;display:flex;align-items:center;gap:12px;}
+.top-bar{position:absolute;top:20px;right:24px;display:flex;align-items:center;gap:12px;z-index:10;}
 .lang{display:flex;gap:2px;}
 .lang a{font-size:11px;color:rgba(255,255,255,.2);padding:4px 6px;border-radius:4px;text-decoration:none;font-weight:500;transition:all .15s;}
 .lang a:hover{color:rgba(255,255,255,.5);}
