@@ -50,8 +50,11 @@ header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px
 section.block{margin-top:40px;}
 section.block h2{font-size:18px;font-weight:700;margin-bottom:14px;letter-spacing:-.3px;display:flex;align-items:baseline;gap:10px;}
 section.block h2 .num{font-size:12px;color:rgba(99,102,241,.6);font-weight:600;font-variant-numeric:tabular-nums;min-width:26px;}
+section.block h3{font-size:14.5px;font-weight:700;color:rgba(255,255,255,.85);margin-top:26px;margin-bottom:10px;letter-spacing:-.1px;}
+section.block h3:first-of-type{margin-top:14px;}
 section.block p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:12px;}
 section.block p strong{color:rgba(255,255,255,.85);font-weight:600;}
+section.block code{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;padding:1px 6px;border-radius:4px;background:rgba(99,102,241,.12);color:rgba(199,210,254,.95);}
 section.block ul{list-style:none;padding:0;margin:12px 0;}
 section.block ul li{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.7;padding-left:18px;position:relative;margin-bottom:6px;}
 section.block ul li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:2px;background:rgba(99,102,241,.5);}
@@ -72,6 +75,29 @@ footer .legal{display:flex;gap:24px;}
   .content{padding:20px 20px 64px;}
   .toc ol{grid-template-columns:1fr;}
   footer{padding:24px 20px;flex-direction:column;align-items:flex-start;}
+}
+
+@media print {
+  body { background: #fff; color: #111; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  header { display: none; }
+  .hero { padding: 20px 0 16px; }
+  .hero h1 { color: #0f172a; }
+  .content { padding: 0; }
+  .toc { page-break-inside: avoid; break-inside: avoid; background: #f1f5f9; border-color: #cbd5e1; }
+  .toc a { color: #334155; }
+  section.block { color: #111; page-break-inside: avoid; break-inside: avoid; margin-top: 22px; }
+  section.block h2 { color: #0f172a; page-break-after: avoid; break-after: avoid; }
+  section.block h3 { color: #0f172a; page-break-after: avoid; break-after: avoid; }
+  section.block p, section.block ul li { color: #334155; }
+  section.block code { background: #eef2ff; color: #4338ca; }
+  h1, h2, h3 { page-break-after: avoid; break-after: avoid; }
+  .contact-box { page-break-inside: avoid; break-inside: avoid; }
+  table { page-break-inside: auto; }
+  tr { page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  p, li { orphans: 3; widows: 3; }
+  body::before, body::after { display: none; }
+  footer { display: none; }
 }
 </style>
 </head>
@@ -95,7 +121,7 @@ footer .legal{display:flex;gap:24px;}
 </section>
 
 <div class="content">
-  <div class="stand">Stand: April 2026 &middot; Version 1.0</div>
+  <div class="stand">Stand: 26. April 2026 &middot; Version 2.1 &middot; zur Kanzlei-Prüfung 4. Mai 2026 vorgesehen</div>
 
   <div class="toc">
     <h4>Inhalt</h4>
@@ -113,7 +139,8 @@ footer .legal{display:flex;gap:24px;}
       <li><a href="#v11">Ihre Rechte</a></li>
       <li><a href="#v12">Speicherdauer</a></li>
       <li><a href="#v13">Beschwerderecht</a></li>
-      <li><a href="#v14">Änderungen</a></li>
+      <li><a href="#v14">Einsatz automatisierter Systeme &amp; KI</a></li>
+      <li><a href="#v15">Änderungen</a></li>
     </ol>
   </div>
 
@@ -154,8 +181,9 @@ footer .legal{display:flex;gap:24px;}
 
   <section id="v4" class="block">
     <h2><span class="num">4.</span> Hosting &amp; Datenstandort</h2>
-    <p>Diese Website wird bei der <strong>Hetzner Online GmbH</strong>, Industriestr. 25, 91710 Gunzenhausen, Deutschland gehostet. Die Server befinden sich ausschliesslich in Rechenzentren in <strong>Deutschland (Falkenstein / Nürnberg)</strong>.</p>
-    <p>Hetzner ist <strong>ISO/IEC 27001 zertifiziert</strong> und betreibt die Rechenzentren nach höchsten Sicherheitsstandards. Es findet keine Übertragung personenbezogener Daten in Drittstaaten statt, mit Ausnahme der unter Abschnitt 6 genannten Dienste.</p>
+    <p>Die Infrastruktur von RC-Tech Solutions wird <strong>georedundant in der Europäischen Union</strong> betrieben. Primäre Applikations- und Datenbank-Server: <strong>Hetzner Online GmbH</strong>, Rechenzentren Nürnberg (Deutschland) und Helsinki (Finnland). Ein zusätzlicher Witness-Server für Ausfallsicherheit und VPN-Kontrollebene wird bei <strong>Infomaniak Network SA</strong> in Genf (Schweiz) betrieben.</p>
+    <p>Externe, verschlüsselte Backups werden bei der <strong>IONOS SE</strong> in Frankfurt am Main (Deutschland, Konzernmutter United Internet AG, DAX-gelistet) vorgehalten. Der Edge-/WAF-Schutz (Anti-DDoS, Bot-Protection) erfolgt über <strong>Gcore S.à r.l.</strong> (Luxemburg), wobei die Edge-Lokationen auf EU-Regionen beschränkt sind.</p>
+    <p>Sämtliche Haupt-Anbieter sind ISO/IEC 27001 zertifiziert oder gleichwertig. Eine primäre Übertragung personenbezogener Daten in Drittstaaten ausserhalb der EU/des EWR findet nicht statt, mit Ausnahme der unter Abschnitt 6 und Abschnitt 12 genannten Sub-Auftragsverarbeiter.</p>
   </section>
 
   <section id="v5" class="block">
@@ -168,14 +196,19 @@ footer .legal{display:flex;gap:24px;}
       <li>Automatisierte Backups und Wiederherstellungsdienste</li>
       <li>DNS-Verwaltung und SSL/TLS-Zertifikatsmanagement</li>
     </ul>
-    <p>Alle Daten werden ausschliesslich auf Servern in Deutschland verarbeitet. Wir haben keinen inhaltlichen Zugriff auf die Endkunden-Daten und handeln ausschliesslich auf Weisung des jeweiligen Kunden.</p>
+    <p>Alle Daten werden ausschliesslich auf Servern in der EU (DE, FI) und der Schweiz verarbeitet. Wir haben keinen inhaltlichen Zugriff auf die Endkunden-Daten und handeln ausschliesslich auf Weisung des jeweiligen Kunden.</p>
   </section>
 
   <section id="v6" class="block">
     <h2><span class="num">6.</span> Unterauftragsverarbeiter</h2>
-    <p><strong>Cloudflare Inc.</strong> &mdash; Wir nutzen Cloudflare als DNS-Provider, CDN und DDoS-Schutz. Cloudflare erhält technisch bedingt Zugriff auf Ihre IP-Adresse. Rechtsgrundlage: berechtigtes Interesse an einer sicheren und effizienten Bereitstellung (Art. 6 Abs. 1 lit. f DSGVO). Cloudflare ist unter dem <strong>EU-US Data Privacy Framework</strong> zertifiziert und unterliegt Standardvertragsklauseln (SCC).</p>
-    <p><strong>Stripe Inc.</strong> &mdash; Für die Zahlungsabwicklung nutzen wir Stripe. Stripe verarbeitet Zahlungsdaten als eigenständiger Verantwortlicher. Rechtsgrundlage: Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO). Stripe ist <strong>PCI DSS Level 1</strong> zertifiziert und unter dem EU-US Data Privacy Framework registriert.</p>
-    <p><strong>Google Fonts (self-hosted möglich)</strong> &mdash; Die Website lädt Schriften ggf. von Google Fonts (Google Ireland Limited). Dabei wird die IP-Adresse an Google übertragen. Rechtsgrundlage: berechtigtes Interesse an einer einheitlichen Darstellung.</p>
+    <p><strong>Hetzner Online GmbH</strong> (Deutschland / Finnland) &mdash; primäres Hosting der Applikations- und Datenbank-Server. ISO/IEC 27001 zertifiziert. Rechtsgrundlage: Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO).</p>
+    <p><strong>Infomaniak Network SA</strong> (Genf, Schweiz) &mdash; Witness-Server für Ausfallsicherheit und VPN-Kontrollebene. Swiss-Made Cloud, kein US-Konzernbezug. Rechtsgrundlage: berechtigtes Interesse an Hochverfügbarkeit (Art. 6 Abs. 1 lit. f DSGVO).</p>
+    <p><strong>IONOS SE</strong> (Frankfurt am Main, Deutschland; Konzernmutter United Internet AG) &mdash; externe, verschlüsselte Backups. AVV abgeschlossen. Rechtsgrundlage: berechtigtes Interesse an Datenverfügbarkeit (Art. 6 Abs. 1 lit. f DSGVO).</p>
+    <p><strong>Gcore S.à r.l.</strong> (Luxemburg) &mdash; Edge-/WAF-Schutz (Anti-DDoS, Bot-Protection). Edge-Lokationen auf EU-Regionen beschränkt. Rechtsgrundlage: berechtigtes Interesse an IT-Sicherheit (Art. 6 Abs. 1 lit. f DSGVO). In Phase 5 (~Q3/Q4 2027) geplanter Wechsel auf <strong>Myra Security GmbH</strong> (Deutschland, BSI-zertifiziert) für Enterprise-Kunden.</p>
+    <p><strong>AWS Europe SARL</strong> (Luxemburg) &mdash; Hosting der KI-Inferenz für Claude-Modelle der Anthropic PBC über AWS Bedrock in der EU-Region <code>eu-central-1</code> (Frankfurt am Main). Verwendung in den RC-Tech-eigenen SaaS-Plattformen (insbesondere EasyAndSmartBooking) für Buchungs-Chatbot, Übersetzungen, CRM-Profil-Zusammenfassung, Admin-Support und KI-gestützte Texterstellung. Datenminimierung gemäss Art. 5 Abs. 1 lit. c DSGVO ist code-seitig implementiert. Die KI-Inferenz erfolgt vollständig innerhalb der AWS-EU-Region &mdash; kein Drittland-Transfer im Sinne von Art. 44 DSGVO. Anthropic PBC (San Francisco, USA) agiert als Sub-Auftragsverarbeiter im Rahmen der AWS-Marketplace-Subscription ohne direkten Datenfluss in die USA. Rechtsgrundlage des AVV: AWS-Kundenvereinbarung mit integriertem GDPR Data Processing Addendum und Standardvertragsklauseln (SCCs).</p>
+    <p><strong>Stripe Payments Europe Ltd.</strong> (Dublin, Irland) &mdash; Zahlungsabwicklung. Stripe verarbeitet Zahlungsdaten als eigenständiger Verantwortlicher (Art. 6 Abs. 1 lit. b DSGVO). PCI DSS Level 1 zertifiziert.</p>
+    <p><strong>BetterStack</strong> (Tallinn, Estland) &mdash; Monitoring und Statuspage. EU-basiert. Rechtsgrundlage: berechtigtes Interesse an Betriebssicherheit (Art. 6 Abs. 1 lit. f DSGVO).</p>
+    <p><strong>Google Fonts (self-hosted bevorzugt)</strong> &mdash; Die Website lädt Schriften primär self-hosted; bei Google-Fonts-Fallback würde die IP-Adresse an Google Ireland Limited übertragen.</p>
   </section>
 
   <section id="v7" class="block">
@@ -245,7 +278,23 @@ footer .legal{display:flex;gap:24px;}
   </section>
 
   <section id="v14" class="block">
-    <h2><span class="num">14.</span> Änderungen</h2>
+    <h2><span class="num">14.</span> Einsatz automatisierter Systeme und KI (EU AI Act)</h2>
+    <p>RC-Tech Solutions nutzt Claude-Modelle der Anthropic PBC auf zwei klar getrennten Wegen, die unterschiedlichen DSGVO-Konstellationen unterliegen.</p>
+
+    <h3>14.1 Eigene Entwicklungs-Werkzeuge (Pair-Programming)</h3>
+    <p>RC-Tech setzt zur Erbringung von Softwareentwicklungs- und Beratungsleistungen KI-gestützte Werkzeuge ein, insbesondere <strong>Claude Code</strong> der <strong>Anthropic PBC</strong> (548 Market Street PMB 90375, San Francisco, CA 94104, USA) als Pair-Programming-Tool. Dabei werden ausschliesslich RC-Tech-eigene Code-Bestände, Dokumentation und Architektur-Konzepte verarbeitet. <strong>Vertrauliche Kundendaten werden nicht an diese Entwicklungs-KI übermittelt.</strong> Sämtliche KI-generierten Arbeitsergebnisse werden vor der Auslieferung an den Kunden manuell geprüft, getestet und freigegeben. Bei Beratungs- oder Review-Aufträgen, bei denen KI-Unterstützung mit Kundendaten sinnvoll ist, wird die Datenübertragung vorab mit dem Kunden abgestimmt und vertraglich geregelt. Rechtsgrundlage für den hierbei stattfindenden Drittlandtransfer sind das <strong>EU&ndash;US Data Privacy Framework</strong> (Adequacy Decision der EU-Kommission vom 10. Juli 2023, Anthropic-zertifiziert) sowie ergänzend Standardvertragsklauseln.</p>
+
+    <h3>14.2 KI-Funktionen in den RC-Tech-eigenen SaaS-Plattformen (EasyAndSmartBooking)</h3>
+    <p>KI-gestützte Funktionen in den RC-Tech-eigenen SaaS-Plattformen, insbesondere auf <strong>EasyAndSmartBooking</strong> (Buchungs-Chatbot, Übersetzungen in fünf Sprachen, CRM-Profil-Zusammenfassung mit Pseudonymisierung, Admin-Support mit PII-Sanitizer, Bewertungs-Moderation, KI-gestützte Texterstellung), nutzen die Claude-Modelle der Anthropic PBC bezogen über <strong>AWS Bedrock in der EU-Region <code>eu-central-1</code> (Frankfurt am Main)</strong>. Vertragspartner: <strong>AWS Europe SARL</strong> (Luxemburg). Die KI-Inferenz erfolgt vollständig innerhalb der AWS-EU-Region &mdash; Daten verlassen das EU/EWR-Gebiet nicht. Anthropic PBC agiert als Sub-Auftragsverarbeiter über AWS Bedrock ohne direkten Datenfluss in die USA.</p>
+    <p>Datenminimierung gemäss Art. 5 Abs. 1 lit. c DSGVO ist code-seitig implementiert (Vornamen-Reduktion, Pseudonymisierung im CRM-Profil, Allergien-Ausschluss aus Chatbot-Prompt, Pre-Save-Sanitizer im Admin-Support-Chat). Endkunden können den KI-Chatbot per Opt-Out deaktivieren (Art. 21 DSGVO Widerspruchsrecht). KI-Funktionen werden ausschliesslich über die Plattform-Konfiguration des Anbieters bereitgestellt &mdash; eine Hinterlegung eigener KI-API-Schlüssel durch Tenants ist nicht möglich.</p>
+
+    <h3>14.3 Transparenz nach Art. 50 EU AI Act</h3>
+    <p>Endkunden werden bei jeder Chatbot-Interaktion erkennbar darauf hingewiesen, dass sie mit einem automatisierten System kommunizieren (Transparenzpflicht nach <strong>Art. 50 Verordnung (EU) 2024/1689 (EU AI Act)</strong>). Der Buchungs-Chatbot ist funktional auf Terminbuchung und Dienstleistungs-Auskünfte beschränkt und gibt ausdrücklich keine medizinische, gesundheitsbezogene, diagnostische oder therapeutische Beratung. Eine Einstufung als Hochrisiko-KI im Sinne von Annex III AI Act liegt nicht vor.</p>
+    <p>Eine automatisierte Entscheidungsfindung mit rechtlicher Wirkung im Sinne von Art. 22 DSGVO findet nicht statt. Die CRM-Profil-Zusammenfassung (Customer-Brain) liefert pseudonymisierte Empfehlungen für das Salon-Personal &mdash; die Verwendung erfolgt durch das Personal als Mensch-im-Loop, kein automatisierter Beschluss.</p>
+  </section>
+
+  <section id="v15" class="block">
+    <h2><span class="num">15.</span> Änderungen</h2>
     <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich rechtliche Anforderungen oder unsere Datenverarbeitungspraxis ändern. Die jeweils aktuelle Version ist stets auf dieser Seite abrufbar.</p>
   </section>
 
