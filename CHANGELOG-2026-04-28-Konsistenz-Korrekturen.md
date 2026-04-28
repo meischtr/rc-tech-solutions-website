@@ -171,6 +171,53 @@ Sobald die GmbH notariell beglaubigt und das Fort-Knox-Setup aufgehoben ist, sol
 
 Übersetzungen (EN/FR/IT/ES/SR) werden nachgezogen, sobald der DE-Inhalt finalisiert ist. Bis dahin nur DE-Version aktiv.
 
+## Iteration 4 — Eigenprodukt-Trennung + Zukunftsklausel (28.04. ganz spät)
+
+Nach weiterer Sichtung wurden zwei strukturelle Lücken erkannt:
+
+1. **RC-Tech vs. EHB nicht klar genug getrennt:** EHB ist ein Eigenprodukt aus eigenem Haus, kein gewhitelabeltes Drittanbieter-Tool. Diese Information stand zwar implizit in §1, aber nicht prominent. Bei einem Audit oder einer Kanzleiprüfung wäre das eine erste Frage.
+
+2. **Keine Zukunftsklausel:** Die KI-Use-Case-Listen in EHB §6 (AGB) und §13 (Datenschutz) waren Momentaufnahmen. Wenn der Voice Agent live geht oder neue KI-Funktionen kommen, müssten die AGB jedes Mal angepasst werden. Eine generische "Wir dokumentieren neue Funktionen vorab in der Datenschutzerklärung"-Klausel löst das.
+
+**Iteration 4 — Änderungen:**
+
+| Bereich | Datei | Änderung |
+|---|---|---|
+| EHB AGB §1 | `TermsPage.tsx` | "Eigenes Software-Produkt aus dem Hause der RC-Tech Solutions GmbH ... kein gewhitelabeltes Drittanbieter-Produkt" — explizite Eigenprodukt-Klarstellung |
+| EHB AGB §6 | `TermsPage.tsx` | Voice Agent als zukünftige KI-Funktion ergänzt; Zukunftsklausel am Ende: neue Funktionen werden in der Datenschutzerklärung dokumentiert, kein erneuter AGB-Update bei jeder Erweiterung nötig |
+| EHB Datenschutz §13 | `PrivacyPage.tsx` | Eigenprodukt-Hinweis am Anfang; Voice Agent als Use-Case Nr. 8 mit Status "in Vorbereitung"; Zukunftsklausel am Ende mit Verweis auf Architektur-Leitfaden (Bedrock EU + Datenminimierung + Mensch-im-Loop) |
+| RC-Tech Datenschutz §14 | `datenschutz.html` | Restrukturiert von 2 auf **3 KI-Wege**: 14.1 Pair-Programming, 14.2 EHB-Eigenprodukt, **14.3 NEU: Kundenprojekte (modell-agnostisch)**, 14.4 Transparenz Art. 50 (vorher 14.3), 14.5 NEU: Zukunftsklausel |
+| RC-Tech Datenschutz | `datenschutz.html` Stand-Zeile | V2.3 → **V2.4** |
+
+**Konzept:** Die drei Wege auf RC-Tech-Seite sind jetzt sauber separiert:
+- **Pair-Programming** = Anthropic-direkt für RC-Tech-eigene Code-Entwicklung (kein Kundendaten-Bezug)
+- **EHB als Eigenprodukt** = Bedrock-EU als feste Architektur-Wahl
+- **Kundenprojekte (Beratung/KI-Integration)** = projekt-individuell, im jeweiligen AVV geregelt — diese Datenschutzerklärung gilt nicht für Kundenprojekte, sondern nur für RC-Tech selbst
+
+## Iteration 3 — Aufbewahrungsfristen + Anthropic-Konsistenz (28.04. spät)
+
+Nach weiterer Sichtung kamen zwei Detail-Probleme an die Oberfläche:
+
+1. **EHB §6 listete Anthropic noch als direkten US-Drittanbieter** — das war vor der Bedrock-Umstellung korrekt, ist seit V3 aber inkonsistent zu §13 ("Anthropic agiert als Sub-Auftragsverarbeiter im Rahmen der AWS-Marketplace-Subscription ohne direkten Datenfluss in die USA"). **Fix:** §6 listet jetzt AWS Europe SARL als Vertragspartner, Anthropic explizit als Sub-AVV.
+
+2. **Aufbewahrungsfristen vermischten Buchhaltung mit Backup-Retention** — der alte §10 (EHB) und §12 (RC-Tech) suggerierten "10 Jahre Buchhaltung" pauschal, ohne klar zu trennen zwischen:
+   - operativen Plattform-Daten (Vertragsdauer + 30 Tage)
+   - Backup-Snapshots auf IONOS (rolling 30 Tage, automatisch überschrieben)
+   - Buchhaltungs-Belegen in der Buchhaltung (10 Jahre OR/HGB)
+   - KI-Inferenz (nicht persistiert)
+   
+   **Fix:** Beide §10 (EHB) und §12 (RC-Tech) zeigen jetzt explizit fünf bis sechs Datenkategorien mit eigenen Fristen. Das war datenschutzrechtlich nicht zwingend falsch, aber missverständlich — und ein Auditor hätte zu Recht nachgefragt.
+
+**Zusätzliche Änderungen aus Iteration 3:**
+
+| Bereich | Datei | Änderung |
+|---|---|---|
+| EHB Datenschutz | `PrivacyPage.tsx` §6 | Anthropic-Eintrag korrigiert: AWS Europe SARL als Vertragspartner, Anthropic als Sub-AVV |
+| EHB Datenschutz | `PrivacyPage.tsx` §10 | Aufbewahrungsfristen in 6 Datenkategorien aufgeteilt |
+| EHB AGB+Datenschutz | `TermsPage.tsx` + `PrivacyPage.tsx` Stand-Zeile | V3.2 → **V3.3** |
+| RC-Tech Datenschutz | `datenschutz.html` §12 | Aufbewahrungsfristen in 6 Datenkategorien aufgeteilt (analog EHB) |
+| RC-Tech Datenschutz | `datenschutz.html` Stand-Zeile | V2.2 → **V2.3** |
+
 ## Iteration 2 — Konsolidierung am Abend des 28.04.
 
 Nach erstem Sichten kamen drei Wünsche dazu:
@@ -186,7 +233,7 @@ Nach erstem Sichten kamen drei Wünsche dazu:
 ```
 rc-tech-solutions-webseite/
 ├── agb.html                                            (V2.1 → V2.4)
-├── datenschutz.html                                    (V2.1 → V2.2)
+├── datenschutz.html                                    (V2.1 → V2.4)
 ├── de.html, en.html, fr.html, it.html, es.html, sr.html (KI-Integration-Service + No-US + Landingpage-Link + neutrale Tags)
 ├── ki-integrationen.html                                (NEU — Landingpage, Stack-Sektion provider-agnostisch)
 ├── CHANGELOG-2026-04-28-Konsistenz-Korrekturen.md       (NEU)
@@ -194,8 +241,8 @@ rc-tech-solutions-webseite/
 └── datenschutz.pdf                                      (GELÖSCHT — V2.0-Altstand, nicht synchron)
 
 easyandsmartbooking-webseite/src/pages/marketing/
-├── TermsPage.tsx                                       (V3 → V3.2)
-└── PrivacyPage.tsx                                     (V3 → V3.2)
+├── TermsPage.tsx                                       (V3 → V3.3)
+└── PrivacyPage.tsx                                     (V3 → V3.3)
 
 Firmenunterlagen/Recht/Compliance/Webseiten/
 └── STALE-NOTICE-2026-04-28.md                           (NEU — Snapshots veraltet, vor 4.5. regenerieren)

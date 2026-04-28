@@ -121,7 +121,7 @@ footer .legal{display:flex;gap:24px;}
 </section>
 
 <div class="content">
-  <div class="stand">Stand: 28. April 2026 &middot; Version 2.2 &middot; zur Kanzlei-Prüfung 4. Mai 2026 vorgesehen</div>
+  <div class="stand">Stand: 28. April 2026 &middot; Version 2.4 &middot; zur Kanzlei-Prüfung 4. Mai 2026 vorgesehen</div>
 
   <div class="toc">
     <h4>Inhalt</h4>
@@ -260,12 +260,14 @@ footer .legal{display:flex;gap:24px;}
 
   <section id="v12" class="block">
     <h2><span class="num">12.</span> Speicherdauer</h2>
-    <p>Wir speichern personenbezogene Daten nur so lange, wie es für die jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungsfristen dies verlangen. Konkret:</p>
+    <p>Wir speichern personenbezogene Daten differenziert nach Datenkategorie und nur so lange, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungsfristen dies verlangen:</p>
     <ul>
-      <li><strong>Server-Logs:</strong> 30 Tage (danach anonymisiert)</li>
-      <li><strong>Kontaktanfragen:</strong> bis zu 12 Monate</li>
-      <li><strong>Kundendaten:</strong> für die Dauer des Vertrags + 30 Tage Gnadenfrist zur Rückgewinnung</li>
-      <li><strong>Buchhaltungsrelevante Daten:</strong> 10 Jahre (Schweizer OR Art. 958f)</li>
+      <li><strong>Server-Logs:</strong> 30 Tage, danach anonymisiert oder gelöscht</li>
+      <li><strong>Kontaktanfragen:</strong> bis zu 12 Monate, sofern kein Vertragsverhältnis besteht</li>
+      <li><strong>Operative Kundendaten:</strong> für die Dauer des Vertrags + 30 Tage Gnadenfrist zur Rückgewinnung; danach werden sie gelöscht</li>
+      <li><strong>Backup-Snapshots</strong> (verschlüsselt bei IONOS Frankfurt): rollierend max. 30 Tage; ältere Backups werden automatisch überschrieben. Backups dienen ausschliesslich der Wiederherstellung im Störungsfall, nicht der Langzeit-Archivierung</li>
+      <li><strong>Buchhaltungsrelevante Belege</strong> (Rechnungen, Zahlungsdaten-Metadaten, Steuerunterlagen): 10 Jahre gemäss Schweizer OR Art. 958f. Diese Belege liegen in unserer Buchhaltung &mdash; nicht in der operativen Plattform-Datenbank &mdash; und enthalten ausschliesslich vertrags- und zahlungsrelevante Daten</li>
+      <li><strong>KI-Inferenz:</strong> AWS Bedrock speichert Prompts und Antworten gemäss AWS-Vereinbarung nicht persistent; es werden keine personenbezogenen KI-Inferenz-Logs vorgehalten</li>
     </ul>
   </section>
 
@@ -280,18 +282,24 @@ footer .legal{display:flex;gap:24px;}
 
   <section id="v14" class="block">
     <h2><span class="num">14.</span> Einsatz automatisierter Systeme und KI (EU AI Act)</h2>
-    <p>RC-Tech Solutions nutzt Claude-Modelle der Anthropic PBC auf zwei klar getrennten Wegen, die unterschiedlichen DSGVO-Konstellationen unterliegen.</p>
+    <p>RC-Tech Solutions setzt KI-gestützte Werkzeuge auf <strong>drei klar getrennten Wegen</strong> ein, die unterschiedlichen DSGVO-Konstellationen unterliegen. Wichtig für die Abgrenzung: RC-Tech tritt einerseits als <strong>Hersteller eigener SaaS-Produkte</strong> auf (z.&nbsp;B. EasyAndSmartBooking als Eigenprodukt aus eigenem Haus &mdash; siehe Ziff. 5), andererseits als <strong>Dienstleisterin für Kundenprojekte</strong> (Beratung, Softwareentwicklung, KI-Integration). Die jeweilige KI-Architektur unterscheidet sich entsprechend.</p>
 
     <h3>14.1 Eigene Entwicklungs-Werkzeuge (Pair-Programming)</h3>
     <p>RC-Tech setzt zur Erbringung von Softwareentwicklungs- und Beratungsleistungen KI-gestützte Werkzeuge ein, insbesondere <strong>Claude Code</strong> der <strong>Anthropic PBC</strong> (548 Market Street PMB 90375, San Francisco, CA 94104, USA) als Pair-Programming-Tool. Dabei werden ausschliesslich RC-Tech-eigene Code-Bestände, Dokumentation und Architektur-Konzepte verarbeitet. <strong>Vertrauliche Kundendaten werden nicht an diese Entwicklungs-KI übermittelt.</strong> Sämtliche KI-generierten Arbeitsergebnisse werden vor der Auslieferung an den Kunden manuell geprüft, getestet und freigegeben. Bei Beratungs- oder Review-Aufträgen, bei denen KI-Unterstützung mit Kundendaten sinnvoll ist, wird die Datenübertragung vorab mit dem Kunden abgestimmt und vertraglich geregelt. Rechtsgrundlage für den hierbei stattfindenden Drittlandtransfer sind das <strong>EU&ndash;US Data Privacy Framework</strong> (Adequacy Decision der EU-Kommission vom 10. Juli 2023, Anthropic-zertifiziert) sowie ergänzend Standardvertragsklauseln.</p>
 
     <h3>14.2 KI-Funktionen in den RC-Tech-eigenen SaaS-Plattformen (EasyAndSmartBooking)</h3>
-    <p>KI-gestützte Funktionen in den RC-Tech-eigenen SaaS-Plattformen, insbesondere auf <strong>EasyAndSmartBooking</strong> (Buchungs-Chatbot, Übersetzungen in fünf Sprachen, CRM-Profil-Zusammenfassung mit Pseudonymisierung, Admin-Support mit PII-Sanitizer, Bewertungs-Moderation, KI-gestützte Texterstellung), nutzen die Claude-Modelle der Anthropic PBC bezogen über <strong>AWS Bedrock in der EU-Region <code>eu-central-1</code> (Frankfurt am Main)</strong>. Vertragspartner: <strong>AWS Europe SARL</strong> (Luxemburg). Die KI-Inferenz erfolgt vollständig innerhalb der AWS-EU-Region &mdash; Daten verlassen das EU/EWR-Gebiet nicht. Anthropic PBC agiert als Sub-Auftragsverarbeiter über AWS Bedrock ohne direkten Datenfluss in die USA.</p>
+    <p>Für die <strong>RC-Tech-eigenen SaaS-Produkte</strong>, insbesondere <strong>EasyAndSmartBooking</strong> als Eigenprodukt aus eigenem Haus (Buchungs-Chatbot, Übersetzungen in fünf Sprachen, CRM-Profil-Zusammenfassung mit Pseudonymisierung, Admin-Support mit PII-Sanitizer, Bewertungs-Moderation, KI-gestützte Texterstellung sowie der zukünftige Voice Agent), wurde eine bewusste, einheitliche KI-Architektur gewählt: Claude-Modelle der Anthropic PBC, bezogen über <strong>AWS Bedrock in der EU-Region <code>eu-central-1</code> (Frankfurt am Main)</strong>. Vertragspartner: <strong>AWS Europe SARL</strong> (Luxemburg). Die KI-Inferenz erfolgt vollständig innerhalb der AWS-EU-Region &mdash; Daten verlassen das EU/EWR-Gebiet nicht. Anthropic PBC agiert als Sub-Auftragsverarbeiter über AWS Bedrock ohne direkten Datenfluss in die USA.</p>
     <p>Datenminimierung gemäss Art. 5 Abs. 1 lit. c DSGVO ist code-seitig implementiert (Vornamen-Reduktion, Pseudonymisierung im CRM-Profil, Allergien-Ausschluss aus Chatbot-Prompt, Pre-Save-Sanitizer im Admin-Support-Chat). Endkunden können den KI-Chatbot per Opt-Out deaktivieren (Art. 21 DSGVO Widerspruchsrecht). KI-Funktionen werden ausschliesslich über die Plattform-Konfiguration des Anbieters bereitgestellt &mdash; eine Hinterlegung eigener KI-API-Schlüssel durch Tenants ist nicht möglich.</p>
 
-    <h3>14.3 Transparenz nach Art. 50 EU AI Act</h3>
+    <h3>14.3 KI-Integration in Kundenprojekten (Beratung)</h3>
+    <p>Bei <strong>Kundenprojekten</strong> mit KI-Integrations-Auftrag (siehe AGB &sect;&nbsp;3) ist die Modell- und Hosting-Wahl <strong>projekt-individuell</strong>. RC-Tech präferiert in der Regel Claude über AWS Bedrock EU, wählt aber je nach Use-Case und Compliance-Anforderungen des Kunden auch andere Anbieter (z.&nbsp;B. Azure OpenAI Service in EU-Regionen, Google Vertex AI <code>europe-west</code>, oder lokale/Open-Source-Modelle auf Kunden-Infrastruktur). Die konkrete KI-Architektur, Datenflüsse, Subprozessoren und Rechtsgrundlagen werden im jeweiligen <strong>projekt-spezifischen Auftragsverarbeitungsvertrag (AVV)</strong> sowie in der Datenschutz-Dokumentation des Kunden verbindlich geregelt &mdash; nicht in dieser Datenschutzerklärung. Diese Datenschutzerklärung beschreibt ausschliesslich die Datenverarbeitung durch RC-Tech selbst, nicht Kundenprojekte.</p>
+
+    <h3>14.4 Transparenz nach Art. 50 EU AI Act</h3>
     <p>Endkunden werden bei jeder Chatbot-Interaktion erkennbar darauf hingewiesen, dass sie mit einem automatisierten System kommunizieren (Transparenzpflicht nach <strong>Art. 50 Verordnung (EU) 2024/1689 (EU AI Act)</strong>). Der Buchungs-Chatbot ist funktional auf Terminbuchung und Dienstleistungs-Auskünfte beschränkt und gibt ausdrücklich keine medizinische, gesundheitsbezogene, diagnostische oder therapeutische Beratung. Eine Einstufung als Hochrisiko-KI im Sinne von Annex III AI Act liegt nicht vor.</p>
     <p>Eine automatisierte Entscheidungsfindung mit rechtlicher Wirkung im Sinne von Art. 22 DSGVO findet nicht statt. Die CRM-Profil-Zusammenfassung (Customer-Brain) liefert pseudonymisierte Empfehlungen für das Salon-Personal &mdash; die Verwendung erfolgt durch das Personal als Mensch-im-Loop, kein automatisierter Beschluss.</p>
+
+    <h3>14.5 Zukünftige Erweiterungen</h3>
+    <p>Sowohl die eigenen SaaS-Produkte als auch das Beratungs-Portfolio werden laufend weiterentwickelt. Werden zusätzliche KI-Modelle, Sub-Auftragsverarbeiter oder neue Anwendungsbereiche eingeführt, werden diese vorab in dieser Datenschutzerklärung sowie im Subprozessoren-Verzeichnis dokumentiert. Wesentliche Änderungen am Datenschutz-Setup werden den Kunden gemäss Ziff. 15 mit angemessener Vorlauffrist mitgeteilt; das Widerspruchsrecht bei Wechseln von Sub-Auftragsverarbeitern bleibt unberührt.</p>
   </section>
 
   <section id="v15" class="block">
