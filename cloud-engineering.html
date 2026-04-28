@@ -82,10 +82,39 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;
 header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;padding-top:env(safe-area-inset-top, 0);height:calc(60px + env(safe-area-inset-top, 0));display:flex;align-items:center;background:rgba(9,9,11,.92);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.06);transition:transform .4s ease;}
 header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
 .n{max-width:1140px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.n-left{display:flex;align-items:center;gap:40px;}
+.n-right{display:flex;align-items:center;gap:8px;}
+.n-logo{font-size:15px;font-weight:700;letter-spacing:-.4px;display:flex;align-items:center;gap:0;flex-shrink:0;}
 .n-logo img{height:44px;width:auto;}
-.n-back{font-size:13px;color:rgba(255,255,255,.55);font-weight:500;display:flex;align-items:center;gap:8px;transition:color .15s;}
-.n-back:hover{color:#fff;}
-.n-back svg{width:14px;height:14px;}
+.n-links{display:flex;gap:24px;align-items:center;line-height:1;}
+.n-links > a,.n-links > .n-dd > .n-dd-trigger{font-size:13px;color:rgba(255,255,255,.45);font-weight:500;transition:color .2s;display:inline-flex;align-items:center;line-height:1;}
+.n-links > a:hover{color:#fff;}
+/* Dropdown */
+.n-dd{position:relative;display:flex;align-items:center;}
+.n-dd-trigger{gap:5px;cursor:pointer;}
+.n-dd-trigger:hover{color:#fff;}
+.n-dd-trigger svg{width:10px;height:10px;opacity:.6;transition:transform .2s;}
+.n-dd:hover .n-dd-trigger,.n-dd:focus-within .n-dd-trigger{color:#fff;}
+.n-dd:hover .n-dd-trigger svg,.n-dd:focus-within .n-dd-trigger svg{transform:rotate(180deg);}
+.n-dd-menu{position:absolute;top:calc(100% + 14px);left:-12px;min-width:260px;padding:8px;background:rgba(9,9,11,.95);-webkit-backdrop-filter:blur(20px) saturate(1.8);backdrop-filter:blur(20px) saturate(1.8);border:1px solid rgba(255,255,255,.06);border-radius:10px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s;display:flex;flex-direction:column;gap:2px;z-index:100;box-shadow:0 16px 40px rgba(0,0,0,.4);}
+.n-dd:hover .n-dd-menu,.n-dd:focus-within .n-dd-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.n-dd-menu a{display:flex;align-items:center;gap:8px;padding:9px 12px;font-size:13px;color:rgba(255,255,255,.6);border-radius:6px;white-space:nowrap;font-weight:500;}
+.n-dd-menu a:hover{background:rgba(255,255,255,.04);color:#fff;}
+.n-dd-menu a.n-dd-active{color:#a5b4fc;background:rgba(99,102,241,.06);}
+.n-dd-menu a svg.dd-spark{width:11px;height:11px;opacity:.6;color:#a5b4fc;margin-left:4px;}
+.n-dd-divider{height:1px;background:rgba(255,255,255,.06);margin:6px 8px;}
+.n-dd-overview{font-size:12px;color:rgba(255,255,255,.4) !important;}
+.n-mobile-section{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3);padding:12px 16px 6px;}
+.n-btn{color:#fff !important;padding:7px 18px;border-radius:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-weight:600;transition:all .15s;}
+.n-btn:hover{background:#6366f1;border-color:#6366f1;}
+
+/* Mobile burger */
+.n-burger{display:none;background:none;border:1px solid rgba(255,255,255,.1);border-radius:6px;width:36px;height:36px;align-items:center;justify-content:center;cursor:pointer;color:#fff;}
+.n-burger svg{width:18px;height:18px;}
+.n-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(9,9,11,.97);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;flex-direction:column;gap:4px;z-index:98;}
+.n-mobile.open{display:flex;}
+.n-mobile a{padding:12px 16px;border-radius:8px;font-size:15px;color:rgba(255,255,255,.7);font-weight:500;}
+.n-mobile a:hover,.n-mobile a:active{background:rgba(255,255,255,.05);color:#fff;}
 
 .hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
 .hero-bg::before{content:'';position:absolute;top:60px;right:0;width:50%;height:100%;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px;-webkit-mask-image:radial-gradient(ellipse at 70% 40%,black 15%,transparent 55%);mask-image:radial-gradient(ellipse at 70% 40%,black 15%,transparent 55%);}
@@ -221,6 +250,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
 }
 @media(max-width:640px){
   header{padding:0 20px;padding-top:env(safe-area-inset-top, 0);}
+  .n-links{display:none;}
+  .n-burger{display:flex;}
   .s{padding:72px 24px;}
   .hero-wrap{padding:0 24px;}
   .hero{padding:120px 0 56px;}
@@ -240,14 +271,45 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
 <body>
 
 <header>
-  <div class="n">
-    <a href="de.html" class="n-logo"><img src="logo.png" alt="RC-Tech Solutions"></a>
-    <a href="de.html" class="n-back">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
-      Zurück zu rc-tech-solutions
-    </a>
+<div class="n">
+  <div class="n-left">
+    <a href="de.html" class="n-logo"><img src="logo.png" alt="RC-Tech Solutions" width="120" height="44"></a>
+    <div class="n-links">
+      <div class="n-dd" tabindex="0">
+        <span class="n-dd-trigger">Services<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6l4 4 4-4"/></svg></span>
+        <div class="n-dd-menu">
+          <a href="softwareentwicklung.html">Softwareentwicklung</a>
+          <a href="cloud-engineering.html" class="n-dd-active">Cloud Engineering</a>
+          <a href="ki-integrationen.html">KI-Integration<svg class="dd-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09zM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456z"/></svg></a>
+          <a href="compliance.html">Compliance &amp; Datenschutz</a>
+          <div class="n-dd-divider"></div>
+          <a href="de.html#services" class="n-dd-overview">Alle Services im &Uuml;berblick &rarr;</a>
+        </div>
+      </div>
+      <a href="de.html#produkte">Produkte</a>
+      <a href="de.html#about">Über uns</a>
+      <a href="mailto:info@rc-tech-solutions.com" class="n-btn">Kontakt</a>
+    </div>
   </div>
+  <div class="n-right">
+    <button class="n-burger" id="burger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</div>
 </header>
+<div class="n-mobile" id="nMobile">
+  <div class="n-mobile-section">Services</div>
+  <a href="softwareentwicklung.html">Softwareentwicklung</a>
+  <a href="cloud-engineering.html">Cloud Engineering</a>
+  <a href="ki-integrationen.html">KI-Integration</a>
+  <a href="compliance.html">Compliance &amp; Datenschutz</a>
+  <a href="de.html#services">Alle Services</a>
+  <div class="n-mobile-section">Mehr</div>
+  <a href="de.html#produkte">Produkte</a>
+  <a href="de.html#about">Über uns</a>
+  <a href="mailto:info@rc-tech-solutions.com">Kontakt</a>
+</div>
 
 <div class="hero-wrap">
   <div class="hero-bg"></div>
@@ -558,13 +620,20 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 })();
 (function(){
+  // Mobile menu
+  var b=document.getElementById('burger'),m=document.getElementById('nMobile');
+  if(b)b.addEventListener('click',function(){m.classList.toggle('open');});
+  document.querySelectorAll('.n-mobile a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});});
+
   var hdr=document.querySelector('header'),lastY=window.scrollY;
   var mq=window.matchMedia('(max-width: 640px)');
   window.addEventListener('scroll',function(){
     if(!mq.matches){hdr.classList.remove('nav-hidden');return;}
-    var y=window.scrollY;
-    if(y>lastY&&y>80)hdr.classList.add('nav-hidden');
-    else hdr.classList.remove('nav-hidden');
+    var y=window.scrollY,menuOpen=m&&m.classList.contains('open');
+    if(!menuOpen){
+      if(y>lastY&&y>80)hdr.classList.add('nav-hidden');
+      else hdr.classList.remove('nav-hidden');
+    }
     lastY=y;
   },{passive:true});
 })();
