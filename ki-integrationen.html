@@ -76,6 +76,34 @@ header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px
 .s-title em{font-style:normal;color:rgba(255,255,255,.32);}
 .s-desc{font-size:15px;color:rgba(255,255,255,.45);line-height:1.7;}
 
+/* --- INTRO (Was heisst KI-Integration eigentlich) --- */
+.intro-wrap{background:#0b0b0e;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);}
+.intro-grid{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;}
+.intro-side{position:sticky;top:100px;}
+.intro-side .s-label{margin-bottom:14px;}
+.intro-side h2{font-size:clamp(24px,2.6vw,30px);font-weight:700;letter-spacing:-1px;line-height:1.2;}
+.intro-side h2 em{font-style:normal;color:rgba(255,255,255,.32);}
+.intro-text p{font-size:15.5px;color:rgba(255,255,255,.62);line-height:1.85;margin-bottom:22px;}
+.intro-text p strong{color:rgba(255,255,255,.92);font-weight:600;}
+.intro-text p:last-child{margin-bottom:0;}
+
+/* --- TIEFEN (Drei Stufen) --- */
+.tiefen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.tiefen-col{position:relative;padding:32px;border-radius:14px;background:linear-gradient(180deg,#111113,#0d0d10);border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;}
+.tiefen-col.featured{border-color:rgba(99,102,241,.25);background:linear-gradient(180deg,#13131a,#0d0d12);}
+.tiefen-col.featured::before{content:'';position:absolute;inset:0;border-radius:14px;padding:1px;background:linear-gradient(180deg,rgba(99,102,241,.4),transparent 60%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+.tiefen-stufe{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(99,102,241,.7);margin-bottom:14px;}
+.tiefen-col h3{font-size:18px;font-weight:700;margin-bottom:10px;letter-spacing:-.3px;}
+.tiefen-zeit{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:18px;font-weight:500;}
+.tiefen-desc{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:18px;}
+.tiefen-list{list-style:none;padding:0;margin:0 0 22px;display:flex;flex-direction:column;gap:8px;}
+.tiefen-list li{font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.55;padding-left:16px;position:relative;}
+.tiefen-list li::before{content:'';position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:rgba(99,102,241,.5);}
+.tiefen-bridge{margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);}
+.tiefen-bridge a{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:#a5b4fc;transition:gap .2s,color .2s;}
+.tiefen-bridge a:hover{gap:10px;color:#c7d2fe;}
+.tiefen-bridge a svg{width:12px;height:12px;}
+
 /* --- USE CASES --- */
 .uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;}
 .uc{padding:32px;border-right:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);background:#09090b;transition:background .3s;position:relative;}
@@ -138,6 +166,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
 
 /* --- RESPONSIVE --- */
 @media(max-width:900px){
+  .intro-grid{grid-template-columns:1fr;gap:32px;}
+  .intro-side{position:static;}
+  .tiefen-grid{grid-template-columns:1fr;}
   .uc-grid{grid-template-columns:1fr 1fr;}
   .uc:nth-child(2n){border-right:none;}
   .uc:nth-child(3n){border-right:1px solid rgba(255,255,255,.06);}
@@ -204,6 +235,25 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
   </section>
 </div>
 
+<!-- INTRO — Was heisst KI-Integration eigentlich -->
+<div class="intro-wrap">
+  <section class="s">
+    <div class="s-inner">
+      <div class="intro-grid">
+        <div class="intro-side rv">
+          <div class="s-label">Worum es geht</div>
+          <h2>Was wir damit konkret <em>meinen.</em></h2>
+        </div>
+        <div class="intro-text rv rv-d1">
+          <p>Die meisten Unternehmen haben bereits, was sie f&uuml;r KI brauchen: <strong>Daten, Dokumente, eingespielte Prozesse</strong> &mdash; und ein gutes Gef&uuml;hl daf&uuml;r, wo Routinearbeit Zeit frisst. KI-Integration heisst nicht, alles neu zu erfinden. Es heisst, an den richtigen Stellen ein Sprachmodell oder eine intelligente Suche einzubauen, die in Sekunden findet, klassifiziert oder erkl&auml;rt, wof&uuml;r heute jemand zwanzig Minuten browst.</p>
+          <p>Konkret: Wir bauen <strong>Dokumentensuchen, die nach Bedeutung suchen statt nach Stichworten</strong>. Wir vektorisieren und indexieren interne Wissensbasen, damit Mitarbeitende Antworten in normaler Sprache stellen k&ouml;nnen &mdash; mit Quellenangaben. Wir <strong>automatisieren Prozessschritte</strong>, die heute manuell sind: Klassifikation eingehender Anfragen, Extraktion aus Formularen, Validierung, Weiterleitung. Und wir bauen Chatbots, die mehr k&ouml;nnen als FAQ.</p>
+          <p>Wo das endet, h&auml;ngt davon ab, wie tief Sie wollen. Ein Mini-Workflow, der eine konkrete Aufgabe automatisiert, ist in zwei Wochen produktiv. Eine <strong>massgeschneiderte Software, in der KI von Anfang an mitgedacht ist</strong>, dauert l&auml;nger &mdash; lohnt sich aber dort, wo Standard-Tools nicht reichen. Mehr dazu im n&auml;chsten Abschnitt: <em>Drei Tiefen der Integration</em>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
 <!-- USE CASES -->
 <section id="use-cases" class="s">
   <div class="s-inner">
@@ -225,8 +275,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
       </div>
       <div class="uc">
         <svg class="uc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
-        <h3>Dokument-Analyse</h3>
-        <p>Verträge, Formulare, Reports. Klassifikation, Extraktion, Zusammenfassung. Mit Audit-Trail und ohne dass die Daten den EU-Raum verlassen.</p>
+        <h3>Dokument-Analyse &amp; semantische Suche</h3>
+        <p>Verträge, Formulare, Berichte, Handbücher. Klassifikation, Extraktion und Zusammenfassung &mdash; aber auch semantische Suche, die nach Bedeutung statt nach Stichworten geht. Mit Audit-Trail und EU-Hosting.</p>
       </div>
       <div class="uc">
         <svg class="uc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"/></svg>
@@ -235,13 +285,77 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
       </div>
       <div class="uc">
         <svg class="uc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
-        <h3>Wissens-Suche</h3>
-        <p>Interne Knowledge-Base, Confluence, SharePoint, Tickets. Statt Volltext-Suche ein Q&amp;A-System mit Quellen­angaben und ohne Halluzinationen.</p>
+        <h3>Wissens-Suche (RAG)</h3>
+        <p>Interne Knowledge-Base, Confluence, SharePoint, Tickets, Vertrags-Archiv. Wir vektorisieren und indexieren die Dokumente, damit Mitarbeitende in normaler Sprache fragen k&ouml;nnen &mdash; mit Quellenangaben, ohne Halluzinationen.</p>
       </div>
       <div class="uc">
         <svg class="uc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25M6.75 17.25 1.5 12l5.25-5.25M14.25 4.5l-4.5 15"/></svg>
         <h3>Code-Assistenz</h3>
         <p>Pair-Programming für interne Entwicklungs-Teams. Code-Reviews, Refactoring, Test-Generierung. Mit klarer Trennung zwischen Kunden­daten und Entwicklungs-Kontext.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIEFEN — Drei Stufen der Integration -->
+<section class="s">
+  <div class="s-inner">
+    <div class="s-head rv">
+      <div class="s-label">Tiefe der Integration</div>
+      <div class="s-title">Vom kleinen Workflow bis zur <em>massgeschneiderten Software.</em></div>
+      <div class="s-desc">KI-Integration ist kein bin&auml;res Ja/Nein. Drei Stufen, je nach Ziel und Reife. Wir gehen mit, so weit Sie wollen &mdash; und sind ehrlich, wenn die kleinste Stufe schon reicht.</div>
+    </div>
+    <div class="tiefen-grid rv">
+      <div class="tiefen-col">
+        <div class="tiefen-stufe">Stufe 1</div>
+        <h3>Workflow-Automation</h3>
+        <div class="tiefen-zeit">2&ndash;4 Wochen Pilot &middot; klein gestartet</div>
+        <p class="tiefen-desc">Bestehende Tools mit KI erg&auml;nzen. Keine neue Software, keine Datenmodellierung von Grund auf. Schneller Hebel, messbarer Effekt.</p>
+        <ul class="tiefen-list">
+          <li>E-Mail-Triage und Klassifikation eingehender Anfragen</li>
+          <li>&Uuml;bersetzungs-Pipeline f&uuml;r Marketing- oder Produkttexte</li>
+          <li>Einfacher Chatbot auf bestehender Webseite (FAQ, Erstkontakt)</li>
+          <li>Automatische Zusammenfassung von Tickets oder Meeting-Notizen</li>
+        </ul>
+        <div class="tiefen-bridge">
+          <a href="#use-cases">Konkrete Beispiele
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="tiefen-col featured">
+        <div class="tiefen-stufe">Stufe 2</div>
+        <h3>Tiefe Integration</h3>
+        <div class="tiefen-zeit">2&ndash;3 Monate &middot; in Ihrem Stack eingebettet</div>
+        <p class="tiefen-desc">KI nahtlos in bestehende Backends, Datenbanken und Workflows. Mit Datenmodellierung, Berechtigungen, Audit-Trail. F&uuml;r Use-Cases, die mehr brauchen als ein Bot.</p>
+        <ul class="tiefen-list">
+          <li>Vektorisierung &amp; Indexierung interner Wissensbasen (RAG)</li>
+          <li>Semantische Suche in Vertr&auml;gen, Handb&uuml;chern, Reports</li>
+          <li>CRM-Anreicherung mit pseudonymisierten KI-Profilen</li>
+          <li>Dokument-Pipelines: Klassifikation &rarr; Extraktion &rarr; Validierung &rarr; Datenbank</li>
+        </ul>
+        <div class="tiefen-bridge">
+          <a href="#process">Vorgehen ansehen
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="tiefen-col">
+        <div class="tiefen-stufe">Stufe 3</div>
+        <h3>Massgeschneiderte Software</h3>
+        <div class="tiefen-zeit">mehrere Monate &middot; KI als Kern, nicht als Add-on</div>
+        <p class="tiefen-desc">Komplette Anwendung von Grund auf gebaut, mit KI als integralem Bestandteil. Wo Standard-Tools nicht reichen und Ihre Abl&auml;ufe einzigartig sind. Hier verschmelzen sich KI-Integration und Software-Engineering aus einer Hand.</p>
+        <ul class="tiefen-list">
+          <li>Branchen-spezifisches SaaS mit KI-Assistenten als Kernfeature</li>
+          <li>Internes Operations-Dashboard mit eingebauter Analyse-KI</li>
+          <li>Custom-Backend mit KI-getriebenen Workflows und Daten-Pipelines</li>
+          <li>Voice- oder Chat-Anwendungen, die in Ihre Systeme schreiben/lesen</li>
+        </ul>
+        <div class="tiefen-bridge">
+          <a href="de.html#services">Softwareentwicklung &amp; Architektur
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>

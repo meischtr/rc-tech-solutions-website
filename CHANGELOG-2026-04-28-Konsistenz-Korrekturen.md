@@ -171,6 +171,24 @@ Sobald die GmbH notariell beglaubigt und das Fort-Knox-Setup aufgehoben ist, sol
 
 Übersetzungen (EN/FR/IT/ES/SR) werden nachgezogen, sobald der DE-Inhalt finalisiert ist. Bis dahin nur DE-Version aktiv.
 
+## Iteration 5 — Subprozessor-Vollständigkeit + Landingpage-Erweiterung (28.04. nachts)
+
+Zwei Themen kamen beim erneuten Durchlesen hoch:
+
+1. **Subprozessor-Liste in RC-Tech §6 unvollständig:** Die EHB-spezifischen Sub-AV (Twilio, SMTP, Google Ireland, Microsoft Ireland, Meta Ireland, fiskaly) waren nur im "Hinweis"-Absatz namentlich erwähnt mit Verweis auf den AVV. Da §5 aber explizit EHB als Auftragsverarbeitungs-Tätigkeit von RC-Tech beschreibt, sollten sie auch in §6 konkret aufgeführt sein — sonst entsteht eine Lücke gegenüber Art. 13 DSGVO (Empfänger-Information). **Fix:** §6 ist jetzt vollständig mit Gruppierung in 6 Unter-Sektionen (6.1–6.6).
+
+2. **KI-Landingpage zu use-case-zentriert:** Die Landingpage zeigte 6 Use-Case-Cards, erklärte aber nicht auf hoher Ebene, was KI-Integration eigentlich heisst — und die Brücke zu "massgeschneiderter Software" (= Software-Engineering von Grund auf) fehlte. Ein nicht-technischer Entscheider hatte keinen klaren Einstieg in die Skala der Möglichkeiten.
+
+**Iteration 5 — Änderungen:**
+
+| Bereich | Datei | Änderung |
+|---|---|---|
+| RC-Tech Datenschutz §6 | `datenschutz.html` | **Vollständig restrukturiert** in 6 Unter-Sektionen: 6.1 Plattform-Infrastruktur (Hetzner, Infomaniak, IONOS, Gcore, BetterStack), 6.2 Zahlungsabwicklung (Stripe), 6.3 KI-Inferenz (AWS Europe SARL mit Anthropic als Sub-AVV), 6.4 EHB-spezifisch (Twilio, SMTP, Google IE, Microsoft IE, Meta IE, fiskaly), 6.5 Webseite (Google Fonts), 6.6 Aktualität (Update-Mechanismus mit Widerspruchsrecht) |
+| RC-Tech Datenschutz | `datenschutz.html` Stand-Zeile | V2.4 → **V2.5** |
+| KI-Landingpage | `ki-integrationen.html` | Neue Section "Was wir damit konkret meinen" zwischen Hero und Use-Cases — drei Absätze in zugänglicher Sprache, erklärt Dokumentensuche, Vektorisierung/Indexierung und Workflow-Automation ohne Buzzword-Bingo |
+| KI-Landingpage | `ki-integrationen.html` | Neue Section "Drei Tiefen der Integration" zwischen Use-Cases und Process — Stufe 1 (Workflow-Automation, 2-4 Wo), Stufe 2 (Tiefe Integration mit RAG/Vektorisierung, 2-3 Mo), **Stufe 3 (Massgeschneiderte Software** mit Link auf `de.html#services` — Brücke zu Software-Engineering-Service) |
+| KI-Landingpage | `ki-integrationen.html` | Use-Cases #3 (Dokument-Analyse) und #5 (Wissens-Suche) geschärft — semantische Suche, RAG, Vektorisierung explizit benannt aber im Kontext erklärt |
+
 ## Iteration 4 — Eigenprodukt-Trennung + Zukunftsklausel (28.04. ganz spät)
 
 Nach weiterer Sichtung wurden zwei strukturelle Lücken erkannt:
@@ -233,7 +251,7 @@ Nach erstem Sichten kamen drei Wünsche dazu:
 ```
 rc-tech-solutions-webseite/
 ├── agb.html                                            (V2.1 → V2.4)
-├── datenschutz.html                                    (V2.1 → V2.4)
+├── datenschutz.html                                    (V2.1 → V2.5)
 ├── de.html, en.html, fr.html, it.html, es.html, sr.html (KI-Integration-Service + No-US + Landingpage-Link + neutrale Tags)
 ├── ki-integrationen.html                                (NEU — Landingpage, Stack-Sektion provider-agnostisch)
 ├── CHANGELOG-2026-04-28-Konsistenz-Korrekturen.md       (NEU)
