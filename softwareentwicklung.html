@@ -137,6 +137,8 @@ header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
 .tiefen-col.featured::before{content:'';position:absolute;inset:0;border-radius:14px;padding:1px;background:linear-gradient(180deg,rgba(99,102,241,.4),transparent 60%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
 .tiefen-stufe{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(99,102,241,.7);margin-bottom:14px;}
 .tiefen-col h3{font-size:18px;font-weight:700;margin-bottom:10px;letter-spacing:-.3px;}
+.tiefen-price{font-size:22px;font-weight:800;letter-spacing:-.5px;color:#fff;margin-bottom:6px;}
+.tiefen-price small.hint{display:block;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(99,102,241,.65);margin-top:6px;}
 .tiefen-zeit{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:18px;font-weight:500;}
 .tiefen-desc{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:18px;}
 .tiefen-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;}
@@ -342,7 +344,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
         <div class="tiefen-col">
           <div class="tiefen-stufe">Stufe 1</div>
           <h3>Discovery + Konzept</h3>
-          <div class="tiefen-zeit">1&ndash;2 Tage &middot; ab CHF 1&apos;800</div>
+          <div class="tiefen-price">ab CHF 1&apos;800<small class="hint">Richtwert</small></div>
+          <div class="tiefen-zeit">1&ndash;2 Tage</div>
           <p class="tiefen-desc">Workshop, in dem wir eure Idee in eine klare technische Roadmap &uuml;bersetzen. Tech-Stack-Entscheide, Architektur-Skizze, Aufwandsch&auml;tzung. Auch wenn ihr danach weitergeht ohne uns &mdash; ihr habt einen klaren Plan.</p>
           <ul class="tiefen-list">
             <li>Anforderungs-Analyse mit eurem Team</li>
