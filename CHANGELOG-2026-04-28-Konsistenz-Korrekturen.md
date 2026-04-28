@@ -171,6 +171,101 @@ Sobald die GmbH notariell beglaubigt und das Fort-Knox-Setup aufgehoben ist, sol
 
 Übersetzungen (EN/FR/IT/ES/SR) werden nachgezogen, sobald der DE-Inhalt finalisiert ist. Bis dahin nur DE-Version aktiv.
 
+## Iteration 12 — Marketing-Polish, UX, View Transitions (29.04., späte Session)
+
+Letzter grosser Polish-Pass vor Übergabe an PDF-Snapshot-Run.
+
+### A) Header iOS-URL-Bar-Fix (alle 13 HTML-Files)
+- background opacity `.6/.7` → `.92` (klar opaque, kein Durchscheinen mehr)
+- backdrop-filter `blur(20px) saturate(1.4)` (analog EHB)
+- `padding-top:env(safe-area-inset-top, 0)` + `height:calc(60px + env(...))` — Header schiebt automatisch unter iOS-URL-Bar, Klick-Bereich nicht mehr durch URL-Bar blockiert
+
+### B) Em-Dash-Sweep (10 Marketing-Files)
+Alle `&mdash;` und Unicode-`—` durch normale `-` ersetzt — User mag Em-Dashes nicht (KI-Marker). AGB/Datenschutz/Impressum bewusst ausgenommen.
+
+### C) CTA + Marketing-Korrekturen DE-Master
+- de.html CTA: `Lassen Sie uns reden` → `Sprechen wir über Ihr Projekt`
+- softwareentwicklung.html: `Keine Ueberraschungen` → `Keine Überraschungen` (Umlaut-Fix)
+- softwareentwicklung.html: `9 Branchen` → `8 Branchen` (Physiotherapie wurde 2026-04-24 strategisch entfernt)
+- softwareentwicklung.html: Hosting-Satz erweitert um `weitere DSGVO-konforme EU-Anbieter je nach Projekt-Anforderung`
+- softwareentwicklung.html: `Phase 2` → `Stufe 2` (Konsistenz)
+- ki-integrationen.html: `fünf Sprachen` → `mehrsprachig` (generisch, nicht widersprüchlich zu EHB)
+- cloud-engineering.html: Hero h1 sauberer (`Cloud-Setup, das in der EU bleibt. / Auch wenn US-Anbieter wackeln.`)
+- robots.txt: `Stealth Mode bis Launch`-Kommentar entfernt (war unnötig öffentlich)
+- datenschutz.html §6.1: Phase-5/Q3-2027 raus, Myra-Wechsel sachlich neutralisiert; Querverweis Ziff. 15
+
+### D) Cloud Engineering Marketing-Feinschliff
+- Living-Proof-Box: Phase-5/Myra-Erwähnung raus (interner Plan, nicht für Marketing)
+- Living-Proof-Box auf volle Container-Breite
+- Gcore-Provider-Block: Myra neutralisiert auf `alternative EU-Anbieter im Setup vorgesehen`
+- Neuer Hinweis nach Provider-Grid: DSGVO als Standard, projekt-individuelle Auswahl bei Kundenprojekten möglich
+- Datenschutz §6.1: Myra-Erwähnung sachlich (Subprozessor-Wechsel-Ankündigung Art. 28 DSGVO)
+
+### E) Header-Layout (alle 6 Hauptseiten)
+- Logo + Menü als Gruppe links (`.n-left`), Sprachwahl + Burger rechts (`.n-right`)
+- Trigger-Versatz fixiert (`display:inline-flex; line-height:1`)
+
+### F) Hide-on-Scroll Mobile-only (alle 10 Files)
+- `matchMedia('(max-width: 640px)')` Check eingebaut
+- Auf Desktop bleibt Header immer sichtbar; auf Mobile bleibt aktuelles Verhalten
+
+### G) Avatar-Foto Qualität (alle 6 Hauptseiten)
+- 5 HD-Varianten aus Original-PNG (1024×1536) generiert mit System.Drawing HighQualityBicubic, JPEG q=92-95:
+  - `robert.jpg` 160×160 (7KB) für 1x
+  - `robert@2x.jpg` 320×320 (19KB) für Retina
+  - `robert@3x.jpg` 480×480 (36KB) für iPhone Pro
+  - `robert@4x.jpg` 640×640 (76KB) für HighDPI + leichter Zoom
+  - `robert@hd.jpg` 1024×1024 (171KB) für Browser-Zoom 200%+
+- srcset auf width-descriptor mit `sizes="160px"` — Browser wählt optimal nach DPI × Zoom
+- WebP-Source entfernt (keine HD-WebP-Varianten ohne ImageMagick/cwebp)
+- Avatar Hover-Effect zurück: subtle scale(1.04) + stärkerer Glow (mit HD-Bildern keine 'rote Augen'-Artefakte mehr)
+
+### H) About-Section Layout
+- `.about-values` (4 Werte-Kacheln) aus `.about-text` rausgezogen, full-width unter Grid platziert
+- Breakpoints: Desktop 4 Spalten, Tablet (640-900px) 2x2, Mobile 1 Spalte
+- Avatar-Card wirkt nicht mehr 'lost' — ausgewogene Komposition
+
+### I) Menu-Konsistenz auf 4 Landingpages
+Bisher: nur `Logo + Zurück`-Header. Neu: vollständiges Header-Menü analog Hauptseite, ohne Sprachwechsler (DE-Master only).
+- Logo linkt zu de.html (= Zurück durch Logo-Klick, Standard-Web-Konvention)
+- Services-Dropdown mit aktueller Page als `.n-dd-active` markiert (Akzent-Farbe)
+- Über uns / Produkte / Kontakt-Button analog Hauptseite
+- Mobile-Burger mit gleicher Service-Liste
+
+### J) View Transitions API (10 Files: 6 Hauptseiten + 4 Landingpages)
+- `<meta name="view-transition" content="same-origin">` aktiviert Cross-Document-Transitions
+- CSS: `vt-fade-out .2s` + `vt-fade-in .25s` ease — sanftes Crossfade beim Navigieren
+- `prefers-reduced-motion`: animation:none (Accessibility)
+- Browser ohne Support: graceful degradation, normale Navigation
+- Effekt: Klick auf Landingpage → sanftes Crossfade statt hartem Reload-Flash
+
+### K) Hinweis für PDF-Snapshot-Run (separate Session, aus rc-tech-solutions Folder)
+- **PDF-relevante Files (Quellen synchron):** `Quellen/Recht/Compliance/Webseiten/agb-rc-tech.html` (V2.9) / `datenschutz-rc-tech.html` (V2.7) / `impressum-rc-tech.html` (V1.0) — und EHB-md-Quellen unter `EHB/`
+- **NICHT in PDF-Pipeline:** Marketing-Landingpages (compliance/softwareentwicklung/cloud-engineering/ki-integrationen) — bleiben rein digital, kein Snapshot
+
+### L) Offen — für Folge-Session
+
+- **Landingpage-Übersetzungen:** EN/FR/IT/ES/SR-Latn-Versionen von compliance/softwareentwicklung/cloud-engineering (DE-Master ist final). Aufwändig (15 Files), kontextintensiv — frische Session.
+- **EHB-SEO-Basics:** Marketing-Seite TSX-Komponenten (PrivacyPage/TermsPage etc.) haben noch keine Meta/OG-Optimierung wie RC-Tech.
+- **Saasiro-Reveal:** bleibt Stealth bis Soft-Launch.
+- **PDF-Snapshots:** User-Workflow, separate Session aus `rc-tech-solutions/` — Quellen sind synchron.
+
+### M) Commits dieser Iteration
+
+```
+a6448d4 Phase-Roadmap-Bezeichnungen aus öffentlichen Texten entfernt
+dcd64d1 Header iOS-URL-Bar-Fix: Opacity rauf + Safe-Area-Awareness
+6e3e303 Marketing-Polish: Header-Layout, Em-Dashes raus, CTA, Mobile-only Hide-Scroll
+7954068 Foto-Qualität: HD-Varianten + srcset für Retina/HighDPI
+0f4221f Foto-Qualität für Browser-Zoom: HD + 4x Varianten + width-srcset
+1b229c4 Avatar Hover-Effect zurück: subtle scale + stärkerer Glow
+bc14133 About-Section: Werte-Kacheln full-width unter Grid (4-2-1 Breakpoints)
+6203a6f Menu-Konsistenz: Vollständiger Header + Dropdown auf 4 Landingpages
+6c129d2 View Transitions API: sanftes Crossfade zwischen Seiten
+```
+
+---
+
 ## Iteration 11 — Service-Bereinigung + Stufen-Rename + Audit-Findings (29.04., letzte Session vor Anwalts-Termin)
 
 Finale Konsolidierung mit drei Achsen: Service-Säulen ehrlich auf 4 reduziert, Pricing-Stufen entmarketingisiert, AGB/Datenschutz-Audit-Findings vor 4. Mai abgearbeitet.
