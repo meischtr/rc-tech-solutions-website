@@ -24,7 +24,7 @@ img{display:block;max-width:100%;}
 
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.02;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
 
-header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px;display:flex;align-items:center;background:rgba(9,9,11,.7);-webkit-backdrop-filter:blur(16px) saturate(1.8);backdrop-filter:blur(16px) saturate(1.8);border-bottom:1px solid rgba(255,255,255,.06);}
+header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;padding-top:env(safe-area-inset-top, 0);height:calc(60px + env(safe-area-inset-top, 0));display:flex;align-items:center;background:rgba(9,9,11,.92);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.06);}
 .n{max-width:1140px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center;}
 .n-logo img{height:44px;width:auto;}
 .n-back{font-size:13px;color:rgba(255,255,255,.55);font-weight:500;display:flex;align-items:center;gap:6px;}
