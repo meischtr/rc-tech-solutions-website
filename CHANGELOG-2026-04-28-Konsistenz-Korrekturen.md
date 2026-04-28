@@ -171,6 +171,37 @@ Sobald die GmbH notariell beglaubigt und das Fort-Knox-Setup aufgehoben ist, sol
 
 Übersetzungen (EN/FR/IT/ES/SR) werden nachgezogen, sobald der DE-Inhalt finalisiert ist. Bis dahin nur DE-Version aktiv.
 
+## Iteration 6 — IP-Modelle + Schnittstellen-Klarstellung (28.04. nachts)
+
+Drei Themen aus dem laut-denken über die Geschäftsbeziehung:
+
+1. **§8 Geistiges Eigentum war zu eng:** Die alte Formulierung gab nur ein Modell ("nicht-ausschliessliches Nutzungsrecht") und liess offen, was passiert wenn ein Kunde Exklusivität oder vollständiges Eigentum will. Bei einem Werkvertrag/Auftrag im individuellen Software-Bereich ist das ein häufiger Streitpunkt am Projektende. Drei branchenübliche Modelle (Standard / Exklusiv-Lizenz / Eigentums-Übergang) bringen Klarheit ins Angebot — der Kunde sieht von Anfang an, was Standard ist und was kostet extra.
+
+2. **Hintergrund-IP nicht geschützt:** Das alte §8 sicherte unsere "vorbestehenden Rechte" nur implizit. Bei einem strikten Modell-C-Vertrag (Eigentums-Übergang) hätte ein Kunde theoretisch argumentieren können, alle wiederverwendbaren Bausteine zu vereinnahmen. Mit explizitem §8.1 (Hintergrund-IP) ist das geklärt.
+
+3. **Open-Source-Klausel fehlte komplett:** Moderne Software enthält IMMER OSS-Bestandteile (React, Node, Postgres-Treiber, etc.). Ohne Klausel könnten wir versehentlich versprechen, was wir gar nicht halten können. Mit §8.4 ist das explizit geregelt.
+
+4. **Landingpage Schnittstellen-Realität:** Stage 2 (Tiefe Integration) und Audit-Step setzen voraus, dass die bestehende Kundensoftware Schnittstellen hat (APIs, Webhooks, DB-Zugriff). Das war implizit, ist jetzt explizit — verhindert falsche Erwartungen.
+
+5. **Landingpage Infrastruktur-Block zu starr:** Wirkte, als gäbe es nur unseren Eigen-Stack. Bei Kundenprojekten ist Hosting projekt-individuell (auf unserem Stack, in Kunden-Cloud, On-Premise). Saubere Trennung jetzt: Eigen-Stack, Kundenprojekt-Optionen, verbindliche Standards für alle.
+
+**Iteration 6 — Änderungen:**
+
+| Bereich | Datei | Änderung |
+|---|---|---|
+| RC-Tech AGB §8 | `agb.html` | **Vollständig restrukturiert** in 4 Unter-Sektionen: 8.1 Vorbestehende Rechte (Hintergrund-IP), 8.2 Projektspezifische Arbeitsergebnisse mit drei Modellen (a) Standard-Nutzungsrecht / (b) Exklusiv-Lizenz / (c) Eigentums-Übergang, 8.3 Kunden-Inhalte, 8.4 Open-Source-Komponenten |
+| RC-Tech AGB | `agb.html` Stand-Zeile | V2.4 → **V2.5** |
+| Landingpage Stack | `ki-integrationen.html` | Infrastruktur-Block neu strukturiert: Eigen-Stack-Items markiert, Kundenprojekt-Optionen erwähnt (Azure/AWS/Google/On-Premise), Standards "verbindlich für alle Projekte" hervorgehoben |
+| Landingpage Drei Tiefen Stage 2 | `ki-integrationen.html` | Schnittstellen-Voraussetzung explizit benannt; neuer Listenpunkt "Anbindung an bestehende Kundensoftware via REST/GraphQL/Webhook" |
+| Landingpage Audit-Step | `ki-integrationen.html` | Schnittstellen-Frage in den Audit aufgenommen ("Welche Schnittstellen zur bestehenden Software sind verfügbar?") |
+
+**Konzept der drei IP-Modelle:**
+- **Modell A (Standard, im Preis enthalten):** Nicht-ausschliessliches Nutzungsrecht — Kunde nutzt unbefristet, RC-Tech kann Patterns wiederverwenden
+- **Modell B (Aufpreis, im Einzelvertrag verhandelbar):** Exklusiv-Lizenz für 12-24 Monate — wir bauen nichts Vergleichbares für Wettbewerber
+- **Modell C (Aufpreis, im Einzelvertrag verhandelbar):** Vollständiger Eigentums-Übergang am projektspezifischen Code — RC-Tech verzichtet auf Wiederverwendung; Wartungs-Zugriffsrecht muss explizit geregelt werden
+
+In den AGB stehen **keine konkreten Aufpreise** — diese werden im Einzelvertrag verhandelt (üblich: Pauschal-Aufschlag 20-50% auf Projekt-Honorar je nach Modell).
+
 ## Iteration 5 — Subprozessor-Vollständigkeit + Landingpage-Erweiterung (28.04. nachts)
 
 Zwei Themen kamen beim erneuten Durchlesen hoch:
@@ -250,7 +281,7 @@ Nach erstem Sichten kamen drei Wünsche dazu:
 
 ```
 rc-tech-solutions-webseite/
-├── agb.html                                            (V2.1 → V2.4)
+├── agb.html                                            (V2.1 → V2.5)
 ├── datenschutz.html                                    (V2.1 → V2.5)
 ├── de.html, en.html, fr.html, it.html, es.html, sr.html (KI-Integration-Service + No-US + Landingpage-Link + neutrale Tags)
 ├── ki-integrationen.html                                (NEU — Landingpage, Stack-Sektion provider-agnostisch)
