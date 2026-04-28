@@ -28,7 +28,7 @@ Bei einer internen Konsistenz-Prüfung am 28. April 2026 wurden mehrere Inkonsis
 | RC-Tech Landingpage | `ki-integrationen.html` Stack-Sektion (Iteration 2) | Vier KI-Modell-Optionen statt nur Claude: Claude (Bedrock-EU bevorzugt), OpenAI über Azure EU, Gemini über Vertex EU, lokale/Open-Source-Modelle |
 | RC-Tech Landingpage | `ki-integrationen.html` Hero-Trust-Zeile (Iteration 2) | "AWS Bedrock EU-Region" → "EU-Hosting für Modelle und Daten" / "Modell-Wahl projekt-individuell" |
 | Cleanup | `agb.pdf`, `datenschutz.pdf` | **Gelöscht** (waren V2.0-Stände vom 24.4., nicht synchron mit HTML — Quelle der Wahrheit ist das HTML) |
-| Firmenunterlagen-Snapshots | `Firmenunterlagen/Recht/Compliance/Webseiten/STALE-NOTICE-2026-04-28.md` | **Neu:** STALE-Notiz über veraltete Snapshot-PDFs in den Firmenunterlagen — diese müssen vor 4.5. mit dem PDF-Generator regeneriert werden |
+| Firmenunterlagen-Snapshots | `Quellen/Recht/Compliance/Webseiten/STALE-NOTICE-2026-04-28.md` | **Neu:** STALE-Notiz über veraltete Snapshot-PDFs in den Firmenunterlagen — diese müssen vor 4.5. mit dem PDF-Generator regeneriert werden |
 | RC-Tech Datenschutz | `datenschutz.html` §6 | Hinweis auf produktspezifische Sub-Auftragsverarbeiter (Twilio, Google, Microsoft, Meta, fiskaly) für EHB-Kontext ergänzt |
 | RC-Tech Datenschutz | `datenschutz.html` Stand-Zeile | V2.1 → V2.2, Datum 26.4. → 28.4. |
 | RC-Tech Webseite (NEU) | `ki-integrationen.html` | **Neu erstellt:** Standalone-Landingpage für KI-Integration als Vorbereitung der späteren Domain-Redirects (ai-integrationen.ch, ki-integrationen.ch, ai-hilfe-schweiz.ch, ki-hilfe-schweiz.ch). Aktuell verlinkt im Footer der Hauptseite, noindex/nofollow/noarchive aktiv. |
@@ -170,6 +170,89 @@ Sobald die GmbH notariell beglaubigt und das Fort-Knox-Setup aufgehoben ist, sol
 - `ki-hilfe-schweiz.ch`
 
 Übersetzungen (EN/FR/IT/ES/SR) werden nachgezogen, sobald der DE-Inhalt finalisiert ist. Bis dahin nur DE-Version aktiv.
+
+## Iteration 11 — Service-Bereinigung + Stufen-Rename + Audit-Findings (29.04., letzte Session vor Anwalts-Termin)
+
+Finale Konsolidierung mit drei Achsen: Service-Säulen ehrlich auf 4 reduziert, Pricing-Stufen entmarketingisiert, AGB/Datenschutz-Audit-Findings vor 4. Mai abgearbeitet.
+
+### A) Service-Grid 7→4 Säulen — Hauptseite alle 6 Sprachen
+
+**Begründung:** Drei Service-Cards (`SaaS-Hosting`, `Beratung &amp; Architektur`, `Wartung &amp; Support`) hatten keine Landingpage und wirkten als Dead-Ends im Grid. Inhalte sind in den 4 Hauptsäulen abgedeckt:
+- SaaS-Hosting → Cloud Engineering (EU-Hosting) + Softwareentwicklung Stufe 3 (Multi-Tenant)
+- Beratung &amp; Architektur → Softwareentwicklung Stufe 1 + Cloud Engineering Migration-Assessment + Compliance-Audit
+- Wartung &amp; Support → Softwareentwicklung Stufe 3 + Cloud Engineering Schritt 04 (Betrieb)
+
+**Änderungen:**
+- `de.html` + `en.html` + `fr.html` + `it.html` + `es.html` + `sr.html`: 3 Service-Cards entfernt, CSS auf 2x2-Grid umgestellt
+- Service-Headline: `Entwicklung. Infrastruktur. Betrieb.` → `Software. Cloud. KI. Compliance.` (lokalisiert: EN `Software. Cloud. AI. Compliance.`, FR `Logiciel. Cloud. IA. Conformité.`, IT `Software. Cloud. IA. Compliance.`, ES `Software. Cloud. IA. Cumplimiento.`, SR-Latn `Softver. Oblak. AI. Usaglašenost.`)
+- Meta-Description, OG, Twitter-Description, JSON-LD `hasOfferCatalog` (nur DE), Footer-Brand und Footer-Services entsprechend bereinigt
+- Bonus: Orphan-HTML-Block in `it.html` (kaputtes `&lt;div class="svc-t"&gt;` aus früherem Refactor) mitkorrigiert
+
+### B) Pricing-Stufen entmarketingisiert
+
+**Begründung:** "Empfohlen" wirkt bei B2B-Engineering-Haus marketing-gefärbt; passt zu SaaS-Pricing-Tabellen (EHB), nicht zur RC-Tech-Tonalität.
+
+**Änderungen:**
+- `cloud-engineering.html`: `Diagnose / Empfohlen / Komplex` → `Diagnose / Standard / Erweitert`
+- `compliance.html`: `Einstieg / Empfohlen / Implementation` → `Diagnose / Standard / Erweitert`
+- `softwareentwicklung.html`: `Stufe 1 / Stufe 2 / Stufe 3` (belassen — drei aufeinander aufbauende Engagement-Stufen, nicht Komplexität)
+
+### C) Richtwert-Badges für Pricing-Konsistenz
+
+**Begründung:** "ab"-Preise auf Landingpages bleiben Schätzungen. Visueller Badge unter dem Preis macht das ehrlich sichtbar — keine versteckten Festpreis-Erwartungen.
+
+**Änderungen:**
+- `cloud-engineering.html`: Migration-Assessment ab CHF 3&apos;800 / Migration Klein 8-15k / Mid 20-50k → Richtwert-Badge
+- `compliance.html`: Audit ab CHF 6&apos;000 / Template-Pack ab CHF 3&apos;500 → Richtwert-Badge (CHF 240/h Stundensatz bleibt ohne Badge — fix)
+- `softwareentwicklung.html`: Discovery ab CHF 1&apos;800 → Richtwert-Badge (Stufe 2/3 ohne Preis, ohne Badge)
+- CSS: `.format-price small.hint` und `.tiefen-price small.hint` als 10px-Block-Badge in #6366f1-Akzent
+
+### D) AGB V2.8 → V2.9 / Datenschutz V2.6 → V2.7 — Final-Audit-Findings
+
+**Multi-Agent-Audit gefunden, behoben:**
+
+| Datei | Stelle | Finding | Fix |
+|---|---|---|---|
+| `agb.html` | §1 Hero-Subtitle | "Cloud-Hosting" als Begriff | → "Cloud Engineering, KI-Integration, Compliance" |
+| `agb.html` | §1 Geltungsbereich | Alte 7-Säulen-Aufzählung mit SaaS-Hosting/Beratung/Wartung | → 4-Säulen-Aufzählung |
+| `agb.html` | §3 Leistungsumfang | 3 Bullet-Points zu entfernten Säulen | → in die 4 Hauptsäulen integriert (Wartung in Cloud Engineering, Discovery in Softwareentwicklung) |
+| `agb.html` | §10 Carve-Out | Subprozessor-Liste unvollständig (fiskaly, Google IE, Microsoft IE, Meta IE, Twilio fehlten) | → vollständige Spiegelung von Datenschutz §6 |
+| `datenschutz.html` | §4 ISO 27001-Liste | AWS Europe SARL gehört nicht zu §4 (Hosting), sondern §6.3 (KI-Inferenz) | → Querverweis statt Listen-Eintrag |
+| `datenschutz.html` | §5 Section-Titel | "Auftragsverarbeitung (Hosting-Plattform &amp; EASB)" — alter Begriff | → "Auftragsverarbeitung für eigene SaaS-Produkte" |
+| `datenschutz.html` | §5 Text | "eigene SaaS-Hosting-Plattform" — alter Begriff | → "eigene SaaS-Produkte" |
+| `datenschutz.html` | §6.6 | Querverweis "gemäss Ziff. 14" | → "gemäss Ziff. 15" (Änderungen, nicht KI) |
+| `datenschutz.html` | §14.2 | "Übersetzungen in fünf Sprachen" | → "in vier Zielsprachen (EN/FR/IT/ES) ausgehend von Deutsch" |
+
+### E) EHB Terms V3.5 — Sprachkonsistenz
+
+| Datei | Stelle | Finding | Fix |
+|---|---|---|---|
+| `TermsPage.tsx` | §6 KI-Architektur | "automatische Übersetzung in fünf Sprachen" widerspricht Privacy §13 ("vier Zielsprachen") | → "in vier Zielsprachen (EN/FR/IT/ES, ausgehend von Deutsch als Quellsprache)" |
+
+### F) Offen — für Folge-Session
+
+- **Landingpage-Übersetzungen:** EN/FR/IT/ES/SR-Latn-Versionen von `compliance.html`, `softwareentwicklung.html`, `cloud-engineering.html` (DE-Master ist final)
+- **Menü-Konsistenz:** Landingpages haben aktuell nur "Zurück zu rc-tech-solutions" im Header — Hauptseite hat Dropdown mit Cross-Service-Navigation. Wenn UX-Verbesserung gewünscht, Dropdown-Pattern auf Landingpages portieren (gleiche Klassen + JS).
+- **Saasiro-Reveal:** Atlas-Code für Saasiro bleibt Stealth bis Soft-Launch.
+- **EHB-SEO-Basics:** Marketing-Seite TSX-Komponenten haben noch keine Meta/OG-Optimierung wie RC-Tech.
+- **PDF-Snapshots Firmenunterlagen:** STALE-NOTICE bestätigt — Generator-Run nötig vor 4.5. (User-Aufgabe).
+
+### G) Commits dieser Iteration (rc-tech-Repo)
+
+```
+a50fa08 Stufen-Badges & Richtwert-Konsistenz
+3aa1266 Compliance Stufen-Rename
+d787692 Service-Grid bereinigt: 7→4 Säulen
+59eed05 AGB V2.9 + Datenschutz V2.7: Audit-Findings
+3679e08 Service-Grid 5 Sprachen nachgezogen
+```
+
+EHB-Repo:
+```
+b431916 Terms §6: 'fünf Sprachen' → 'vier Zielsprachen (EN/FR/IT/ES) ausgehend von Deutsch'
+```
+
+---
 
 ## Iteration 10 — Service-Landingpages + Dropdown-Menu (29.04. nachts)
 
@@ -400,20 +483,25 @@ Nach erstem Sichten kamen drei Wünsche dazu:
 
 ```
 rc-tech-solutions-webseite/
-├── agb.html                                            (V2.1 → V2.7)
-├── datenschutz.html                                    (V2.1 → V2.6)
-├── de.html, en.html, fr.html, it.html, es.html, sr.html (KI-Integration-Service + No-US + Landingpage-Link + neutrale Tags)
+├── agb.html                                            (V2.1 → V2.9)
+├── datenschutz.html                                    (V2.1 → V2.7)
+├── de.html, en.html, fr.html, it.html, es.html, sr.html (Service-Grid 7→4, Headline lokalisiert, KI-Card, No-US, Tags neutralisiert)
 ├── ki-integrationen.html                                (NEU — Landingpage, Stack-Sektion provider-agnostisch)
+├── compliance.html                                      (NEU — Landingpage, Diagnose/Standard/Erweitert, Richtwert-Badges)
+├── softwareentwicklung.html                             (NEU — Landingpage, Stufe 1/2/3, Richtwert-Badge bei Discovery)
+├── cloud-engineering.html                               (NEU — Landingpage, Diagnose/Standard/Erweitert, Richtwert-Badges)
+├── sitemap.xml                                          (UPD — 4 Service-Landingpages + Legal-Pages)
 ├── CHANGELOG-2026-04-28-Konsistenz-Korrekturen.md       (NEU)
 ├── agb.pdf                                              (GELÖSCHT — V2.0-Altstand, nicht synchron)
 └── datenschutz.pdf                                      (GELÖSCHT — V2.0-Altstand, nicht synchron)
 
 easyandsmartbooking-webseite/src/pages/marketing/
 ├── TermsPage.tsx                                       (V3 → V3.5)
-└── PrivacyPage.tsx                                     (V3 → V3.4)
+├── PrivacyPage.tsx                                     (V3 → V3.4)
+└── motion.tsx                                          (UPD — safeThreshold für mobile FadeIn-Bug)
 
-Firmenunterlagen/Recht/Compliance/Webseiten/
-└── STALE-NOTICE-2026-04-28.md                           (NEU — Snapshots veraltet, vor 4.5. regenerieren)
+Quellen/Recht/Compliance/Webseiten/
+└── STALE-NOTICE-2026-04-28.md                           (NEU — Snapshots in Firmenunterlagen veraltet, vor 4.5. regenerieren)
 ```
 
 ---
