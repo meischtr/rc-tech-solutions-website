@@ -229,13 +229,38 @@ Finale Konsolidierung mit drei Achsen: Service-Säulen ehrlich auf 4 reduziert, 
 |---|---|---|---|
 | `TermsPage.tsx` | §6 KI-Architektur | "automatische Übersetzung in fünf Sprachen" widerspricht Privacy §13 ("vier Zielsprachen") | → "in vier Zielsprachen (EN/FR/IT/ES, ausgehend von Deutsch als Quellsprache)" |
 
-### F) Offen — für Folge-Session
+### F) Cloud Engineering Marketing-Feinschliff
+
+- Living-Proof-Box: Phase-5/Myra-Erwähnung entfernt (interner Plan, nicht für Marketing); Box auf volle Container-Breite (max-width:920px entfernt)
+- Gcore-Provider-Block: Myra-Erwähnung neutralisiert auf "alternative EU-Anbieter im Setup vorgesehen"
+- Neuer Hinweis nach Provider-Grid: DSGVO als Standard für eigene Infrastruktur, projekt-individuelle Auswahl bei Kundenprojekten möglich
+- Datenschutz §6.1 behält Myra-Erwähnung — dort ist sie sachlich (Subprozessor-Wechsel-Ankündigung Art. 28 DSGVO)
+
+### G) Footer-Cross-Service-Navigation auf 4 Landingpages
+
+UX-Verbesserung: Statt nur "Zurück zur Hauptseite" jetzt direkter Sprung zu anderen Services aus jeder Landingpage.
+
+- 4-Spalten-Footer-Grid (`2fr 1fr 1fr 1fr`) mit eigener "Services"-Spalte
+- Auf jeder Page werden die 3 anderen Services verlinkt (aktuelle Page ist im Hauptbereich)
+- Pages: `compliance.html`, `softwareentwicklung.html`, `cloud-engineering.html`, `ki-integrationen.html`
+
+### H) Quellen-Sync für PDF-Generator (Compliance-Snapshots)
+
+Vor PDF-Generation nötig:
+
+- `Quellen/Recht/Compliance/Webseiten/agb-rc-tech.html` ← gespiegelt von `rc-tech-solutions-webseite/agb.html` (V2.9)
+- `Quellen/Recht/Compliance/Webseiten/datenschutz-rc-tech.html` ← gespiegelt von `rc-tech-solutions-webseite/datenschutz.html` (V2.7)
+- `Quellen/Recht/Compliance/Webseiten/EHB/agb-easyandsmartbooking.md` ← regeneriert aus `TermsPage.tsx` (V3.5)
+- `Quellen/Recht/Compliance/Webseiten/EHB/datenschutz-easyandsmartbooking.md` ← regeneriert aus `PrivacyPage.tsx` (V3.4)
+- README.md in beiden Quellen-Ordnern aktualisiert auf neue Versionen + Datum
+
+### I) Offen — für Folge-Session
 
 - **Landingpage-Übersetzungen:** EN/FR/IT/ES/SR-Latn-Versionen von `compliance.html`, `softwareentwicklung.html`, `cloud-engineering.html` (DE-Master ist final)
-- **Menü-Konsistenz:** Landingpages haben aktuell nur "Zurück zu rc-tech-solutions" im Header — Hauptseite hat Dropdown mit Cross-Service-Navigation. Wenn UX-Verbesserung gewünscht, Dropdown-Pattern auf Landingpages portieren (gleiche Klassen + JS).
+- **Header-Dropdown auf Landingpages:** Aktuell nur "Zurück"-Button im Header. Footer-Cross-Service ist da — wenn Header-Konsistenz gewünscht, Dropdown-Pattern aus de.html portieren.
 - **Saasiro-Reveal:** Atlas-Code für Saasiro bleibt Stealth bis Soft-Launch.
 - **EHB-SEO-Basics:** Marketing-Seite TSX-Komponenten haben noch keine Meta/OG-Optimierung wie RC-Tech.
-- **PDF-Snapshots Firmenunterlagen:** STALE-NOTICE bestätigt — Generator-Run nötig vor 4.5. (User-Aufgabe).
+- **PDF-Snapshots Firmenunterlagen:** Quellen sind synchronisiert — PDF-Generator-Agent (separater Run) erstellt die finalen Snapshots vor 4.5.
 
 ### G) Commits dieser Iteration (rc-tech-Repo)
 
