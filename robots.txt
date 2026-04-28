@@ -66,5 +66,5 @@ Disallow: /
 # Sitemap (wird bei Launch aktiviert, aber bereits hier referenziert für Vorbereitung)
 Sitemap: https://rc-tech-solutions.com/sitemap.xml
 
-# RC-Tech Solutions — Stealth Mode bis Launch
+# RC-Tech Solutions GmbH
 # Kein Crawling, kein Indexing, kein KI-Training
