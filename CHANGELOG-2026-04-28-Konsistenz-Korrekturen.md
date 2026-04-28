@@ -171,6 +171,26 @@ Sobald die GmbH notariell beglaubigt und das Fort-Knox-Setup aufgehoben ist, sol
 
 Übersetzungen (EN/FR/IT/ES/SR) werden nachgezogen, sobald der DE-Inhalt finalisiert ist. Bis dahin nur DE-Version aktiv.
 
+## Iteration 7 — Haftungs-Klausel + Mobile-Header (28.04. ganz spät nachts)
+
+Zwei Themen vom finalen Sichten:
+
+1. **§10 Haftungs-Klausel war juristisch zu pauschal:** Aussage *"haftet nicht für Schäden durch Drittanbieter und ihre Sub-Auftragsverarbeiter"* widerspricht zwingendem Schweizer Recht (OR Art. 101, Erfüllungsgehilfen-Haftung) sowie DSGVO Art. 28 Abs. 4. Vor Gericht wäre die Klausel teilweise unwirksam und hätte die ganze §10 angreifbar gemacht.
+
+2. **Mobile-Bug auf RC-Tech:** Top-Menü blieb beim Scrollen oben kleben — Abstand zwischen Menü und Top-Inhalt nervig auf Mobile. EHB hat das saubere Hide-on-Scroll-Verhalten, RC-Tech nicht.
+
+**Iteration 7 — Änderungen:**
+
+| Bereich | Datei | Änderung |
+|---|---|---|
+| RC-Tech AGB §10 | `agb.html` | **Haftungs-Klausel neu strukturiert:** Sorgfalts-Klausel ("RC-Tech wählt und überwacht mit der Sorgfalt eines erfahrenen IT-Anbieters") + Erfüllungsgehilfen-Anerkennung (Art. 28 DSGVO + Art. 101 OR) — Schutz bleibt für höhere Gewalt, unverschuldete Drittanbieter-Ausfälle, eigenständige Vertragsverhältnisse (Stripe), unsachgemässe Nutzung |
+| RC-Tech AGB | `agb.html` Stand-Zeile | V2.5 → **V2.6** |
+| RC-Tech Header | `de/en/fr/it/es/sr.html` + `ki-integrationen.html` | CSS `transition:transform .4s ease` + `.nav-hidden` Klasse; Scroll-Listener im JS-Block — Header verschwindet beim Runterscrollen, kommt zurück beim Hochscrollen oder am Top |
+| EHB AGB §10 | `TermsPage.tsx` | Analog zur RC-Tech-Anpassung: Sorgfalts-Klausel + Erfüllungsgehilfen-Anerkennung; expliziter Hinweis auf Art. 100 OR (zwingende Mindesthaftung) im ersten Absatz |
+| EHB AGB+Datenschutz | `TermsPage.tsx` + `PrivacyPage.tsx` Stand-Zeile | V3.3 → **V3.4** |
+
+**Hinweis:** Die neue Haftungs-Klausel macht uns NICHT haftbarer — wir haften gesetzlich ohnehin so. Sie macht uns nur unangreifbarer vor Gericht, weil sie nicht mehr versucht, zwingendes Recht auszuhebeln.
+
 ## Iteration 6 — IP-Modelle + Schnittstellen-Klarstellung (28.04. nachts)
 
 Drei Themen aus dem laut-denken über die Geschäftsbeziehung:
@@ -281,7 +301,7 @@ Nach erstem Sichten kamen drei Wünsche dazu:
 
 ```
 rc-tech-solutions-webseite/
-├── agb.html                                            (V2.1 → V2.5)
+├── agb.html                                            (V2.1 → V2.6)
 ├── datenschutz.html                                    (V2.1 → V2.5)
 ├── de.html, en.html, fr.html, it.html, es.html, sr.html (KI-Integration-Service + No-US + Landingpage-Link + neutrale Tags)
 ├── ki-integrationen.html                                (NEU — Landingpage, Stack-Sektion provider-agnostisch)
@@ -290,8 +310,8 @@ rc-tech-solutions-webseite/
 └── datenschutz.pdf                                      (GELÖSCHT — V2.0-Altstand, nicht synchron)
 
 easyandsmartbooking-webseite/src/pages/marketing/
-├── TermsPage.tsx                                       (V3 → V3.3)
-└── PrivacyPage.tsx                                     (V3 → V3.3)
+├── TermsPage.tsx                                       (V3 → V3.4)
+└── PrivacyPage.tsx                                     (V3 → V3.4)
 
 Firmenunterlagen/Recht/Compliance/Webseiten/
 └── STALE-NOTICE-2026-04-28.md                           (NEU — Snapshots veraltet, vor 4.5. regenerieren)
@@ -300,5 +320,5 @@ Firmenunterlagen/Recht/Compliance/Webseiten/
 ---
 
 **Erstellt:** 2026-04-28
-**Verantwortlich:** Robert Camathias, Geschäftsführer RC-Tech Solutions GmbH (i. Gr.)
+**Verantwortlich:** Robert Camathias, Geschäftsführer RC-Tech Solutions GmbH
 **Review-Termin:** 2026-05-04 (Anwalts-Termin)

@@ -46,7 +46,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
 
 /* --- NAV --- */
-header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px;display:flex;align-items:center;background:rgba(9,9,11,.6);-webkit-backdrop-filter:blur(16px) saturate(1.8);backdrop-filter:blur(16px) saturate(1.8);border-bottom:1px solid rgba(255,255,255,.06);}
+header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px;display:flex;align-items:center;background:rgba(9,9,11,.6);-webkit-backdrop-filter:blur(16px) saturate(1.8);backdrop-filter:blur(16px) saturate(1.8);border-bottom:1px solid rgba(255,255,255,.06);transition:transform .4s ease;}
+header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
 .n{max-width:1140px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;}
 .n-logo{font-size:15px;font-weight:700;letter-spacing:-.4px;display:flex;align-items:center;gap:0;flex-shrink:0;}
 .n-logo img{height:44px;width:auto;}
@@ -661,6 +662,17 @@ try{if(!sessionStorage.getItem('rc_auth'))window.location.href='index.html';}cat
   var b=document.getElementById('burger'),m=document.getElementById('nMobile');
   if(b)b.addEventListener('click',function(){m.classList.toggle('open');});
   document.querySelectorAll('.n-mobile a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});});
+
+  // Ocultar el header al desplazarse hacia abajo, mostrarlo al desplazarse hacia arriba
+  var hdr=document.querySelector('header'),lastY=window.scrollY;
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY,menuOpen=m&&m.classList.contains('open');
+    if(!menuOpen){
+      if(y>lastY&&y>80)hdr.classList.add('nav-hidden');
+      else hdr.classList.remove('nav-hidden');
+    }
+    lastY=y;
+  },{passive:true});
   var els=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){
     var o=new IntersectionObserver(function(e){e.forEach(function(i){if(i.isIntersecting){i.target.classList.add('v');o.unobserve(i.target);}});},{threshold:.08,rootMargin:'0px 0px -30px 0px'});

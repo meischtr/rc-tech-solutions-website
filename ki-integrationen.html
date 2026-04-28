@@ -36,7 +36,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
 
 /* --- NAV --- */
-header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px;display:flex;align-items:center;background:rgba(9,9,11,.6);-webkit-backdrop-filter:blur(16px) saturate(1.8);backdrop-filter:blur(16px) saturate(1.8);border-bottom:1px solid rgba(255,255,255,.06);}
+header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px;display:flex;align-items:center;background:rgba(9,9,11,.6);-webkit-backdrop-filter:blur(16px) saturate(1.8);backdrop-filter:blur(16px) saturate(1.8);border-bottom:1px solid rgba(255,255,255,.06);transition:transform .4s ease;}
+header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
 .n{max-width:1140px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;}
 .n-logo img{height:44px;width:auto;}
 .n-back{font-size:13px;color:rgba(255,255,255,.55);font-weight:500;display:flex;align-items:center;gap:8px;transition:color .15s;}
@@ -511,6 +512,17 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
   if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('v');});return;}
   var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+
+// Header verstecken beim Runterscrollen, zeigen beim Hochscrollen
+(function(){
+  var hdr=document.querySelector('header'),lastY=window.scrollY;
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY;
+    if(y>lastY&&y>80)hdr.classList.add('nav-hidden');
+    else hdr.classList.remove('nav-hidden');
+    lastY=y;
+  },{passive:true});
 })();
 </script>
 
