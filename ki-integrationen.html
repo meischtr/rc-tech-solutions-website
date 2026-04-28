@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#09090b">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow, noarchive">
+<meta name="format-detection" content="telephone=no">
+<title>KI-Integration für Schweizer KMU — RC-Tech Solutions GmbH</title>
+<meta name="description" content="LLMs in echte Workflows integrieren. AWS Bedrock EU-Region, DSGVO-konform, pragmatisch. RC-Tech Solutions GmbH, Schweiz.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" as="image" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden;}
+body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;background:#09090b;color:#fafafa;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;min-height:100vh;min-height:-webkit-fill-available;}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+button{font:inherit;}
+::selection{background:rgba(99,102,241,.3);}
+
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.025;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
+
+.acc{color:#6366f1;}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);}
+.rv.v{opacity:1;transform:none;}
+.rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}.rv-d4{transition-delay:.32s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+/* --- NAV --- */
+header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px;display:flex;align-items:center;background:rgba(9,9,11,.6);-webkit-backdrop-filter:blur(16px) saturate(1.8);backdrop-filter:blur(16px) saturate(1.8);border-bottom:1px solid rgba(255,255,255,.06);}
+.n{max-width:1140px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.n-logo img{height:44px;width:auto;}
+.n-back{font-size:13px;color:rgba(255,255,255,.55);font-weight:500;display:flex;align-items:center;gap:8px;transition:color .15s;}
+.n-back:hover{color:#fff;}
+.n-back svg{width:14px;height:14px;}
+
+/* --- HERO --- */
+.hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.hero-bg::before{content:'';position:absolute;top:60px;right:0;width:50%;height:100%;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px;-webkit-mask-image:radial-gradient(ellipse at 70% 40%,black 15%,transparent 55%);mask-image:radial-gradient(ellipse at 70% 40%,black 15%,transparent 55%);}
+.hero-bg::after{content:'';position:absolute;top:15%;right:10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.05),transparent 65%);}
+
+.hero-wrap{padding:0 48px;position:relative;}
+.hero{max-width:1140px;margin:0 auto;padding:160px 0 96px;position:relative;}
+.hero-content{max-width:820px;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(99,102,241,.7);padding:6px 12px;border-radius:999px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.18);margin-bottom:28px;}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#6366f1;box-shadow:0 0 8px rgba(99,102,241,.7);}
+.hero h1{font-size:clamp(38px,5.5vw,68px);font-weight:800;line-height:1.04;letter-spacing:-2.5px;margin-bottom:28px;}
+.hero h1 em{font-style:normal;color:rgba(255,255,255,.28);}
+.hero-p{font-size:17px;color:rgba(255,255,255,.5);line-height:1.7;max-width:620px;margin-bottom:40px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.b1{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:8px;background:#fafafa;color:#09090b;font-size:14px;font-weight:700;transition:all .15s;border:none;cursor:pointer;}
+.b1:hover{background:#e4e4e7;transform:translateY(-1px);}
+.b1 svg{width:16px;height:16px;}
+.b2{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:8px;color:rgba(255,255,255,.6);font-size:14px;font-weight:500;border:1px solid rgba(255,255,255,.1);transition:all .15s;cursor:pointer;background:0;}
+.b2:hover{color:#fff;border-color:rgba(255,255,255,.25);}
+
+.hero-trust{display:flex;gap:28px;margin-top:48px;flex-wrap:wrap;padding-top:32px;border-top:1px solid rgba(255,255,255,.06);}
+.hero-trust span{font-size:12px;color:rgba(255,255,255,.4);font-weight:500;display:flex;align-items:center;gap:8px;letter-spacing:.3px;}
+.hero-trust span::before{content:'';width:5px;height:5px;border-radius:50%;background:rgba(99,102,241,.5);}
+
+/* --- SECTIONS --- */
+.s{padding:96px 48px;}
+.s-inner{max-width:1140px;margin:0 auto;}
+.s-head{margin-bottom:56px;max-width:680px;}
+.s-label{font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#6366f1;font-weight:600;margin-bottom:14px;}
+.s-title{font-size:clamp(26px,3.2vw,38px);font-weight:700;letter-spacing:-1.4px;line-height:1.15;margin-bottom:14px;}
+.s-title em{font-style:normal;color:rgba(255,255,255,.32);}
+.s-desc{font-size:15px;color:rgba(255,255,255,.45);line-height:1.7;}
+
+/* --- USE CASES --- */
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;}
+.uc{padding:32px;border-right:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);background:#09090b;transition:background .3s;position:relative;}
+.uc:nth-child(3n){border-right:none;}
+.uc:nth-child(n+4){border-bottom:none;}
+.uc:hover{background:#111113;}
+.uc:hover h3{color:#a5b4fc;}
+.uc-ic{width:30px;height:30px;margin-bottom:18px;color:rgba(99,102,241,.7);transition:color .3s;}
+.uc:hover .uc-ic{color:#a5b4fc;}
+.uc h3{font-size:15px;font-weight:700;margin-bottom:10px;letter-spacing:-.2px;transition:color .3s;}
+.uc p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;}
+
+/* --- PROCESS --- */
+.proc-wrap{background:#0b0b0e;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;background:#09090b;}
+.proc-step{padding:32px;border-right:1px solid rgba(255,255,255,.06);transition:background .3s;}
+.proc-step:last-child{border-right:none;}
+.proc-step:hover{background:#111113;}
+.proc-num{font-size:30px;font-weight:800;color:rgba(99,102,241,.3);letter-spacing:-1px;margin-bottom:18px;font-family:'JetBrains Mono',monospace;transition:color .3s;}
+.proc-step:hover .proc-num{color:rgba(99,102,241,.6);}
+.proc-step h4{font-size:14.5px;font-weight:700;margin-bottom:8px;}
+.proc-step p{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.65;}
+
+/* --- STACK --- */
+.stack-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.stack-col{padding:32px;border-radius:12px;background:linear-gradient(180deg,#111113,#0d0d10);border:1px solid rgba(255,255,255,.06);}
+.stack-col h3{font-size:14px;font-weight:700;letter-spacing:.4px;margin-bottom:8px;color:rgba(255,255,255,.95);}
+.stack-col p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:20px;}
+.stack-list{display:flex;flex-direction:column;gap:10px;}
+.stack-item{display:flex;align-items:flex-start;gap:12px;font-size:13px;color:rgba(255,255,255,.6);line-height:1.55;}
+.stack-item::before{content:'';width:5px;height:5px;border-radius:50%;background:rgba(99,102,241,.6);margin-top:8px;flex-shrink:0;}
+.stack-item strong{color:rgba(255,255,255,.9);font-weight:600;}
+
+/* --- WHY --- */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.why-item h3{font-size:16px;font-weight:700;margin-bottom:8px;letter-spacing:-.2px;}
+.why-item p{font-size:13.5px;color:rgba(255,255,255,.45);line-height:1.7;}
+.why-line{width:24px;height:2px;background:linear-gradient(90deg,#6366f1,#a78bfa);margin-bottom:18px;border-radius:1px;}
+
+/* --- CTA --- */
+.cta{text-align:center;padding:120px 48px;position:relative;max-width:1236px;margin:0 auto;}
+.cta::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(99,102,241,.04),transparent 70%);pointer-events:none;}
+.cta h2{font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-2px;margin-bottom:14px;position:relative;}
+.cta p{font-size:16px;color:rgba(255,255,255,.4);margin-bottom:36px;position:relative;}
+.cta-links{margin-top:24px;font-size:13px;color:rgba(255,255,255,.25);position:relative;}
+.cta-links a{color:rgba(255,255,255,.5);border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:1px;transition:all .2s;}
+.cta-links a:hover{color:#fff;border-color:rgba(255,255,255,.4);}
+
+/* --- FOOTER --- */
+footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
+.f-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;}
+.f-brand img{height:26px;width:auto;margin-bottom:12px;}
+.f-brand strong{font-size:14px;font-weight:700;display:block;margin-bottom:6px;}
+.f-brand p{font-size:12px;color:rgba(255,255,255,.32);line-height:1.65;}
+.f-brand .f-addr{font-size:11px;color:rgba(255,255,255,.22);margin-top:10px;line-height:1.6;}
+.f-col h4{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.28);margin-bottom:14px;font-weight:700;}
+.f-col a{display:block;font-size:13px;color:rgba(255,255,255,.4);padding:3px 0;transition:color .15s;}
+.f-col a:hover{color:rgba(255,255,255,.85);}
+.f-bottom{max-width:1140px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.22);flex-wrap:wrap;gap:12px;}
+
+/* --- RESPONSIVE --- */
+@media(max-width:900px){
+  .uc-grid{grid-template-columns:1fr 1fr;}
+  .uc:nth-child(2n){border-right:none;}
+  .uc:nth-child(3n){border-right:1px solid rgba(255,255,255,.06);}
+  .uc:nth-child(6){border-right:none;}
+  .uc:nth-child(n+5){border-bottom:none;}
+  .proc-grid{grid-template-columns:1fr 1fr;}
+  .proc-step:nth-child(2n){border-right:none;}
+  .proc-step:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.06);}
+  .why-grid{grid-template-columns:1fr;gap:32px;}
+  .stack-grid{grid-template-columns:1fr;}
+  .f-inner{grid-template-columns:1fr 1fr;gap:32px;}
+}
+@media(max-width:640px){
+  header{padding:0 20px;}
+  .s{padding:72px 24px;}
+  .hero-wrap{padding:0 24px;}
+  .hero{padding:120px 0 56px;}
+  .hero h1{letter-spacing:-1px;}
+  .cta{padding:80px 24px;}
+  .uc-grid,.proc-grid{grid-template-columns:1fr;}
+  .uc,.proc-step{border-right:none !important;border-bottom:1px solid rgba(255,255,255,.06) !important;}
+  .uc:last-child,.proc-step:last-child{border-bottom:none !important;}
+  .f-inner{grid-template-columns:1fr;}
+  footer{padding:40px 24px 24px;}
+  .hero-btns{flex-direction:column;}
+  .b1,.b2{width:100%;justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <div class="n">
+    <a href="de.html" class="n-logo"><img src="logo.png" alt="RC-Tech Solutions"></a>
+    <a href="de.html" class="n-back">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+      Zurück zu rc-tech-solutions
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="hero-bg"></div>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag rv">KI-Integration für Schweizer KMU</div>
+      <h1 class="rv rv-d1">LLMs in Ihre Workflows.<br><em>Mit einem Plan, der Bestand hat.</em></h1>
+      <p class="hero-p rv rv-d2">Wir integrieren grosse Sprachmodelle in echte Geschäftsprozesse — pragmatisch, mit Datenschutz-Architektur und EU-Hosting. Nicht jeder braucht sofort alles. Aber wer KI nutzt, sollte wissen, wohin die Daten gehen und warum.</p>
+      <div class="hero-btns rv rv-d3">
+        <a href="#contact" class="b1">
+          Gespräch vereinbaren
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="#use-cases" class="b2">Was wir konkret machen</a>
+      </div>
+      <div class="hero-trust rv rv-d4">
+        <span>AWS Bedrock EU-Region (Frankfurt)</span>
+        <span>DSGVO &amp; revDSG konform</span>
+        <span>Daten verlassen die EU nicht</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- USE CASES -->
+<section id="use-cases" class="s">
+  <div class="s-inner">
+    <div class="s-head rv">
+      <div class="s-label">Use-Cases</div>
+      <div class="s-title">Was wir konkret machen. <em>Keine Vapor­ware.</em></div>
+      <div class="s-desc">Sechs Bereiche, in denen LLMs heute messbar Zeit sparen oder Qualität heben. Wir starten dort, wo der Hebel am grössten ist — und nicht dort, wo das Buzzword am hellsten leuchtet.</div>
+    </div>
+    <div class="uc-grid rv">
+      <div class="uc">
+        <svg class="uc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"/></svg>
+        <h3>Chatbot &amp; Voice-Agent</h3>
+        <p>FAQ, Buchungen, Erstberatung. Mehrsprachig, mit Opt-Out, ohne dass medizinische oder rechtliche Auskünfte herauskommen, wo sie nicht hingehören.</p>
+      </div>
+      <div class="uc">
+        <svg class="uc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802"/></svg>
+        <h3>Übersetzungen</h3>
+        <p>Marketing-Content, Produkttexte, interne Dokumente. Konsistent in fünf Sprachen, mit Glossar-Pflege und Stil-Guideline statt Google-Translate-Optik.</p>
+      </div>
+      <div class="uc">
+        <svg class="uc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
+        <h3>Dokument-Analyse</h3>
+        <p>Verträge, Formulare, Reports. Klassifikation, Extraktion, Zusammenfassung. Mit Audit-Trail und ohne dass die Daten den EU-Raum verlassen.</p>
+      </div>
+      <div class="uc">
+        <svg class="uc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"/></svg>
+        <h3>Workflow-Automation</h3>
+        <p>E-Mail-Triage, Datenanreicherung, Klassifikation eingehender Anfragen. Wo bisher Routine-Klicks waren, kommt eine LLM-gesteuerte Pipeline mit Human-in-the-Loop.</p>
+      </div>
+      <div class="uc">
+        <svg class="uc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
+        <h3>Wissens-Suche</h3>
+        <p>Interne Knowledge-Base, Confluence, SharePoint, Tickets. Statt Volltext-Suche ein Q&amp;A-System mit Quellen­angaben und ohne Halluzinationen.</p>
+      </div>
+      <div class="uc">
+        <svg class="uc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25M6.75 17.25 1.5 12l5.25-5.25M14.25 4.5l-4.5 15"/></svg>
+        <h3>Code-Assistenz</h3>
+        <p>Pair-Programming für interne Entwicklungs-Teams. Code-Reviews, Refactoring, Test-Generierung. Mit klarer Trennung zwischen Kunden­daten und Entwicklungs-Kontext.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<div class="proc-wrap">
+  <section class="s">
+    <div class="s-inner">
+      <div class="s-head rv">
+        <div class="s-label">Vorgehen</div>
+        <div class="s-title">Vier Schritte. <em>Keine Über­raschungen.</em></div>
+        <div class="s-desc">Wir starten klein, messen früh, integrieren erst dann tief. So bleibt das Risiko überschaubar — und die Investition wird nicht zur Wette.</div>
+      </div>
+      <div class="proc-grid rv">
+        <div class="proc-step">
+          <div class="proc-num">01</div>
+          <h4>Audit</h4>
+          <p>Welche Workflows sind realistisch automatisierbar? Wo lohnt sich KI, wo nicht? Datenschutz-Inventur, Use-Case-Bewertung, Hebel-Analyse.</p>
+        </div>
+        <div class="proc-step">
+          <div class="proc-num">02</div>
+          <h4>Pilot</h4>
+          <p>Ein konkreter Use-Case in zwei bis vier Wochen produktiv. Messbar. Mit klaren Abbruch-Kriterien, falls die Realität anders aussieht als die Annahme.</p>
+        </div>
+        <div class="proc-step">
+          <div class="proc-num">03</div>
+          <h4>Integration</h4>
+          <p>Tiefe Einbettung in bestehende Tools, APIs und Datenbanken. Tenant-Isolation, Audit-Logging, Pseudonymisierung wo nötig — von Anfang an.</p>
+        </div>
+        <div class="proc-step">
+          <div class="proc-num">04</div>
+          <h4>Betrieb</h4>
+          <p>Monitoring, Modell-Updates, Datenschutz-Audits, SLA. Keine Black-Box, die nach dem Launch sich selbst überlassen wird.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- STACK -->
+<section class="s">
+  <div class="s-inner">
+    <div class="s-head rv">
+      <div class="s-label">Stack &amp; Infrastruktur</div>
+      <div class="s-title">Womit wir bauen. <em>Und warum.</em></div>
+      <div class="s-desc">Eine kurze Antwort auf die zwei Fragen, die jeder Datenschutz-Beauftragte stellt: «Welches Modell?» und «Wo liegen die Daten?»</div>
+    </div>
+    <div class="stack-grid rv">
+      <div class="stack-col">
+        <h3>KI-Modelle</h3>
+        <p>Wir setzen primär auf Claude-Modelle der Anthropic PBC, bezogen über AWS Bedrock in der EU-Region <code>eu-central-1</code> (Frankfurt am Main).</p>
+        <div class="stack-list">
+          <div class="stack-item"><span><strong>Claude Sonnet 4.6</strong> für anspruchsvolle Aufgaben (Analyse, Dokumente, Code)</span></div>
+          <div class="stack-item"><span><strong>Claude Haiku 4.5</strong> für schnelle Klassifikation und hohe Volumina</span></div>
+          <div class="stack-item"><span><strong>Vertragspartner: AWS Europe SARL</strong>, Luxemburg — kein direkter Datenfluss in die USA</span></div>
+          <div class="stack-item"><span>Modell-Wechsel jederzeit möglich (Vertex AI, eigene LLMs) — wir binden uns nicht religiös</span></div>
+        </div>
+      </div>
+      <div class="stack-col">
+        <h3>Infrastruktur &amp; Datenschutz</h3>
+        <p>Hosting auf eigener Infrastruktur in der EU und der Schweiz. Keine Schatten-Daten in unbekannten Regionen, alles dokumentiert im AVV.</p>
+        <div class="stack-list">
+          <div class="stack-item"><span><strong>Hetzner Nürnberg/Helsinki</strong> für Applikations- und Datenbank-Server</span></div>
+          <div class="stack-item"><span><strong>Infomaniak Genf</strong> als Schweizer Witness und VPN-Kontrollebene</span></div>
+          <div class="stack-item"><span><strong>IONOS Frankfurt</strong> für externe, verschlüsselte Backups</span></div>
+          <div class="stack-item"><span>Tenant-Isolation, AES-256, TLS 1.3, Audit-Logging — DSGVO/revDSG ab Tag 1</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="s" style="padding-top:0;">
+  <div class="s-inner">
+    <div class="s-head rv">
+      <div class="s-label">Warum RC-Tech</div>
+      <div class="s-title">Drei Dinge, die uns von einer Agentur unter­scheiden.</div>
+    </div>
+    <div class="why-grid rv">
+      <div class="why-item">
+        <div class="why-line"></div>
+        <h3>Engineering, nicht Beratung</h3>
+        <p>Wir liefern Code und Architektur — keine PowerPoints. Was wir empfehlen, können wir auch bauen und betreiben. Sie sprechen direkt mit der technischen Führung, nicht mit einem Junior-Team.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-line"></div>
+        <h3>EU-First, nicht US-First</h3>
+        <p>Daten verlassen die EU/CH nicht. Vertragspartner sind durchgängig EU-Rechtsträger (AWS Europe SARL, Stripe Ireland, etc.). DPF-Risiken vermeiden wir architekturell, nicht nur klauseltechnisch.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-line"></div>
+        <h3>Transparenz statt Black-Box</h3>
+        <p>Jeder Datenfluss ist im Verarbeitungs­verzeichnis dokumentiert. Sie wissen, welches Modell welche Daten sieht — und können das im Audit auch belegen. Kein «ist halt KI».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta">
+  <h2 class="rv">Reden wir über Ihren Use-Case.</h2>
+  <p class="rv">Ein 30-minütiges Gespräch. Wir hören zu, ordnen ein, sagen ehrlich, ob KI hier Sinn macht oder ob es eine simplere Lösung gibt.</p>
+  <a href="mailto:info@rc-tech-solutions.com?subject=KI-Integration%20Gespr%C3%A4ch" class="b1 rv" style="font-size:15px;">
+    info@rc-tech-solutions.com
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+  </a>
+  <div class="cta-links rv">
+    <a href="tel:+41815528008">+41 (0)81 552 80 08</a> &nbsp;&middot;&nbsp;
+    <a href="mailto:info@rc-tech-solutions.com">E-Mail</a> &nbsp;&middot;&nbsp;
+    <a href="de.html">Zurück zu rc-tech-solutions</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-inner">
+    <div class="f-brand">
+      <img src="logo.png" alt="RC-Tech Solutions">
+      <strong>RC-Tech Solutions GmbH</strong>
+      <p>KI-Integration, Softwareentwicklung, Cloud-Infrastruktur. Schweiz, mit EU-Hosting.</p>
+      <div class="f-addr">
+        Via Montalin 13<br>
+        7013 Domat/Ems<br>
+        Schweiz<br>
+        +41 (0)81 552 80 08
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>RC-Tech</h4>
+      <a href="de.html">Hauptseite</a>
+      <a href="de.html#services">Services</a>
+      <a href="de.html#about">Über uns</a>
+    </div>
+    <div class="f-col">
+      <h4>Legal</h4>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <span>&copy; 2026 RC-Tech Solutions GmbH &mdash; Schweiz</span>
+    <span>KI-Integration · made in Graub&uuml;nden</span>
+  </div>
+</footer>
+
+<script>
+// Scroll-Reveal: Elemente einblenden, sobald sie sichtbar werden
+(function(){
+  if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('v');});return;}
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+</script>
+
+</body>
+</html>
