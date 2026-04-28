@@ -237,13 +237,14 @@ header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
 .about-text h3 em{font-style:normal;color:rgba(255,255,255,.35);}
 .about-text p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:16px;}
 .about-text p strong{color:rgba(255,255,255,.85);font-weight:600;}
-.about-values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,.06);}
+.about-values{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px;padding-top:36px;border-top:1px solid rgba(255,255,255,.06);}
 .about-val{padding:14px 16px;border-radius:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);}
 .about-val h5{font-size:12px;font-weight:700;color:#a5b4fc;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;}
 .about-val p{font-size:12.5px;color:rgba(255,255,255,.45);line-height:1.55;margin:0;}
 @media(max-width:900px){
   .about-grid{grid-template-columns:1fr;gap:32px;}
   .about-card{position:static;max-width:340px;margin:0 auto;}
+  .about-values{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:640px){
   .about-values{grid-template-columns:1fr;}
@@ -613,24 +614,24 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
       <p><strong>RC-Tech Solutions GmbH</strong> je osnovan da ovo iskustvo pretoči u sopstvene proizvode: sopstvenu hosting platformu (u razvoju), rešenje za branšu za MSP (Easy &amp; Smart Booking) i fokusirani konsalting za kompanije kojima treba pravi inženjering, a ne PowerPoint prezentacije.</p>
       <p><strong>VI je naša kafa:</strong> svakodnevna, intenzivna, neizostavna. Testiramo nove modele, integrišemo LLM-ove u stvarne workflow-ove, automatizujemo ono što se može automatizovati. Ne treba svima sve odmah. Ali svi bi trebalo da znaju šta je moguće. Rado ćemo vam pokazati.</p>
       <p>Ono što kod nas dobijate: <strong>direktan kontakt</strong> sa tehničkim rukovodstvom, čistu arhitekturu bez tehničkog duga i infrastrukturu koja radi i kada više niko na nju ne obraća pažnju. Bez outsourcinga. Bez junior timova. Bez marketinških fraza.</p>
-      <div class="about-values">
-        <div class="about-val">
-          <h5>Odgovornost</h5>
-          <p>Ono što gradimo, i održavamo. Jedan sagovornik od početka do kraja.</p>
-        </div>
-        <div class="about-val">
-          <h5>Transparentnost</h5>
-          <p>Jasne ponude, fer cene, poštena procena - i kada to nije u našu korist.</p>
-        </div>
-        <div class="about-val">
-          <h5>Zaštita podataka na prvom mestu</h5>
-          <p>GDPR i švajcarski zakon o zaštiti podataka za nas nisu samo stavka na listi. Oni su osnova svake odluke.</p>
-        </div>
-        <div class="about-val">
-          <h5>Dugoročnost</h5>
-          <p>Gradimo za narednih 10 godina - ne za sledeći sprint.</p>
-        </div>
-      </div>
+    </div>
+  </div>
+  <div class="about-values rv rv-d2">
+    <div class="about-val">
+      <h5>Odgovornost</h5>
+      <p>Ono što gradimo, i održavamo. Jedan sagovornik od početka do kraja.</p>
+    </div>
+    <div class="about-val">
+      <h5>Transparentnost</h5>
+      <p>Jasne ponude, fer cene, poštena procena - i kada to nije u našu korist.</p>
+    </div>
+    <div class="about-val">
+      <h5>Zaštita podataka na prvom mestu</h5>
+      <p>GDPR i švajcarski zakon o zaštiti podataka za nas nisu samo stavka na listi. Oni su osnova svake odluke.</p>
+    </div>
+    <div class="about-val">
+      <h5>Dugoročnost</h5>
+      <p>Gradimo za narednih 10 godina - ne za sledeći sprint.</p>
     </div>
   </div>
 </div>

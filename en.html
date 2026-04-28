@@ -237,13 +237,14 @@ header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
 .about-text h3 em{font-style:normal;color:rgba(255,255,255,.35);}
 .about-text p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:16px;}
 .about-text p strong{color:rgba(255,255,255,.85);font-weight:600;}
-.about-values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,.06);}
+.about-values{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px;padding-top:36px;border-top:1px solid rgba(255,255,255,.06);}
 .about-val{padding:14px 16px;border-radius:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);}
 .about-val h5{font-size:12px;font-weight:700;color:#a5b4fc;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;}
 .about-val p{font-size:12.5px;color:rgba(255,255,255,.45);line-height:1.55;margin:0;}
 @media(max-width:900px){
   .about-grid{grid-template-columns:1fr;gap:32px;}
   .about-card{position:static;max-width:340px;margin:0 auto;}
+  .about-values{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:640px){
   .about-values{grid-template-columns:1fr;}
@@ -613,24 +614,24 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
       <p><strong>RC-Tech Solutions GmbH</strong> was founded to channel this experience into our own products: our own hosting platform (in development), an industry solution for SMBs (Easy &amp; Smart Booking), and focused consulting for companies that need real engineering instead of PowerPoint.</p>
       <p><strong>AI is our coffee:</strong> daily, intense, indispensable. We test new models, integrate LLMs into real workflows, automate what can be automated. Not everyone needs everything right away. But everyone should know what's possible. We'd be happy to show you.</p>
       <p>What you get with us: <strong>direct contact</strong> with technical leadership, clean architecture without technical debt, and infrastructure that keeps working even when nobody is watching. No outsourcing. No junior teams. No marketing clichés.</p>
-      <div class="about-values">
-        <div class="about-val">
-          <h5>Accountability</h5>
-          <p>What we build, we run. One point of contact from start to finish.</p>
-        </div>
-        <div class="about-val">
-          <h5>Transparency</h5>
-          <p>Clear proposals, fair pricing, honest assessment - even when we don't profit from it.</p>
-        </div>
-        <div class="about-val">
-          <h5>Privacy first</h5>
-          <p>GDPR and FADP aren't a checkbox for us. They are the basis of every decision.</p>
-        </div>
-        <div class="about-val">
-          <h5>Long-term focus</h5>
-          <p>We build for the next 10 years - not for the next sprint.</p>
-        </div>
-      </div>
+    </div>
+  </div>
+  <div class="about-values rv rv-d2">
+    <div class="about-val">
+      <h5>Accountability</h5>
+      <p>What we build, we run. One point of contact from start to finish.</p>
+    </div>
+    <div class="about-val">
+      <h5>Transparency</h5>
+      <p>Clear proposals, fair pricing, honest assessment - even when we don't profit from it.</p>
+    </div>
+    <div class="about-val">
+      <h5>Privacy first</h5>
+      <p>GDPR and FADP aren't a checkbox for us. They are the basis of every decision.</p>
+    </div>
+    <div class="about-val">
+      <h5>Long-term focus</h5>
+      <p>We build for the next 10 years - not for the next sprint.</p>
     </div>
   </div>
 </div>
