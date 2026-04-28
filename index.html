@@ -66,12 +66,8 @@ h1 span{color:#6366f1;}
   <div class="lang">
     <a href="#" data-lang="de" class="active">DE</a>
     <a href="#" data-lang="en">EN</a>
-    <a href="#" data-lang="fr">FR</a>
-    <a href="#" data-lang="it">IT</a>
-    <a href="#" data-lang="es">ES</a>
-    <a href="#" data-lang="sr">SR</a>
   </div>
-  <a href="login.html" class="top-login" id="loginBtn">
+  <a href="/de/login.html" class="top-login" id="loginBtn">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg>
     <span id="loginLabel">Login</span>
   </a>
@@ -88,12 +84,8 @@ h1 span{color:#6366f1;}
 
 <script>
 var t={
-  de:{h:'hier entsteht <span>Grosses.</span>',l:'Login'},
-  en:{h:'something big is <span>coming.</span>',l:'Login'},
-  fr:{h:'quelque chose de grand <span>arrive.</span>',l:'Connexion'},
-  it:{h:'qualcosa di grande <span>sta arrivando.</span>',l:'Accedi'},
-  es:{h:'algo grande está <span>llegando.</span>',l:'Acceso'},
-  sr:{h:'nešto veliko <span>dolazi.</span>',l:'Prijava'}
+  de:{h:'hier entsteht <span>Grosses.</span>',l:'Login',p:'/de/login.html'},
+  en:{h:'something big is <span>coming.</span>',l:'Login',p:'/en/login.html'}
 };
 document.querySelectorAll('.lang a').forEach(function(a){
   a.addEventListener('click',function(e){
@@ -101,6 +93,8 @@ document.querySelectorAll('.lang a').forEach(function(a){
     var l=this.dataset.lang;
     document.getElementById('headline').innerHTML=t[l].h;
     document.getElementById('loginLabel').textContent=t[l].l;
+    document.getElementById('loginBtn').setAttribute('href',t[l].p);
+    document.documentElement.lang=l;
     document.querySelectorAll('.lang a').forEach(function(x){x.classList.remove('active');});
     this.classList.add('active');
   });
