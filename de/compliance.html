@@ -131,6 +131,12 @@ header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
 .n-btn{color:#fff !important;padding:7px 18px;border-radius:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-weight:600;transition:all .15s;}
 .n-btn:hover{background:#6366f1;border-color:#6366f1;}
 
+.lang-sw{display:flex;gap:2px;align-items:center;margin-left:8px;padding-left:12px;border-left:1px solid rgba(255,255,255,.08);}
+.lang-sw a{font-size:11px;color:rgba(255,255,255,.3);font-weight:500;padding:4px 6px;border-radius:4px;transition:all .15s;}
+.lang-sw a:hover{color:rgba(255,255,255,.7);}
+.lang-sw a.active{color:rgba(255,255,255,.8);background:rgba(255,255,255,.06);}
+@media(max-width:640px){.lang-sw{display:none;}}
+
 /* Mobile burger */
 .n-burger{display:none;background:none;border:1px solid rgba(255,255,255,.1);border-radius:6px;width:36px;height:36px;align-items:center;justify-content:center;cursor:pointer;color:#fff;}
 .n-burger svg{width:18px;height:18px;}
@@ -318,6 +324,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
       <a href="de.html#about">Über uns</a>
       <a href="mailto:info@rc-tech-solutions.com" class="n-btn">Kontakt</a>
     </div>
+      <div class="lang-sw"><a href="/de/compliance.html" class="active">DE</a><a href="/en/compliance.html">EN</a></div>
   </div>
   <div class="n-right">
     <button class="n-burger" id="burger" aria-label="Menu">
@@ -588,8 +595,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
 <footer>
   <div class="f-inner">
     <div class="f-brand">
-      <img src="/logo.png" alt="RC-Tech Solutions">
-      <strong>RC-Tech Solutions GmbH</strong>
+            <strong>RC-Tech Solutions GmbH</strong>
       <p>Compliance, Softwareentwicklung, Cloud Engineering, KI-Integration. Schweiz, mit EU-Hosting.</p>
       <div class="f-addr">
         Via Montalin 13<br>
