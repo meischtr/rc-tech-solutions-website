@@ -171,6 +171,36 @@ Sobald die GmbH notariell beglaubigt und das Fort-Knox-Setup aufgehoben ist, sol
 
 Übersetzungen (EN/FR/IT/ES/SR) werden nachgezogen, sobald der DE-Inhalt finalisiert ist. Bis dahin nur DE-Version aktiv.
 
+## Iteration 9 — SEO-Phase-A + Cloud Engineering Rename + Landingpage-Briefing (29.04. nachts)
+
+Strategische Erweiterung: Service-Landingpages für SEO. Recherche durch interne Strategie-Dokumente (Consulting-Strategie 2026, Marketing-Fahrplan 2026) ergab klare Service-Mappings und Pricing-Bereiche.
+
+**Phase A SEO-Basics umgesetzt** (alle 6 Sprachen + KI-Landingpage):
+- Meta-Description sprachgerecht erweitert (war zu generisch)
+- Keywords-Tags
+- canonical URLs
+- hreflang Cross-Linking aller Sprachversionen
+- Open Graph Tags (Social-Sharing für LinkedIn/Twitter/WhatsApp)
+- Twitter Card Tags
+- JSON-LD Schema.org (Organization + ProfessionalService auf de.html als Master)
+- Service-Schema auf ki-integrationen.html
+- sitemap.xml erstellt mit allen URLs + hreflang-Mapping
+- robots.txt mit Sitemap-Referenz erweitert (bleibt Fort-Knox bis Launch)
+
+**Cloud Engineering Rename**:
+- "Cloud-Infrastruktur" → "Cloud Engineering" in allen 6 Sprach-HTMLs (Service-Card + Expertise-Section + Footer)
+- AGB §3: Bullet umbenannt + um "Migration auf EU-Provider" erweitert
+- ki-integrationen.html Footer: ebenfalls umbenannt
+- AGB §1 Geltungsbereich: "Cloud-Infrastruktur" → "Cloud Engineering"
+
+**Landingpage-Briefing erstellt** (`BRIEFING-Landingpages-2026-04-28.md`):
+- Service-Mapping (Webseite-Cards ↔ Consulting-Strategie Service-Lines)
+- 4 vorgeschlagene Landingpages (Softwareentwicklung, Cloud Engineering, Beratung & Architektur, Compliance) mit Strukturvorschlag und Pricing-Hinweisen aus Recherche
+- Konkrete Briefing-Fragen (A1-A4, B1-B4, C1-C4, D1-D4) für Inhalts-Erstellung
+- Strategische Fragen (E: Buchungssystem-Beratung als 5. Page? F: Tech-DD eigene Page? G: Menu Dropdown vs. Anker?)
+
+EHB-SEO-Basics noch ausstehend — wird nach User-Feedback zu den Landingpages gemacht.
+
 ## Iteration 8 — Detail-Audit-Fixes (28.04. spät nachts, Audit-Pass)
 
 Systematischer Audit gegen fünf Kriterien (DSGVO / Schweizer Recht / Behauptung-vs-Wissen / EHB-RC-Tech-Trennung / Doku-Konsistenz). Sechs Fixes identifiziert und eingebaut:

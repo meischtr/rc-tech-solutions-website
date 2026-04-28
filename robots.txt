@@ -1,7 +1,14 @@
+# ============================================================
+# RC-Tech Solutions GmbH — robots.txt
+# ============================================================
+# Aktueller Status: FORT-KNOX-MODE (vor Launch)
+# Bei Launch-Tag: Disallow-Zeilen für Allow umstellen, sitemap.xml aktiv lassen
+# ============================================================
+
 User-agent: *
 Disallow: /
 
-# AI-Training-Crawler explizit blockieren
+# AI-Training-Crawler explizit blockieren (bleiben auch nach Launch geblockt)
 User-agent: GPTBot
 Disallow: /
 
@@ -56,5 +63,8 @@ Disallow: /
 User-agent: YouBot
 Disallow: /
 
-# RC-Tech Solutions - Stealth Mode bis Launch
+# Sitemap (wird bei Launch aktiviert, aber bereits hier referenziert für Vorbereitung)
+Sitemap: https://rc-tech-solutions.com/sitemap.xml
+
+# RC-Tech Solutions — Stealth Mode bis Launch
 # Kein Crawling, kein Indexing, kein KI-Training
