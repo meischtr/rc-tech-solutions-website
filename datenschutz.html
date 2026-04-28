@@ -121,7 +121,7 @@ footer .legal{display:flex;gap:24px;}
 </section>
 
 <div class="content">
-  <div class="stand">Stand: 28. April 2026 &middot; Version 2.5 &middot; zur Kanzlei-Prüfung 4. Mai 2026 vorgesehen</div>
+  <div class="stand">Stand: 28. April 2026 &middot; Version 2.6 &middot; zur Kanzlei-Prüfung 4. Mai 2026 vorgesehen</div>
 
   <div class="toc">
     <h4>Inhalt</h4>
@@ -183,7 +183,7 @@ footer .legal{display:flex;gap:24px;}
     <h2><span class="num">4.</span> Hosting &amp; Datenstandort</h2>
     <p>Die Infrastruktur von RC-Tech Solutions wird <strong>georedundant in der Europäischen Union</strong> betrieben. Primäre Applikations- und Datenbank-Server: <strong>Hetzner Online GmbH</strong>, Rechenzentren Nürnberg (Deutschland) und Helsinki (Finnland). Ein zusätzlicher Witness-Server für Ausfallsicherheit und VPN-Kontrollebene wird bei <strong>Infomaniak Network SA</strong> in Genf (Schweiz) betrieben.</p>
     <p>Externe, verschlüsselte Backups werden bei der <strong>IONOS SE</strong> in Frankfurt am Main (Deutschland, Konzernmutter United Internet AG, DAX-gelistet) vorgehalten. Der Edge-/WAF-Schutz (Anti-DDoS, Bot-Protection) erfolgt über <strong>Gcore S.à r.l.</strong> (Luxemburg), wobei die Edge-Lokationen auf EU-Regionen beschränkt sind.</p>
-    <p>Sämtliche Haupt-Anbieter sind ISO/IEC 27001 zertifiziert oder gleichwertig. Eine primäre Übertragung personenbezogener Daten in Drittstaaten ausserhalb der EU/des EWR findet nicht statt, mit Ausnahme der unter Abschnitt 6 und Abschnitt 12 genannten Sub-Auftragsverarbeiter.</p>
+    <p>Die wesentlichen Infrastruktur-Anbieter (Hetzner Online GmbH, Infomaniak Network SA, IONOS SE, AWS Europe SARL) sind ISO/IEC 27001 zertifiziert. Weitere Sub-Auftragsverarbeiter erfüllen branchenübliche Sicherheitsstandards mit dokumentierten Zertifizierungen oder gleichwertigen technisch-organisatorischen Massnahmen. Eine primäre Übertragung personenbezogener Daten in Drittstaaten ausserhalb der EU/des EWR findet nicht statt, mit Ausnahme der unter Abschnitt 6 genannten Sub-Auftragsverarbeiter.</p>
   </section>
 
   <section id="v5" class="block">
@@ -249,18 +249,19 @@ footer .legal{display:flex;gap:24px;}
 
   <section id="v10" class="block">
     <h2><span class="num">10.</span> Datensicherheit (TOM)</h2>
-    <p>Wir setzen umfangreiche <strong>technische und organisatorische Massnahmen</strong> zum Schutz Ihrer Daten ein:</p>
+    <p><strong>Geltungsbereich:</strong> Die nachfolgenden technischen und organisatorischen Massnahmen (TOM) gelten für unsere produktiven SaaS-Plattformen und Backend-Systeme, in denen personenbezogene Kundendaten verarbeitet werden (insbesondere EasyAndSmartBooking). Die Webseite rc-tech-solutions.com selbst ist ein statisches Informations-Angebot ohne Datenbank-Backend; dort gelten TLS/HSTS (siehe Ziff. 7) und Server-Log-Anonymisierung (siehe Ziff. 12).</p>
+    <p>Auf den produktiven SaaS-Plattformen setzen wir folgende Massnahmen ein:</p>
     <ul>
-      <li><strong>AES-256-GCM</strong> Verschlüsselung für sensible Daten (API-Keys, Credentials)</li>
+      <li><strong>AES-256-GCM</strong> Envelope-Encryption für sensible Felder (API-Keys, Credentials, ausgewählte CRM-Daten)</li>
       <li><strong>bcrypt</strong>-Hashing für Passwörter (12 Rounds)</li>
       <li><strong>SSH-Key</strong>-basierter Serverzugang (kein Passwort-Login)</li>
       <li>Rollenbasierte Zugriffskontrolle (RBAC) mit Audit-Logging</li>
-      <li>Automatisierte tägliche Backups mit verschlüsselter Speicherung</li>
-      <li>Firewall mit Whitelist-Prinzip und DDoS-Schutz</li>
+      <li>Automatisierte tägliche Backups mit verschlüsselter Speicherung (rolling 30-Tage-Retention)</li>
+      <li>Firewall mit Whitelist-Prinzip und DDoS-Schutz über Edge-Provider</li>
       <li>Fail2Ban gegen Brute-Force-Angriffe</li>
       <li>Regelmässige Sicherheits-Updates und Vulnerability-Scans</li>
     </ul>
-    <p>Detaillierte Informationen zu unseren TOM werden auf Anfrage zur Verfügung gestellt.</p>
+    <p>Detaillierte Informationen zu unseren TOM werden im Rahmen eines Auftragsverarbeitungsvertrags (AVV) bzw. auf konkrete Anfrage zur Verfügung gestellt.</p>
   </section>
 
   <section id="v11" class="block">
@@ -305,7 +306,7 @@ footer .legal{display:flex;gap:24px;}
     <p>RC-Tech Solutions setzt KI-gestützte Werkzeuge auf <strong>drei klar getrennten Wegen</strong> ein, die unterschiedlichen DSGVO-Konstellationen unterliegen. Wichtig für die Abgrenzung: RC-Tech tritt einerseits als <strong>Hersteller eigener SaaS-Produkte</strong> auf (z.&nbsp;B. EasyAndSmartBooking als Eigenprodukt aus eigenem Haus &mdash; siehe Ziff. 5), andererseits als <strong>Dienstleisterin für Kundenprojekte</strong> (Beratung, Softwareentwicklung, KI-Integration). Die jeweilige KI-Architektur unterscheidet sich entsprechend.</p>
 
     <h3>14.1 Eigene Entwicklungs-Werkzeuge (Pair-Programming)</h3>
-    <p>RC-Tech setzt zur Erbringung von Softwareentwicklungs- und Beratungsleistungen KI-gestützte Werkzeuge ein, insbesondere <strong>Claude Code</strong> der <strong>Anthropic PBC</strong> (548 Market Street PMB 90375, San Francisco, CA 94104, USA) als Pair-Programming-Tool. Dabei werden ausschliesslich RC-Tech-eigene Code-Bestände, Dokumentation und Architektur-Konzepte verarbeitet. <strong>Vertrauliche Kundendaten werden nicht an diese Entwicklungs-KI übermittelt.</strong> Sämtliche KI-generierten Arbeitsergebnisse werden vor der Auslieferung an den Kunden manuell geprüft, getestet und freigegeben. Bei Beratungs- oder Review-Aufträgen, bei denen KI-Unterstützung mit Kundendaten sinnvoll ist, wird die Datenübertragung vorab mit dem Kunden abgestimmt und vertraglich geregelt. Rechtsgrundlage für den hierbei stattfindenden Drittlandtransfer sind das <strong>EU&ndash;US Data Privacy Framework</strong> (Adequacy Decision der EU-Kommission vom 10. Juli 2023, Anthropic-zertifiziert) sowie ergänzend Standardvertragsklauseln.</p>
+    <p>RC-Tech setzt zur Erbringung von Softwareentwicklungs- und Beratungsleistungen KI-gestützte Werkzeuge ein, insbesondere <strong>Claude Code</strong> der <strong>Anthropic PBC</strong> (548 Market Street PMB 90375, San Francisco, CA 94104, USA) als Pair-Programming-Tool. Dabei werden ausschliesslich RC-Tech-eigene Code-Bestände, Dokumentation und Architektur-Konzepte verarbeitet. <strong>Vertrauliche Kundendaten werden nicht an diese Entwicklungs-KI übermittelt.</strong> Sämtliche KI-generierten Arbeitsergebnisse werden vor der Auslieferung an den Kunden manuell geprüft, getestet und freigegeben. Bei Beratungs- oder Review-Aufträgen, bei denen KI-Unterstützung mit Kundendaten sinnvoll ist, wird die Datenübertragung vorab mit dem Kunden abgestimmt und vertraglich geregelt. Rechtsgrundlage für den hierbei stattfindenden Drittlandtransfer sind primär die EU-Standardvertragsklauseln (SCCs) gemäss Durchführungsbeschluss (EU) 2021/914, ergänzt durch ein Transfer Impact Assessment. Soweit Anthropic eine gültige Zertifizierung unter dem <strong>EU&ndash;US Data Privacy Framework</strong> (Adequacy Decision der EU-Kommission vom 10. Juli 2023) aufrechterhält, kommt diese als zusätzliche Rechtsgrundlage in Betracht; bei Wegfall der Adequacy Decision bleiben die SCCs als primäre Grundlage bestehen.</p>
 
     <h3>14.2 KI-Funktionen in den RC-Tech-eigenen SaaS-Plattformen (EasyAndSmartBooking)</h3>
     <p>Für die <strong>RC-Tech-eigenen SaaS-Produkte</strong>, insbesondere <strong>EasyAndSmartBooking</strong> als Eigenprodukt aus eigenem Haus (Buchungs-Chatbot, Übersetzungen in fünf Sprachen, CRM-Profil-Zusammenfassung mit Pseudonymisierung, Admin-Support mit PII-Sanitizer, Bewertungs-Moderation, KI-gestützte Texterstellung sowie der zukünftige Voice Agent), wurde eine bewusste, einheitliche KI-Architektur gewählt: Claude-Modelle der Anthropic PBC, bezogen über <strong>AWS Bedrock in der EU-Region <code>eu-central-1</code> (Frankfurt am Main)</strong>. Vertragspartner: <strong>AWS Europe SARL</strong> (Luxemburg). Die KI-Inferenz erfolgt vollständig innerhalb der AWS-EU-Region &mdash; Daten verlassen das EU/EWR-Gebiet nicht. Anthropic PBC agiert als Sub-Auftragsverarbeiter über AWS Bedrock ohne direkten Datenfluss in die USA.</p>

@@ -171,6 +171,43 @@ Sobald die GmbH notariell beglaubigt und das Fort-Knox-Setup aufgehoben ist, sol
 
 Übersetzungen (EN/FR/IT/ES/SR) werden nachgezogen, sobald der DE-Inhalt finalisiert ist. Bis dahin nur DE-Version aktiv.
 
+## Iteration 8 — Detail-Audit-Fixes (28.04. spät nachts, Audit-Pass)
+
+Systematischer Audit gegen fünf Kriterien (DSGVO / Schweizer Recht / Behauptung-vs-Wissen / EHB-RC-Tech-Trennung / Doku-Konsistenz). Sechs Fixes identifiziert und eingebaut:
+
+**Iteration 8 — Änderungen:**
+
+| Bereich | Datei | Änderung |
+|---|---|---|
+| RC-Tech AGB §4 | `agb.html` | Fester Stundensatz CHF 160 entfernt → "projekt-individuell vereinbarte Stunden- oder Tagessätze gemäss Einzelvertrag oder aktuellem Angebot". Beratungssätze sind nicht standardisiert |
+| RC-Tech AGB §14 | `agb.html` | Restrukturiert von 2 auf **3 Wege** (analog zu Datenschutz §14): 14.1 Pair-Programming, 14.2 Eigene SaaS-Produkte, 14.3 NEU: Kundenprojekte mit projekt-individueller Modell-Wahl |
+| RC-Tech AGB | `agb.html` Stand-Zeile | V2.6 → **V2.7** |
+| RC-Tech Datenschutz §4 | `datenschutz.html` | "Sämtliche Haupt-Anbieter ISO 27001 zertifiziert" → präzise: "Wesentliche Infrastruktur-Anbieter (Hetzner, Infomaniak, IONOS, AWS) sind ISO/IEC 27001 zertifiziert. Weitere Sub-Auftragsverarbeiter erfüllen branchenübliche Standards" — keine Pauschal-Behauptung mehr |
+| RC-Tech Datenschutz §10 | `datenschutz.html` | Neuer Geltungsbereich-Absatz am Anfang: TOM gelten für produktive SaaS-Plattformen, NICHT für die statische rc-tech-solutions.com-Webseite (für die gelten TLS/HSTS aus §7 und Server-Log-Anonymisierung aus §12) |
+| RC-Tech Datenschutz §14.1 | `datenschutz.html` | DPF-Wording robuster gegen Wegfall: SCCs sind primäre Rechtsgrundlage, DPF nur "soweit aufrechterhalten" als zusätzlich. Bei Schrems-III-Wegfall fällt die Datenschutzerklärung nicht in sich zusammen |
+| RC-Tech Datenschutz | `datenschutz.html` Stand-Zeile | V2.5 → **V2.6** |
+| EHB AGB §4 | `TermsPage.tsx` | "Stripe, Inc. bzw. verbundene Gesellschaft" → "Stripe Payments Europe Ltd. (Dublin, Irland) bzw. verbundene EU-Gesellschaft" — konsistent zu §6, kein versehentlicher US-Datenfluss-Eindruck |
+| EHB AGB | `TermsPage.tsx` Stand-Zeile | V3.4 → **V3.5** |
+
+**Was im Audit als sauber bestätigt wurde** (keine Änderung nötig):
+- Subprozessor-Liste vollständig und gruppiert (V2.5 §6)
+- Aufbewahrungsfristen sauber differenziert (6 Kategorien)
+- IP-Modelle (3 Stufen) konsistent
+- Haftungs-Klausel mit Erfüllungsgehilfen-Anerkennung (V2.6)
+- Customer-Brain als Mensch-im-Loop / Art. 22 DSGVO
+- US-Kunden-Ausschluss in beiden AGB §1
+- Voice Agent als "in Vorbereitung" markiert
+- Querverweise (6.2, 4, 14, 6.6) funktionieren alle
+- EHB ↔ RC-Tech sauber getrennt (Eigenprodukt vs. Dachfirma)
+- Zukunftsklauseln in §6.6 (RC-Tech) und §6/§13 (EHB) → erlauben neue Produkte/Subprozessoren ohne AGB-Update
+
+**Audit-Bestätigung:**
+1. ✅ DSGVO-konform — alle Verarbeitungs-Tätigkeiten dokumentiert mit Rechtsgrundlagen
+2. ✅ Schweizer Recht — kein Verstoss gegen OR Art. 100 (zwingend), Art. 101 (Erfüllungsgehilfe), revDSG
+3. ✅ Wissen statt Behauptung — pauschale Aussagen präzisiert, ISO-27001-Behauptung auf belegbare Anbieter beschränkt
+4. ✅ EHB ↔ RC-Tech Trennung — Eigenprodukt-Klausel in §1, drei KI-Wege in §14
+5. ✅ Interne Doku — CHANGELOG + STALE-NOTICE führen den vollständigen Audit-Trail
+
 ## Iteration 7 — Haftungs-Klausel + Mobile-Header (28.04. ganz spät nachts)
 
 Zwei Themen vom finalen Sichten:
@@ -301,8 +338,8 @@ Nach erstem Sichten kamen drei Wünsche dazu:
 
 ```
 rc-tech-solutions-webseite/
-├── agb.html                                            (V2.1 → V2.6)
-├── datenschutz.html                                    (V2.1 → V2.5)
+├── agb.html                                            (V2.1 → V2.7)
+├── datenschutz.html                                    (V2.1 → V2.6)
 ├── de.html, en.html, fr.html, it.html, es.html, sr.html (KI-Integration-Service + No-US + Landingpage-Link + neutrale Tags)
 ├── ki-integrationen.html                                (NEU — Landingpage, Stack-Sektion provider-agnostisch)
 ├── CHANGELOG-2026-04-28-Konsistenz-Korrekturen.md       (NEU)
@@ -310,7 +347,7 @@ rc-tech-solutions-webseite/
 └── datenschutz.pdf                                      (GELÖSCHT — V2.0-Altstand, nicht synchron)
 
 easyandsmartbooking-webseite/src/pages/marketing/
-├── TermsPage.tsx                                       (V3 → V3.4)
+├── TermsPage.tsx                                       (V3 → V3.5)
 └── PrivacyPage.tsx                                     (V3 → V3.4)
 
 Firmenunterlagen/Recht/Compliance/Webseiten/

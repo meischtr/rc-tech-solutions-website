@@ -106,7 +106,7 @@ footer .legal{display:flex;gap:24px;}
 </section>
 
 <div class="content">
-  <div class="stand">Stand: 28. April 2026 &middot; Version 2.6 &middot; Schweizer Recht &middot; zur Kanzlei-Prüfung 4. Mai 2026 vorgesehen</div>
+  <div class="stand">Stand: 28. April 2026 &middot; Version 2.7 &middot; Schweizer Recht &middot; zur Kanzlei-Prüfung 4. Mai 2026 vorgesehen</div>
 
   <section class="block">
     <h2><span class="num">1.</span> Geltungsbereich</h2>
@@ -142,7 +142,7 @@ footer .legal{display:flex;gap:24px;}
     <p>Abrechnung erfolgt, je nach Vertragstyp:</p>
     <ul>
       <li><strong>Festpreisprojekte:</strong> nach Meilensteinen oder bei Abnahme</li>
-      <li><strong>Zeit- und Aufwand (Time &amp; Material):</strong> monatliche Rechnungsstellung zum Stundensatz CHF 160 (netto), sofern nicht abweichend vereinbart</li>
+      <li><strong>Zeit- und Aufwand (Time &amp; Material):</strong> monatliche Rechnungsstellung zu projekt-individuell vereinbarten Stunden- oder Tagessätzen gemäss Einzelvertrag oder aktuellem Angebot</li>
       <li><strong>SaaS / Hosting / Wartung:</strong> monatlich oder jährlich im Voraus</li>
     </ul>
     <p>Zahlungsziel: 30 Tage netto ab Rechnungsdatum. Bei Zahlungsverzug werden Verzugszinsen von 5 % gemäss Schweizer OR Art. 104 geschuldet.</p>
@@ -233,9 +233,11 @@ footer .legal{display:flex;gap:24px;}
 
   <section class="block">
     <h2><span class="num">14.</span> Einsatz von KI-Werkzeugen und automatisierten Systemen</h2>
-    <p>RC-Tech setzt zur Erbringung von Softwareentwicklungs- und Beratungsleistungen KI-gestützte Werkzeuge ein, insbesondere Modelle der Anthropic PBC (Claude Code als Pair-Programming-Tool). <strong>Vertrauliche Kundendaten werden im Entwicklungsprozess grundsätzlich nicht an externe KI-Dienste übermittelt.</strong> Sämtliche KI-generierte Arbeitsergebnisse werden vor der Auslieferung an den Kunden manuell geprüft, getestet und freigegeben. Bei Beratungs- oder Review-Aufträgen, bei denen KI-Unterstützung sinnvoll ist, wird die Datenübertragung vorab mit dem Kunden abgestimmt und vertraglich geregelt.</p>
-    <p>KI-gestützte Produkt-Funktionen innerhalb der von RC-Tech betriebenen SaaS-Plattformen (z.&nbsp;B. Buchungs-Chatbot auf EasyAndSmartBooking) erfolgen über <strong>AWS Bedrock in der EU-Region <code>eu-central-1</code></strong> (AWS Europe SARL, Luxemburg) &mdash; Details siehe <a href="datenschutz.html#v14">Datenschutzerklärung Ziff.&nbsp;14</a>. Die betreffenden Systeme erfüllen die Transparenzpflichten nach Art. 50 der Verordnung (EU) 2024/1689 (EU AI Act) und werden ausdrücklich als KI-gestützte Assistenten gekennzeichnet.</p>
-    <p>RC-Tech verarbeitet keine besonderen Kategorien personenbezogener Daten im Sinne von Art. 9 DSGVO im Rahmen der KI-gestützten Funktionen. Eine Hochrisiko-KI im Sinne von Annex III AI Act liegt nicht vor.</p>
+    <p>RC-Tech setzt KI-gestützte Werkzeuge auf <strong>drei klar getrennten Wegen</strong> ein, die unterschiedlichen Datenschutz-Konstellationen unterliegen:</p>
+    <p><strong>14.1 Eigene Entwicklungs-Werkzeuge (Pair-Programming).</strong> RC-Tech setzt zur Erbringung von Softwareentwicklungs- und Beratungsleistungen KI-gestützte Werkzeuge ein, insbesondere Modelle der Anthropic PBC (Claude Code als Pair-Programming-Tool). <strong>Vertrauliche Kundendaten werden im Entwicklungsprozess grundsätzlich nicht an externe KI-Dienste übermittelt.</strong> Sämtliche KI-generierte Arbeitsergebnisse werden vor der Auslieferung an den Kunden manuell geprüft, getestet und freigegeben.</p>
+    <p><strong>14.2 KI-Funktionen in den RC-Tech-eigenen SaaS-Produkten.</strong> KI-gestützte Produkt-Funktionen innerhalb der von RC-Tech betriebenen SaaS-Plattformen (z.&nbsp;B. Buchungs-Chatbot auf EasyAndSmartBooking als Eigenprodukt) erfolgen über <strong>AWS Bedrock in der EU-Region <code>eu-central-1</code></strong> (AWS Europe SARL, Luxemburg) als bewusste Architektur-Entscheidung. Anthropic agiert dabei als Sub-Auftragsverarbeiter über AWS ohne direkten Datenfluss in die USA. Details siehe <a href="datenschutz.html#v14">Datenschutzerklärung Ziff.&nbsp;14</a>. Die betreffenden Systeme erfüllen die Transparenzpflichten nach Art. 50 der Verordnung (EU) 2024/1689 (EU AI Act).</p>
+    <p><strong>14.3 KI-Integration in Kundenprojekten.</strong> Bei Kundenprojekten mit KI-Integrations-Auftrag (siehe Ziff. 3) ist die Modell- und Hosting-Wahl <strong>projekt-individuell</strong> &mdash; je nach Use-Case und Compliance-Anforderungen des Kunden kommen z.&nbsp;B. AWS Bedrock EU, Azure OpenAI Service in EU-Regionen, Google Vertex AI <code>europe-west</code> oder lokale/Open-Source-Modelle auf Kunden-Infrastruktur zum Einsatz. Die konkrete Architektur, Datenflüsse und Sub-Auftragsverarbeiter werden im jeweiligen Einzelvertrag und im projektspezifischen AVV verbindlich geregelt.</p>
+    <p>RC-Tech verarbeitet im Rahmen der eigenen KI-gestützten Funktionen keine besonderen Kategorien personenbezogener Daten im Sinne von Art. 9 DSGVO. Eine Hochrisiko-KI im Sinne von Annex III AI Act liegt nicht vor.</p>
   </section>
 
   <section class="block">
