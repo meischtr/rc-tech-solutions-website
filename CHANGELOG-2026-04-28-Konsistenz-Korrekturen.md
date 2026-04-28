@@ -28,7 +28,7 @@ Bei einer internen Konsistenz-Prüfung am 28. April 2026 wurden mehrere Inkonsis
 | RC-Tech Landingpage | `ki-integrationen.html` Stack-Sektion (Iteration 2) | Vier KI-Modell-Optionen statt nur Claude: Claude (Bedrock-EU bevorzugt), OpenAI über Azure EU, Gemini über Vertex EU, lokale/Open-Source-Modelle |
 | RC-Tech Landingpage | `ki-integrationen.html` Hero-Trust-Zeile (Iteration 2) | "AWS Bedrock EU-Region" → "EU-Hosting für Modelle und Daten" / "Modell-Wahl projekt-individuell" |
 | Cleanup | `agb.pdf`, `datenschutz.pdf` | **Gelöscht** (waren V2.0-Stände vom 24.4., nicht synchron mit HTML — Quelle der Wahrheit ist das HTML) |
-| Firmenunterlagen-Snapshots | `Quellen/Recht/Compliance/Webseiten/STALE-NOTICE-2026-04-28.md` | **Neu:** STALE-Notiz über veraltete Snapshot-PDFs in den Firmenunterlagen — diese müssen vor 4.5. mit dem PDF-Generator regeneriert werden |
+| Firmenunterlagen-Snapshots | `rc-tech-solutions-webseite/STALE-NOTICE-2026-04-28.md` | **Neu:** STALE-Notiz über veraltete Snapshot-PDFs in den Firmenunterlagen — diese müssen vor 4.5. mit dem PDF-Generator regeneriert werden |
 | RC-Tech Datenschutz | `datenschutz.html` §6 | Hinweis auf produktspezifische Sub-Auftragsverarbeiter (Twilio, Google, Microsoft, Meta, fiskaly) für EHB-Kontext ergänzt |
 | RC-Tech Datenschutz | `datenschutz.html` Stand-Zeile | V2.1 → V2.2, Datum 26.4. → 28.4. |
 | RC-Tech Webseite (NEU) | `ki-integrationen.html` | **Neu erstellt:** Standalone-Landingpage für KI-Integration als Vorbereitung der späteren Domain-Redirects (ai-integrationen.ch, ki-integrationen.ch, ai-hilfe-schweiz.ch, ki-hilfe-schweiz.ch). Aktuell verlinkt im Footer der Hauptseite, noindex/nofollow/noarchive aktiv. |
@@ -500,8 +500,8 @@ easyandsmartbooking-webseite/src/pages/marketing/
 ├── PrivacyPage.tsx                                     (V3 → V3.4)
 └── motion.tsx                                          (UPD — safeThreshold für mobile FadeIn-Bug)
 
-Quellen/Recht/Compliance/Webseiten/
-└── STALE-NOTICE-2026-04-28.md                           (NEU — Snapshots in Firmenunterlagen veraltet, vor 4.5. regenerieren)
+rc-tech-solutions-webseite/
+└── STALE-NOTICE-2026-04-28.md                           (NEU — Status-Notiz: PDFs in Firmenunterlagen veraltet, vor 4.5. regenerieren)
 ```
 
 ---
