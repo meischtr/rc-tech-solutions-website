@@ -171,6 +171,38 @@ Sobald die GmbH notariell beglaubigt und das Fort-Knox-Setup aufgehoben ist, sol
 
 Übersetzungen (EN/FR/IT/ES/SR) werden nachgezogen, sobald der DE-Inhalt finalisiert ist. Bis dahin nur DE-Version aktiv.
 
+## Iteration 10 — Service-Landingpages + Dropdown-Menu (29.04. nachts)
+
+Strategische Erweiterung umgesetzt: 3 neue Service-Landingpages plus Dropdown-Navigation.
+
+**Neue Landingpages (DE-Master, andere Sprachen folgen nach Inhalts-Sign-off):**
+
+| Page | URL | Living-Proof-Story |
+|---|---|---|
+| Compliance &amp; Datenschutz | `/compliance.html` | Eigene RC-Tech-Datenschutzerklärung als Beispiel |
+| Softwareentwicklung | `/softwareentwicklung.html` | EHB als Showcase (220+ Features, Multi-Tenant, KI) |
+| Cloud Engineering | `/cloud-engineering.html` | Eigener EU-Stack-Aufbau (Hetzner, Infomaniak, IONOS, Gcore) |
+
+**Pricing-Anker auf jeder Landingpage:**
+- Compliance: Audit ab CHF 6&apos;000 / Template-Pack ab CHF 3&apos;500 / Spot-Beratung CHF 240/h
+- Softwareentwicklung: Discovery ab CHF 1&apos;800
+- Cloud Engineering: Migration-Assessment ab CHF 3&apos;800 / Migration Klein 8-15k / Mid 20-50k
+
+**Hauptseite-Updates (alle 6 Sprachen):**
+- Service-Cards mit "Mehr →"-Links zu allen 4 Service-Landingpages (Software, Cloud, KI, Compliance)
+- Beratung &amp; Architektur, SaaS-Hosting, Wartung &amp; Support bleiben Service-Cards ohne Detail-Page (überschneiden sich, sind self-contained, oder gehören zu Saasiro-Stealth)
+- Top-Menu Dropdown: Services ▾ → Software / Cloud / KI / Compliance / "Alle Services im Überblick"
+- Mobile-Burger: flache Liste mit Section-Headers
+- Footer-Services-Block: alle 4 Landingpages + Beratung-Anker
+
+**Tech:**
+- CSS-only Dropdown (Hover + Focus, keine JS), keyboard-accessible
+- sitemap.xml um 3 neue URLs erweitert
+- CHANGELOG dokumentiert Iteration 10
+
+**Ehrlich-Bremsen-Notiz:**
+4 Landingpages (mit KI-Integration) statt ursprünglich diskutierten 6. Beratung &amp; Architektur als Anker-Section auf Hauptseite (überschneidet sich mit anderen Services). Tech-DD bleibt opportunistisch, ohne eigene Page. Buchungssystem-Beratung: weggelassen (potenzieller COI mit EHB-Marke).
+
 ## Iteration 9 — SEO-Phase-A + Cloud Engineering Rename + Landingpage-Briefing (29.04. nachts)
 
 Strategische Erweiterung: Service-Landingpages für SEO. Recherche durch interne Strategie-Dokumente (Consulting-Strategie 2026, Marketing-Fahrplan 2026) ergab klare Service-Mappings und Pricing-Bereiche.

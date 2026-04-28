@@ -75,6 +75,20 @@ header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
 .n-links{display:flex;gap:24px;align-items:center;}
 .n-links a{font-size:13px;color:rgba(255,255,255,.45);font-weight:500;transition:color .2s;}
 .n-links a:hover{color:#fff;}
+.n-dd{position:relative;}
+.n-dd-trigger{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.45);font-weight:500;cursor:pointer;transition:color .2s;}
+.n-dd-trigger:hover{color:#fff;}
+.n-dd-trigger svg{width:10px;height:10px;opacity:.6;transition:transform .2s;}
+.n-dd:hover .n-dd-trigger,.n-dd:focus-within .n-dd-trigger{color:#fff;}
+.n-dd:hover .n-dd-trigger svg,.n-dd:focus-within .n-dd-trigger svg{transform:rotate(180deg);}
+.n-dd-menu{position:absolute;top:calc(100% + 14px);left:-12px;min-width:260px;padding:8px;background:rgba(9,9,11,.95);-webkit-backdrop-filter:blur(20px) saturate(1.8);backdrop-filter:blur(20px) saturate(1.8);border:1px solid rgba(255,255,255,.06);border-radius:10px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s;display:flex;flex-direction:column;gap:2px;z-index:100;box-shadow:0 16px 40px rgba(0,0,0,.4);}
+.n-dd:hover .n-dd-menu,.n-dd:focus-within .n-dd-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.n-dd-menu a{display:flex;align-items:center;gap:8px;padding:9px 12px;font-size:13px;color:rgba(255,255,255,.6);border-radius:6px;white-space:nowrap;font-weight:500;}
+.n-dd-menu a:hover{background:rgba(255,255,255,.04);color:#fff;}
+.n-dd-menu a svg.dd-spark{width:11px;height:11px;opacity:.6;color:#a5b4fc;margin-left:4px;}
+.n-dd-divider{height:1px;background:rgba(255,255,255,.06);margin:6px 8px;}
+.n-dd-overview{font-size:12px;color:rgba(255,255,255,.4) !important;}
+.n-mobile-section{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3);padding:12px 16px 6px;}
 .n-btn{color:#fff !important;padding:7px 18px;border-radius:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-weight:600;transition:all .15s;}
 .n-btn:hover{background:#6366f1;border-color:#6366f1;}
 
@@ -314,8 +328,17 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
 <div class="n">
   <a href="#" class="n-logo"><img src="logo.png" alt="RC-Tech Solutions" width="120" height="44"></a>
   <div class="n-links">
-    <a href="#services">Services</a>
-    <a href="ki-integrationen.html" style="display:inline-flex;align-items:center;gap:5px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:.6;"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09zM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456z"/></svg>AI Integration</a>
+    <div class="n-dd" tabindex="0">
+      <span class="n-dd-trigger">Services<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6l4 4 4-4"/></svg></span>
+      <div class="n-dd-menu">
+        <a href="softwareentwicklung.html">Software Development</a>
+        <a href="cloud-engineering.html">Cloud Engineering</a>
+        <a href="ki-integrationen.html">AI Integration<svg class="dd-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09zM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456z"/></svg></a>
+        <a href="compliance.html">Compliance &amp; Data Protection</a>
+        <div class="n-dd-divider"></div>
+        <a href="#services" class="n-dd-overview">All services overview &rarr;</a>
+      </div>
+    </div>
     <a href="#produkte">Products</a>
     <a href="#about">About</a>
     <a href="#contact" class="n-btn">Contact</a>
@@ -327,8 +350,13 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
 </div>
 </header>
 <div class="n-mobile" id="nMobile">
-  <a href="#services">Services</a>
+  <div class="n-mobile-section">Services</div>
+  <a href="softwareentwicklung.html">Software Development</a>
+  <a href="cloud-engineering.html">Cloud Engineering</a>
   <a href="ki-integrationen.html">AI Integration</a>
+  <a href="compliance.html">Compliance &amp; Data Protection</a>
+  <a href="#services">All services</a>
+  <div class="n-mobile-section">More</div>
   <a href="#produkte">Products</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
@@ -391,13 +419,15 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
       <svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25M6.75 17.25L1.5 12l5.25-5.25M14.25 4.5l-4.5 15"/></svg>
       <h3>Software Development</h3>
       <p>Web applications, SaaS products, APIs. Full-stack, TypeScript-first, built to be maintainable.</p>
-      <div class="svc-t">React · Next.js · Node.js · PostgreSQL</div>
+      <div class="svc-t">React · Node.js · PostgreSQL · EU Hosting</div>
+      <a href="softwareentwicklung.html" class="svc-link">Learn more<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
     <div class="svc">
       <svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/></svg>
       <h3>Cloud Engineering</h3>
       <p>We build and operate your cloud setup. Server architecture, automated deployments, monitoring, security. On Hetzner Cloud, in the EU.</p>
-      <div class="svc-t">Hetzner · Docker · CI/CD · Monitoring</div>
+      <div class="svc-t">Hetzner · Infomaniak · Gcore · OVH</div>
+      <a href="cloud-engineering.html" class="svc-link">Learn more<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
     <div class="svc">
       <svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.602H7.923a3.375 3.375 0 00-3.285 2.602l-2.268 9.64a4.5 4.5 0 00-.12 1.03v.228m19.5 0a3 3 0 01-3 3H5.25a3 3 0 01-3-3m19.5 0a3 3 0 00-3-3H5.25a3 3 0 00-3 3m16.5 0h.008v.008h-.008v-.008zm-3 0h.008v.008h-.008v-.008z"/></svg>
@@ -420,9 +450,10 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     </div>
     <div class="svc">
       <svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
-      <h3>Compliance</h3>
-      <p>Technical GDPR and FADP implementation. DPA, TOMs, encryption, audit logging, data export.</p>
-      <div class="svc-t">GDPR · FADP · DPA · AES-256</div>
+      <h3>Compliance &amp; Data Protection</h3>
+      <p>GDPR, Swiss FADP, EU AI Act. Audits, DPA creation, TOM documentation. We live our own compliance stack &mdash; and help you build yours.</p>
+      <div class="svc-t">GDPR · FADP · EU AI Act · DPA</div>
+      <a href="compliance.html" class="svc-link">Learn more<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
     <div class="svc">
       <svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495"/></svg>
@@ -654,11 +685,11 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
   </div>
   <div class="f-col">
     <h4>Services</h4>
-    <a href="#services">Development</a>
-    <a href="#services">Infrastructure</a>
-    <a href="#produkte">SaaS Hosting</a>
+    <a href="softwareentwicklung.html">Software Development</a>
+    <a href="cloud-engineering.html">Cloud Engineering</a>
     <a href="ki-integrationen.html">AI Integration</a>
-    <a href="#services">Consulting</a>
+    <a href="compliance.html">Compliance &amp; Data Protection</a>
+    <a href="#services">Consulting &amp; Architecture</a>
   </div>
   <div class="f-col">
     <h4>Products</h4>
