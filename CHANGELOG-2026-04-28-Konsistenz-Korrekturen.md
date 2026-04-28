@@ -21,7 +21,14 @@ Bei einer internen Konsistenz-Prüfung am 28. April 2026 wurden mehrere Inkonsis
 | RC-Tech AGB | `agb.html` §3 | Leistungsbereich "KI-Integration" als eigener Bullet aufgenommen |
 | RC-Tech AGB | `agb.html` §10 | Anthropic als Sub-AVV via AWS Bedrock qualifiziert (kein eigenständiger Drittanbieter mehr) |
 | RC-Tech AGB | `agb.html` §13 | Subunternehmer-Klausel um AVV-Hinweis und Widerspruchsrecht (Art. 28 DSGVO) ergänzt |
-| RC-Tech AGB | `agb.html` Stand-Zeile | V2.1 → V2.3, Datum 26.4. → 28.4. |
+| RC-Tech AGB | `agb.html` §3 (Iteration 2, V2.4) | KI-Integration provider-agnostisch formuliert: AWS Bedrock EU bevorzugt für Eigenprodukte, bei Kundenprojekten projekt-individuell (z. B. Bedrock EU, Azure OpenAI EU, Vertex AI EU, lokale Modelle) |
+| RC-Tech AGB | `agb.html` Stand-Zeile | V2.1 → V2.3 → **V2.4**, Datum 26.4. → 28.4. |
+| RC-Tech Webseite | `de/en/fr/it/es/sr.html` Service-Card (Iteration 2) | Tag-Liste auf "LLMs · EU-Hosting · Workflow-Audit · DSGVO" neutralisiert (Claude/Bedrock raus). "Mehr erfahren →"-Link auf `ki-integrationen.html` ergänzt. CSS für `.svc-link` hinzugefügt. |
+| RC-Tech Webseite | `de/en/fr/it/es/sr.html` Footer (Iteration 2) | KI-Integration als Eintrag in Services-Footer-Block ergänzt (sprachspezifisch übersetzt) |
+| RC-Tech Landingpage | `ki-integrationen.html` Stack-Sektion (Iteration 2) | Vier KI-Modell-Optionen statt nur Claude: Claude (Bedrock-EU bevorzugt), OpenAI über Azure EU, Gemini über Vertex EU, lokale/Open-Source-Modelle |
+| RC-Tech Landingpage | `ki-integrationen.html` Hero-Trust-Zeile (Iteration 2) | "AWS Bedrock EU-Region" → "EU-Hosting für Modelle und Daten" / "Modell-Wahl projekt-individuell" |
+| Cleanup | `agb.pdf`, `datenschutz.pdf` | **Gelöscht** (waren V2.0-Stände vom 24.4., nicht synchron mit HTML — Quelle der Wahrheit ist das HTML) |
+| Firmenunterlagen-Snapshots | `Firmenunterlagen/Recht/Compliance/Webseiten/STALE-NOTICE-2026-04-28.md` | **Neu:** STALE-Notiz über veraltete Snapshot-PDFs in den Firmenunterlagen — diese müssen vor 4.5. mit dem PDF-Generator regeneriert werden |
 | RC-Tech Datenschutz | `datenschutz.html` §6 | Hinweis auf produktspezifische Sub-Auftragsverarbeiter (Twilio, Google, Microsoft, Meta, fiskaly) für EHB-Kontext ergänzt |
 | RC-Tech Datenschutz | `datenschutz.html` Stand-Zeile | V2.1 → V2.2, Datum 26.4. → 28.4. |
 | RC-Tech Webseite (NEU) | `ki-integrationen.html` | **Neu erstellt:** Standalone-Landingpage für KI-Integration als Vorbereitung der späteren Domain-Redirects (ai-integrationen.ch, ki-integrationen.ch, ai-hilfe-schweiz.ch, ki-hilfe-schweiz.ch). Aktuell verlinkt im Footer der Hauptseite, noindex/nofollow/noarchive aktiv. |
@@ -164,19 +171,34 @@ Sobald die GmbH notariell beglaubigt und das Fort-Knox-Setup aufgehoben ist, sol
 
 Übersetzungen (EN/FR/IT/ES/SR) werden nachgezogen, sobald der DE-Inhalt finalisiert ist. Bis dahin nur DE-Version aktiv.
 
+## Iteration 2 — Konsolidierung am Abend des 28.04.
+
+Nach erstem Sichten kamen drei Wünsche dazu:
+
+1. **Sauber konsolidieren** — alte Stände entsorgen, eine Quelle der Wahrheit
+2. **Landingpage findbar machen** — vorher nirgends verlinkt, jetzt in Service-Card und Footer
+3. **Provider-Agnostik** — RC-Tech als Dachfirma ist nicht auf Claude festgelegt; bevorzugt für Eigenprodukte (EHB), bei Kundenprojekten modell-/anbieter-individuell
+
+Änderungen aus Iteration 2 sind in der Tabelle oben kenntlich gemacht. EHB-Texte wurden in Iteration 2 nicht mehr angefasst — dort ist die Bedrock-EU-Wahl eine bewusste Architektur-Entscheidung für das eigene Produkt und bleibt fest.
+
 ## Datei-Inventar dieser Iteration
 
 ```
 rc-tech-solutions-webseite/
-├── agb.html                                            (V2.1 → V2.3)
+├── agb.html                                            (V2.1 → V2.4)
 ├── datenschutz.html                                    (V2.1 → V2.2)
-├── de.html, en.html, fr.html, it.html, es.html, sr.html (KI-Integration-Service + No-US)
-├── ki-integrationen.html                                (NEU — Landingpage)
+├── de.html, en.html, fr.html, it.html, es.html, sr.html (KI-Integration-Service + No-US + Landingpage-Link + neutrale Tags)
+├── ki-integrationen.html                                (NEU — Landingpage, Stack-Sektion provider-agnostisch)
 ├── CHANGELOG-2026-04-28-Konsistenz-Korrekturen.md       (NEU)
+├── agb.pdf                                              (GELÖSCHT — V2.0-Altstand, nicht synchron)
+└── datenschutz.pdf                                      (GELÖSCHT — V2.0-Altstand, nicht synchron)
 
 easyandsmartbooking-webseite/src/pages/marketing/
 ├── TermsPage.tsx                                       (V3 → V3.2)
 └── PrivacyPage.tsx                                     (V3 → V3.2)
+
+Firmenunterlagen/Recht/Compliance/Webseiten/
+└── STALE-NOTICE-2026-04-28.md                           (NEU — Snapshots veraltet, vor 4.5. regenerieren)
 ```
 
 ---

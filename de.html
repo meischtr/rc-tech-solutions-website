@@ -123,6 +123,9 @@ header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;height:60px
 .svc h3{font-size:16px;font-weight:700;margin-bottom:8px;letter-spacing:-.2px;transition:color .3s;}
 .svc p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.65;}
 .svc-t{margin-top:16px;font-size:11px;color:rgba(255,255,255,.25);font-weight:500;letter-spacing:.3px;}
+.svc-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;font-weight:600;color:#a5b4fc;transition:gap .2s,color .2s;}
+.svc-link:hover{gap:10px;color:#c7d2fe;}
+.svc-link svg{width:12px;height:12px;}
 
 /* --- EXPERTISE --- */
 .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;}
@@ -387,8 +390,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     <div class="svc">
       <svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09zM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456z"/></svg>
       <h3>KI-Integration</h3>
-      <p>LLMs in echte Workflows integrieren. Mit Datenschutz-Architektur, EU-Hosting und nachvollziehbaren Ergebnissen. Pragmatisch und auf Dauer wartbar.</p>
-      <div class="svc-t">Claude · Bedrock-EU · Workflow-Audit · DSGVO</div>
+      <p>LLMs in echte Workflows integrieren. Modell- und Hosting-Wahl projekt-individuell, mit Datenschutz-Architektur und EU-Hosting. Pragmatisch und auf Dauer wartbar.</p>
+      <div class="svc-t">LLMs · EU-Hosting · Workflow-Audit · DSGVO</div>
+      <a href="ki-integrationen.html" class="svc-link">Details ansehen<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
     <div class="svc">
       <svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
@@ -629,6 +633,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     <a href="#services">Entwicklung</a>
     <a href="#services">Infrastruktur</a>
     <a href="#produkte">SaaS-Hosting</a>
+    <a href="ki-integrationen.html">KI-Integration</a>
     <a href="#services">Beratung</a>
   </div>
   <div class="f-col">
