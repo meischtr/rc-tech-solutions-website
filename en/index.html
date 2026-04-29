@@ -74,8 +74,7 @@ header{view-transition-name:rc-header;}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
 
 /* --- NAV --- */
-header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;padding-top:env(safe-area-inset-top, 0);height:calc(60px + env(safe-area-inset-top, 0));display:flex;align-items:center;background:rgba(9,9,11,.92);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.06);transition:transform .4s ease;}
-header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
+header{position:fixed;top:0;left:0;right:0;z-index:99;padding:0 48px;padding-top:env(safe-area-inset-top, 0);height:calc(60px + env(safe-area-inset-top, 0));display:flex;align-items:center;background:rgba(9,9,11,.92);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.06);}
 .n{max-width:1140px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;}
 .n-left{display:flex;align-items:center;gap:40px;}
 .n-right{display:flex;align-items:center;gap:8px;}
@@ -97,17 +96,21 @@ header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
 .n-dd-menu a svg.dd-spark{width:11px;height:11px;opacity:.6;color:#a5b4fc;margin-left:4px;}
 .n-dd-divider{height:1px;background:rgba(255,255,255,.06);margin:6px 8px;}
 .n-dd-overview{font-size:12px;color:rgba(255,255,255,.4) !important;}
-.n-mobile-section{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3);padding:12px 16px 6px;}
+.n-mobile-section{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);padding:24px 0 8px;}
+body.menu-open{overflow:hidden;}
 .n-btn{color:#fff !important;padding:7px 18px;border-radius:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-weight:600;transition:all .15s;}
 .n-btn:hover{background:#6366f1;border-color:#6366f1;}
 
 /* Mobile burger */
 .n-burger{display:none;background:none;border:1px solid rgba(255,255,255,.1);border-radius:6px;width:36px;height:36px;align-items:center;justify-content:center;cursor:pointer;color:#fff;}
 .n-burger svg{width:18px;height:18px;}
-.n-mobile{display:none;position:fixed;top:calc(60px + env(safe-area-inset-top, 0));left:0;right:0;background:rgba(9,9,11,.97);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;flex-direction:column;gap:4px;z-index:98;}
-.n-mobile.open{display:flex;}
-.n-mobile a{padding:12px 16px;border-radius:8px;font-size:15px;color:rgba(255,255,255,.7);font-weight:500;}
-.n-mobile a:hover,.n-mobile a:active{background:rgba(255,255,255,.05);color:#fff;}
+.n-mobile{display:none;position:fixed;inset:0;background:rgba(9,9,11,.98);-webkit-backdrop-filter:blur(24px) saturate(1.4);backdrop-filter:blur(24px) saturate(1.4);padding:calc(env(safe-area-inset-top, 0) + 80px) 32px env(safe-area-inset-bottom, 32px);flex-direction:column;gap:0;z-index:200;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .25s ease;}
+.n-mobile.open{display:flex;opacity:1;pointer-events:auto;}
+.n-mobile a{padding:16px 0;font-size:20px;color:rgba(255,255,255,.85);font-weight:600;border-bottom:1px solid rgba(255,255,255,.06);transition:color .15s;}
+.n-mobile a:hover,.n-mobile a:active{color:#fff;}
+.n-mobile-close{position:absolute;top:calc(env(safe-area-inset-top, 0) + 14px);right:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);padding:8px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.n-mobile-close:hover,.n-mobile-close:active{color:#fff;border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.08);}
+.n-mobile-close svg{width:18px;height:18px;}
 
 /* --- HERO --- */
 .hero-wrap{padding:0 48px;}
@@ -366,6 +369,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
 </div>
 </header>
 <div class="n-mobile" id="nMobile">
+  <button class="n-mobile-close" id="closeBurger" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6L18 18M6 18L18 6"/></svg>
+  </button>
   <div class="n-mobile-section">Services</div>
   <a href="software-development.html">Software Development</a>
   <a href="cloud-engineering.html">Cloud Engineering</a>
@@ -686,25 +692,13 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
 
 <script>
 (function(){
-  var b=document.getElementById('burger'),m=document.getElementById('nMobile');
-  // Header hide on scroll down, show on scroll up
-  var hdr=document.querySelector('header'),lastY=window.scrollY;
-  if(b)b.addEventListener('click',function(){
-    m.classList.toggle('open');
-    if(m.classList.contains('open'))hdr.classList.remove('nav-hidden');
-  });
-  document.querySelectorAll('.n-mobile a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});});
-
-  var mq=window.matchMedia('(max-width: 640px)');
-  window.addEventListener('scroll',function(){
-    if(!mq.matches){hdr.classList.remove('nav-hidden');return;}
-    var y=window.scrollY,menuOpen=m&&m.classList.contains('open');
-    if(!menuOpen){
-      if(y>lastY&&y>80)hdr.classList.add('nav-hidden');
-      else hdr.classList.remove('nav-hidden');
-    }
-    lastY=y;
-  },{passive:true});
+  var b=document.getElementById('burger'),m=document.getElementById('nMobile'),c=document.getElementById('closeBurger');
+  function openMenu(){m.classList.add('open');document.body.classList.add('menu-open');}
+  function closeMenu(){m.classList.remove('open');document.body.classList.remove('menu-open');}
+  if(b)b.addEventListener('click',function(){m.classList.contains('open')?closeMenu():openMenu();});
+  if(c)c.addEventListener('click',closeMenu);
+  document.querySelectorAll('.n-mobile a').forEach(function(a){a.addEventListener('click',closeMenu);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
   var els=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){
     var o=new IntersectionObserver(function(e){e.forEach(function(i){if(i.isIntersecting){i.target.classList.add('v');o.unobserve(i.target);}});},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
