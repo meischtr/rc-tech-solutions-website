@@ -278,6 +278,9 @@ header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
 .prod-stealth-badge{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#a5b4fc;padding:5px 11px;border-radius:5px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);margin-bottom:14px;}
 .prod-stealth-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#a5b4fc;animation:stealthPulse 2s ease-in-out infinite;}
 @keyframes stealthPulse{0%,100%{opacity:.4;box-shadow:0 0 0 0 rgba(165,180,252,.6);}50%{opacity:1;box-shadow:0 0 0 6px rgba(165,180,252,0);}}
+.prod-coming-badge{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#34d399;padding:5px 11px;border-radius:5px;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.25);margin-bottom:14px;}
+.prod-coming-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#34d399;animation:comingPulse 2s ease-in-out infinite;}
+@keyframes comingPulse{0%,100%{opacity:.5;box-shadow:0 0 0 0 rgba(52,211,153,.6);}50%{opacity:1;box-shadow:0 0 0 6px rgba(52,211,153,0);}}
 .prod-stealth-cta{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#a5b4fc;padding:10px 16px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);transition:all .2s;}
 .prod-stealth-cta:hover{gap:12px;color:#c7d2fe;background:rgba(99,102,241,.14);border-color:rgba(99,102,241,.35);}
 .prod-stealth-cta svg{width:14px;height:14px;}
@@ -587,9 +590,10 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
       </a>
     </div>
     <div class="prod-card">
+      <div class="prod-coming-badge">Launch Juni 2026</div>
       <div class="prod-tag">Branchenlösung</div>
       <div class="prod-name">Easy &amp; Smart Booking</div>
-      <div class="prod-desc">Buchungs- und Kassensystem für Beauty, Wellness, Fitness und Gesundheit. 220+ Features, KI-Chatbot, Multi-Tenant, Tablet-first - läuft auf eigener Infrastruktur.</div>
+      <div class="prod-desc">Buchungs- und Kassensystem für Beauty, Wellness, Fitness und Gesundheit. 220+ Features, KI-Chatbot, Multi-Tenant, Tablet-first - auf eigener EU-Infrastruktur.</div>
       <div class="prod-feat">
         <span>Online-Buchung</span>
         <span>POS / Kasse</span>
@@ -676,7 +680,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     <div class="about-text rv rv-d1">
       <h3>Software ist kein Selbstzweck. <em>Sie muss liefern.</em></h3>
       <p>Hinter RC-Tech Solutions steht keine Agentur, sondern ein Ingenieur mit über <strong>20 Jahren Erfahrung</strong> in Projektmanagement, IT-Security, Netzwerk und Softwareentwicklung. Von grossen Enterprise-Rollouts bis zu kompakten SaaS-Produkten - ich kenne beide Seiten.</p>
-      <p>Die <strong>RC-Tech Solutions GmbH</strong> wurde gegründet, um diese Erfahrung in eigene Produkte zu giessen: eine eigene Hosting-Plattform (in Entwicklung), eine Branchenlösung für KMUs (Easy &amp; Smart Booking) und fokussiertes Consulting für Unternehmen, die echtes Engineering brauchen statt PowerPoint.</p>
+      <p>Die <strong>RC-Tech Solutions GmbH</strong> wurde gegründet, um diese Erfahrung in eigene Produkte zu giessen: eine eigene Hosting-Plattform (in Entwicklung), eine Branchenlösung für KMUs (Easy &amp; Smart Booking, Launch Juni 2026) und fokussiertes Consulting für Unternehmen, die echtes Engineering brauchen statt PowerPoint.</p>
       <p><strong>KI ist unser Kaffee:</strong> täglich, intensiv, nicht wegzudenken. Wir testen neue Modelle, integrieren LLMs in echte Workflows, automatisieren, was sich automatisieren lässt. Nicht jeder braucht sofort alles. Aber jeder sollte wissen, was möglich ist. Zeigen wir Ihnen gerne.</p>
       <p>Was Sie bei uns bekommen: <strong>direkten Kontakt</strong> zur technischen Führung, saubere Architektur ohne technische Schulden, und Infrastruktur, die auch dann funktioniert, wenn keine Aufmerksamkeit mehr drauf liegt. Kein Outsourcing. Keine Junior-Teams. Keine Marketing-Floskeln.</p>
     </div>

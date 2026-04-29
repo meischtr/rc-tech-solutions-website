@@ -201,6 +201,9 @@ header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
 .prod-stealth-badge{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#a5b4fc;padding:5px 11px;border-radius:5px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);margin-bottom:14px;}
 .prod-stealth-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#a5b4fc;animation:stealthPulse 2s ease-in-out infinite;}
 @keyframes stealthPulse{0%,100%{opacity:.4;box-shadow:0 0 0 0 rgba(165,180,252,.6);}50%{opacity:1;box-shadow:0 0 0 6px rgba(165,180,252,0);}}
+.prod-coming-badge{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#34d399;padding:5px 11px;border-radius:5px;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.25);margin-bottom:14px;}
+.prod-coming-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#34d399;animation:comingPulse 2s ease-in-out infinite;}
+@keyframes comingPulse{0%,100%{opacity:.5;box-shadow:0 0 0 0 rgba(52,211,153,.6);}50%{opacity:1;box-shadow:0 0 0 6px rgba(52,211,153,0);}}
 .prod-stealth-cta{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#a5b4fc;padding:10px 16px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);transition:all .2s;}
 .prod-stealth-cta:hover{gap:12px;color:#c7d2fe;background:rgba(99,102,241,.14);border-color:rgba(99,102,241,.35);}
 .prod-stealth-cta svg{width:14px;height:14px;}
@@ -510,9 +513,10 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
       </a>
     </div>
     <div class="prod-card">
+      <div class="prod-coming-badge">Launching June 2026</div>
       <div class="prod-tag">Industry Solution</div>
       <div class="prod-name">Easy &amp; Smart Booking</div>
-      <div class="prod-desc">Booking and POS system for beauty, wellness, fitness and health. 220+ features, AI chatbot, multi-tenant, tablet-first - runs on our own infrastructure.</div>
+      <div class="prod-desc">Booking and POS system for beauty, wellness, fitness and health. 220+ features, AI chatbot, multi-tenant, tablet-first - on our own EU infrastructure.</div>
       <div class="prod-feat">
         <span>Online Booking</span>
         <span>POS / Checkout</span>
@@ -599,7 +603,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     <div class="about-text rv rv-d1">
       <h3>Software isn't an end in itself. <em>It has to deliver.</em></h3>
       <p>Behind RC-Tech Solutions is not an agency, but an engineer with over <strong>20 years of experience</strong> in project management, IT security, networking and software development. From large enterprise rollouts to compact SaaS products - I know both sides.</p>
-      <p><strong>RC-Tech Solutions GmbH</strong> was founded to channel this experience into our own products: our own hosting platform (in development), an industry solution for SMBs (Easy &amp; Smart Booking), and focused consulting for companies that need real engineering instead of PowerPoint.</p>
+      <p><strong>RC-Tech Solutions GmbH</strong> was founded to channel this experience into our own products: our own hosting platform (in development), an industry solution for SMBs (Easy &amp; Smart Booking, launching June 2026), and focused consulting for companies that need real engineering instead of PowerPoint.</p>
       <p><strong>AI is our coffee:</strong> daily, intense, indispensable. We test new models, integrate LLMs into real workflows, automate what can be automated. Not everyone needs everything right away. But everyone should know what's possible. We'd be happy to show you.</p>
       <p>What you get with us: <strong>direct contact</strong> with technical leadership, clean architecture without technical debt, and infrastructure that keeps working even when nobody is watching. No outsourcing. No junior teams. No marketing clichés.</p>
     </div>
