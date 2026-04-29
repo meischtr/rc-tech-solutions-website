@@ -125,7 +125,7 @@ header.nav-hidden{transform:translateY(-100%);pointer-events:none;}
 /* Mobile burger */
 .n-burger{display:none;background:none;border:1px solid rgba(255,255,255,.1);border-radius:6px;width:36px;height:36px;align-items:center;justify-content:center;cursor:pointer;color:#fff;}
 .n-burger svg{width:18px;height:18px;}
-.n-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(9,9,11,.97);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;flex-direction:column;gap:4px;z-index:98;}
+.n-mobile{display:none;position:fixed;top:calc(60px + env(safe-area-inset-top, 0));left:0;right:0;background:rgba(9,9,11,.97);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;flex-direction:column;gap:4px;z-index:98;}
 .n-mobile.open{display:flex;}
 .n-mobile a{padding:12px 16px;border-radius:8px;font-size:15px;color:rgba(255,255,255,.7);font-weight:500;}
 .n-mobile a:hover,.n-mobile a:active{background:rgba(255,255,255,.05);color:#fff;}
