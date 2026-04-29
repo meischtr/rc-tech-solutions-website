@@ -648,10 +648,13 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
 // Mobile menu + Header verstecken beim Runterscrollen, zeigen beim Hochscrollen
 (function(){
   var b=document.getElementById('burger'),m=document.getElementById('nMobile');
-  if(b)b.addEventListener('click',function(){m.classList.toggle('open');});
+  var hdr=document.querySelector('header'),lastY=window.scrollY;
+  if(b)b.addEventListener('click',function(){
+    m.classList.toggle('open');
+    if(m.classList.contains('open'))hdr.classList.remove('nav-hidden');
+  });
   document.querySelectorAll('.n-mobile a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});});
 
-  var hdr=document.querySelector('header'),lastY=window.scrollY;
   var mq=window.matchMedia('(max-width: 640px)');
   window.addEventListener('scroll',function(){
     if(!mq.matches){hdr.classList.remove('nav-hidden');return;}
