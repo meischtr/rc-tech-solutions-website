@@ -398,7 +398,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     <div class="uc-grid rv">
       <div class="uc">
         <svg class="uc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"/></svg>
-        <h3>Chatbot &amp; voice agent</h3>
+        <h3>Booking chatbot</h3>
         <p>FAQ, bookings, first-line consultations. Multilingual, with opt-out, without medical or legal advice escaping where it shouldn't.</p>
       </div>
       <div class="uc">
@@ -632,9 +632,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     </div>
     <div class="f-col">
       <h4>Legal</h4>
-      <a href="/de/impressum.html">Imprint (DE)</a>
-      <a href="/de/datenschutz.html">Privacy (DE)</a>
-      <a href="/de/agb.html">Terms (DE)</a>
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </div>
   </div>
   <div class="f-bottom">
@@ -678,6 +678,19 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
         window.location.href=a.getAttribute('href')+h;
       }
     });
+  });
+})();
+(function(){
+  var logo=document.querySelector('.n-logo[href]');
+  if(!logo)return;
+  var href=logo.getAttribute('href');
+  if(!href||href==='#'||href.charAt(0)==='#')return;
+  logo.addEventListener('click',function(e){
+    if(window.scrollY<80)return;
+    e.preventDefault();
+    document.querySelector('header').classList.remove('nav-hidden');
+    window.scrollTo({top:0,behavior:'smooth'});
+    setTimeout(function(){window.location.href=href;},340);
   });
 })();
 </script>

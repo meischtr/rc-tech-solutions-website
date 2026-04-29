@@ -537,7 +537,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
         <p>What we did for EHB ourselves - multi-tenant, AI chatbot via AWS Bedrock EU, Stripe Connect, clean GDPR stack, tablet-first PWA - that's the engineering you get for your project. Take a look:</p>
         <div class="proof-links">
           <a href="https://easyandsmartbooking.com" target="_blank" rel="noopener">EHB marketing site<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          <a href="/de/datenschutz.html#v6">Our EU hosting setup<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="privacy.html#v6">Our EU hosting setup<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           <a href="ai-integrations.html">AI integration (Bedrock EU)<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
@@ -646,9 +646,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     </div>
     <div class="f-col">
       <h4>Legal</h4>
-      <a href="/de/impressum.html">Imprint (DE)</a>
-      <a href="/de/datenschutz.html">Privacy (DE)</a>
-      <a href="/de/agb.html">Terms (DE)</a>
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </div>
   </div>
   <div class="f-bottom">
@@ -690,6 +690,19 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
         window.location.href=a.getAttribute('href')+h;
       }
     });
+  });
+})();
+(function(){
+  var logo=document.querySelector('.n-logo[href]');
+  if(!logo)return;
+  var href=logo.getAttribute('href');
+  if(!href||href==='#'||href.charAt(0)==='#')return;
+  logo.addEventListener('click',function(e){
+    if(window.scrollY<80)return;
+    e.preventDefault();
+    document.querySelector('header').classList.remove('nav-hidden');
+    window.scrollTo({top:0,behavior:'smooth'});
+    setTimeout(function(){window.location.href=href;},340);
   });
 })();
 </script>

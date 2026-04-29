@@ -102,24 +102,60 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rc-tech-solutions.com/de/ki-integrationen.html"/>
   </url>
 
-  <!-- Legal-Seiten (DE-only, niedrigere Prioritaet, EN-Convenience erst nach Anwalts-Sign-Off) -->
+  <!-- Legal-Seiten (DE rechtsguelig, EN als Convenience-Translation; alle noindex) -->
   <url>
     <loc>https://rc-tech-solutions.com/de/impressum.html</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rc-tech-solutions.com/de/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rc-tech-solutions.com/en/imprint.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rc-tech-solutions.com/de/impressum.html"/>
+  </url>
+  <url>
+    <loc>https://rc-tech-solutions.com/en/imprint.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rc-tech-solutions.com/de/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rc-tech-solutions.com/en/imprint.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rc-tech-solutions.com/de/impressum.html"/>
   </url>
   <url>
     <loc>https://rc-tech-solutions.com/de/datenschutz.html</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rc-tech-solutions.com/de/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rc-tech-solutions.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rc-tech-solutions.com/de/datenschutz.html"/>
+  </url>
+  <url>
+    <loc>https://rc-tech-solutions.com/en/privacy.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rc-tech-solutions.com/de/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rc-tech-solutions.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rc-tech-solutions.com/de/datenschutz.html"/>
   </url>
   <url>
     <loc>https://rc-tech-solutions.com/de/agb.html</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rc-tech-solutions.com/de/agb.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rc-tech-solutions.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rc-tech-solutions.com/de/agb.html"/>
+  </url>
+  <url>
+    <loc>https://rc-tech-solutions.com/en/terms.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rc-tech-solutions.com/de/agb.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rc-tech-solutions.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rc-tech-solutions.com/de/agb.html"/>
   </url>
 
 </urlset>

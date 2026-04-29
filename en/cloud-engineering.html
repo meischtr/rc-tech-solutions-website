@@ -555,8 +555,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
         <p>Before we sold cloud engineering, we had to push it through for ourselves. Insurance requirements with a no-US-customers policy. Sub-processor inventory for GDPR compliance. Step-by-step migration away from US edge providers to EU alternatives. GDPR architecture with DPA stack, TOM documentation, transparent sub-processor list.</p>
         <p>What we tell you doesn't come from books. It comes from our own frustrating hours, from migrations that took longer than planned, from lessons learned with real pain points. That's exactly the experience that makes a migration assessment worthwhile.</p>
         <div class="proof-links">
-          <a href="/de/datenschutz.html#v6">Our EU stack in detail<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          <a href="/de/datenschutz.html#v4">Hosting setup &amp; data location<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="privacy.html#v6">Our EU stack in detail<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="privacy.html#v4">Hosting setup &amp; data location<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           <a href="compliance.html">Compliance consulting<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
@@ -630,9 +630,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     </div>
     <div class="f-col">
       <h4>Legal</h4>
-      <a href="/de/impressum.html">Imprint (DE)</a>
-      <a href="/de/datenschutz.html">Privacy (DE)</a>
-      <a href="/de/agb.html">Terms (DE)</a>
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </div>
   </div>
   <div class="f-bottom">
@@ -674,6 +674,19 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
         window.location.href=a.getAttribute('href')+h;
       }
     });
+  });
+})();
+(function(){
+  var logo=document.querySelector('.n-logo[href]');
+  if(!logo)return;
+  var href=logo.getAttribute('href');
+  if(!href||href==='#'||href.charAt(0)==='#')return;
+  logo.addEventListener('click',function(e){
+    if(window.scrollY<80)return;
+    e.preventDefault();
+    document.querySelector('header').classList.remove('nav-hidden');
+    window.scrollTo({top:0,behavior:'smooth'});
+    setTimeout(function(){window.location.href=href;},340);
   });
 })();
 </script>

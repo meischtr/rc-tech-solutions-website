@@ -386,13 +386,13 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
   <div class="s-inner">
     <div class="s-head rv">
       <div class="s-label">Use-Cases</div>
-      <div class="s-title">Was wir konkret machen. <em>Keine Vapor­ware.</em></div>
+      <div class="s-title">Was wir konkret machen. <em>Mit messbarem Effekt.</em></div>
       <div class="s-desc">Sechs Bereiche, in denen LLMs heute messbar Zeit sparen oder Qualität heben. Wir starten dort, wo der Hebel am grössten ist - und nicht dort, wo das Buzzword am hellsten leuchtet.</div>
     </div>
     <div class="uc-grid rv">
       <div class="uc">
         <svg class="uc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"/></svg>
-        <h3>Chatbot &amp; Voice-Agent</h3>
+        <h3>Buchungs-Chatbot</h3>
         <p>FAQ, Buchungen, Erstberatung. Mehrsprachig, mit Opt-Out, ohne dass medizinische oder rechtliche Auskünfte herauskommen, wo sie nicht hingehören.</p>
       </div>
       <div class="uc">
@@ -672,6 +672,19 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
         window.location.href=a.getAttribute('href')+h;
       }
     });
+  });
+})();
+(function(){
+  var logo=document.querySelector('.n-logo[href]');
+  if(!logo)return;
+  var href=logo.getAttribute('href');
+  if(!href||href==='#'||href.charAt(0)==='#')return;
+  logo.addEventListener('click',function(e){
+    if(window.scrollY<80)return;
+    e.preventDefault();
+    document.querySelector('header').classList.remove('nav-hidden');
+    window.scrollTo({top:0,behavior:'smooth'});
+    setTimeout(function(){window.location.href=href;},340);
   });
 })();
 </script>

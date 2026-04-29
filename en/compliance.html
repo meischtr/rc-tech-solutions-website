@@ -547,10 +547,10 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
         <p>Before we sold compliance, we had to build it for ourselves. For our SaaS product EasyAndSmartBooking, for RC-Tech as an engineering house, for the insurance requirements. What we sell to you runs on our own servers. Take a look - all openly accessible:</p>
         <p>Sub-processor register cleanly grouped, retention periods properly differentiated, EU AI Act-compliant AI stack via AWS Bedrock EU, US-provider carve-out for insurance reasons, DPA mechanics with right of objection. All documented, all current, all verifiable.</p>
         <div class="proof-links">
-          <a href="/de/datenschutz.html">View privacy policy<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          <a href="/de/agb.html">View terms<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          <a href="/de/datenschutz.html#v6">Sub-processor register<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          <a href="/de/datenschutz.html#v14">AI architecture (3 paths)<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="privacy.html">View privacy policy<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="terms.html">View terms<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="privacy.html#v6">Sub-processor register<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="privacy.html#v14">AI architecture (3 paths)<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
         <p style="margin-top:16px;font-size:12px;color:rgba(255,255,255,.35);">Legal documents in German (binding version). English convenience translation pending lawyer review.</p>
       </div>
@@ -627,9 +627,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     </div>
     <div class="f-col">
       <h4>Legal</h4>
-      <a href="/de/impressum.html">Imprint (DE)</a>
-      <a href="/de/datenschutz.html">Privacy (DE)</a>
-      <a href="/de/agb.html">Terms (DE)</a>
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </div>
   </div>
   <div class="f-bottom">
@@ -671,6 +671,19 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
         window.location.href=a.getAttribute('href')+h;
       }
     });
+  });
+})();
+(function(){
+  var logo=document.querySelector('.n-logo[href]');
+  if(!logo)return;
+  var href=logo.getAttribute('href');
+  if(!href||href==='#'||href.charAt(0)==='#')return;
+  logo.addEventListener('click',function(e){
+    if(window.scrollY<80)return;
+    e.preventDefault();
+    document.querySelector('header').classList.remove('nav-hidden');
+    window.scrollTo({top:0,behavior:'smooth'});
+    setTimeout(function(){window.location.href=href;},340);
   });
 })();
 </script>
