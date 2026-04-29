@@ -69,7 +69,7 @@ footer .legal{display:flex;gap:24px;}
 <header>
 <div class="n">
   <a href="index.html" class="n-logo"><img src="/logo.png" alt="RC-Tech Solutions"></a>
-  <a href="index.html" class="n-back">
+  <a href="index.html" class="n-back" onclick="if(document.referrer&&document.referrer!==location.href){event.preventDefault();history.back();}">
     <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
     Zurück
   </a>

@@ -311,9 +311,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
       <a href="index.html#about">About</a>
       <a href="mailto:info@rc-tech-solutions.com" class="n-btn">Contact</a>
     </div>
-    <div class="lang-sw"><a href="/de/softwareentwicklung.html">DE</a><a href="/en/software-development.html" class="active">EN</a></div>
   </div>
   <div class="n-right">
+    <div class="lang-sw"><a href="/de/softwareentwicklung.html">DE</a><a href="/en/software-development.html" class="active">EN</a></div>
     <button class="n-burger" id="burger" aria-label="Menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
@@ -680,6 +680,17 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     }
     lastY=y;
   },{passive:true});
+})();
+(function(){
+  document.querySelectorAll('.lang-sw a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var h=window.location.hash;
+      if(h&&a.getAttribute('href').indexOf('#')<0){
+        e.preventDefault();
+        window.location.href=a.getAttribute('href')+h;
+      }
+    });
+  });
 })();
 </script>
 

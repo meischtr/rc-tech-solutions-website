@@ -309,16 +309,16 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
           <a href="ki-integrationen.html" class="n-dd-active">KI-Integration<svg class="dd-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09zM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456z"/></svg></a>
           <a href="compliance.html">Compliance &amp; Datenschutz</a>
           <div class="n-dd-divider"></div>
-          <a href="de.html#services" class="n-dd-overview">Alle Services im &Uuml;berblick &rarr;</a>
+          <a href="index.html#services" class="n-dd-overview">Alle Services im &Uuml;berblick &rarr;</a>
         </div>
       </div>
-      <a href="de.html#produkte">Produkte</a>
-      <a href="de.html#about">Über uns</a>
+      <a href="index.html#produkte">Produkte</a>
+      <a href="index.html#about">Über uns</a>
       <a href="mailto:info@rc-tech-solutions.com" class="n-btn">Kontakt</a>
     </div>
-      <div class="lang-sw"><a href="/de/ki-integrationen.html" class="active">DE</a><a href="/en/ai-integrations.html">EN</a></div>
   </div>
   <div class="n-right">
+    <div class="lang-sw"><a href="/de/ki-integrationen.html" class="active">DE</a><a href="/en/ai-integrations.html">EN</a></div>
     <button class="n-burger" id="burger" aria-label="Menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
@@ -331,10 +331,10 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
   <a href="cloud-engineering.html">Cloud Engineering</a>
   <a href="ki-integrationen.html">KI-Integration</a>
   <a href="compliance.html">Compliance &amp; Datenschutz</a>
-  <a href="de.html#services">Alle Services</a>
+  <a href="index.html#services">Alle Services</a>
   <div class="n-mobile-section">Mehr</div>
-  <a href="de.html#produkte">Produkte</a>
-  <a href="de.html#about">Über uns</a>
+  <a href="index.html#produkte">Produkte</a>
+  <a href="index.html#about">Über uns</a>
   <a href="mailto:info@rc-tech-solutions.com">Kontakt</a>
 </div>
 
@@ -480,7 +480,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
           <li>Voice- oder Chat-Anwendungen, die in Ihre Systeme schreiben/lesen</li>
         </ul>
         <div class="tiefen-bridge">
-          <a href="de.html#services">Softwareentwicklung &amp; Architektur
+          <a href="index.html#services">Softwareentwicklung &amp; Architektur
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
         </div>
@@ -621,8 +621,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     <div class="f-col">
       <h4>RC-Tech</h4>
       <a href="index.html">Hauptseite</a>
-      <a href="de.html#about">Über uns</a>
-      <a href="de.html#contact">Kontakt</a>
+      <a href="index.html#about">Über uns</a>
+      <a href="index.html#contact">Kontakt</a>
     </div>
     <div class="f-col">
       <h4>Legal</h4>
@@ -662,6 +662,17 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
     }
     lastY=y;
   },{passive:true});
+})();
+(function(){
+  document.querySelectorAll('.lang-sw a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var h=window.location.hash;
+      if(h&&a.getAttribute('href').indexOf('#')<0){
+        e.preventDefault();
+        window.location.href=a.getAttribute('href')+h;
+      }
+    });
+  });
 })();
 </script>
 

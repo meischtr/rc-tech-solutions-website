@@ -277,6 +277,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
 .f-col a{display:block;font-size:13px;color:rgba(255,255,255,.4);padding:3px 0;transition:color .15s;}
 .f-col a:hover{color:rgba(255,255,255,.85);}
 .f-bottom{max-width:1140px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2);flex-wrap:wrap;gap:12px;}
+.f-bottom a{transition:color .15s;}
+.f-bottom a:hover{color:rgba(255,255,255,.55);}
 
 /* --- RESPONSIVE --- */
 @media(max-width:1100px){
@@ -527,23 +529,6 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
 </div>
 </section>
 
-<!-- TECH -->
-<section id="tech" class="s">
-<div class="s-inner">
-  <div class="s-head rv">
-    <div class="s-label">Stack</div>
-    <div class="s-title">What we work with</div>
-    <div class="s-desc">Proven and modern. No hype - just technology that delivers.</div>
-  </div>
-  <div class="tech-wrap rv">
-    <div class="tp">TypeScript</div><div class="tp">React</div><div class="tp">Next.js</div><div class="tp">Astro</div>
-    <div class="tp">Node.js</div><div class="tp">PostgreSQL</div><div class="tp">Docker</div><div class="tp">Hetzner Cloud</div>
-    <div class="tp">Tailwind CSS</div><div class="tp">Caddy</div><div class="tp">PM2</div><div class="tp">Gcore</div>
-    <div class="tp">Linux</div><div class="tp">Git</div><div class="tp">CI/CD</div><div class="tp">Prisma</div>
-  </div>
-</div>
-</section>
-
 <!-- APPROACH -->
 <section id="approach" class="s" style="padding-top:0;">
 <div class="s-inner">
@@ -691,6 +676,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 32px;}
 <div class="f-bottom">
   <span>&copy; 2026 RC-Tech Solutions GmbH</span>
   <span>Switzerland - EU data centers</span>
+  <a href="https://status.rc-tech-solutions.com/" target="_blank" rel="noopener">Live status &amp; uptime</a>
 </div>
 </footer>
 
@@ -721,6 +707,17 @@ try{if(!sessionStorage.getItem('rc_auth'))window.location.href='index.html';}cat
     els.forEach(function(el){el.classList.add('v');});
   }
   setTimeout(function(){els.forEach(function(el){el.classList.add('v');});},3000);
+})();
+(function(){
+  document.querySelectorAll('.lang-sw a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var h=window.location.hash;
+      if(h&&a.getAttribute('href').indexOf('#')<0){
+        e.preventDefault();
+        window.location.href=a.getAttribute('href')+h;
+      }
+    });
+  });
 })();
 </script>
 
