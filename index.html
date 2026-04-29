@@ -2,94 +2,37 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#09090b">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="googlebot" content="noindex, nofollow, noarchive">
-<title>RC-Tech Solutions — Coming Soon</title>
+<title>RC-Tech Solutions</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"></noscript>
+<script>
+(function(){
+  try{
+    var lang=(navigator.language||navigator.userLanguage||'de').toLowerCase();
+    var target=lang.indexOf('de')===0?'/de/':'/en/';
+    window.location.replace(target);
+  }catch(e){
+    window.location.replace('/de/');
+  }
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=/de/"></noscript>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#09090b;color:#fafafa;min-height:100vh;min-height:-webkit-fill-available;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;position:relative;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-::selection{background:rgba(99,102,241,.3);}
-
-/* BG */
-.bg-orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;will-change:transform;}
-.bg-orb-1{width:500px;height:500px;top:20%;left:-10%;background:rgba(59,130,246,.06);animation:drift 20s ease-in-out infinite;}
-.bg-orb-2{width:400px;height:400px;bottom:10%;right:-10%;background:rgba(99,102,241,.05);animation:drift 25s ease-in-out infinite 5s;}
-@keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
-@media(max-width:640px){.bg-orb{display:none;}}
-@media(prefers-reduced-motion:reduce){.bg-orb{animation:none;}}
-
-/* Content */
-.content{text-align:center;padding:32px;max-width:640px;position:relative;z-index:1;}
-.logo{height:72px;width:auto;margin-bottom:48px;}
-h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-2px;line-height:1.1;margin-bottom:56px;}
-h1 span{color:#6366f1;}
-
-
-
-/* Footer */
-.foot{position:absolute;bottom:32px;text-align:center;font-size:11px;color:rgba(255,255,255,.1);}
-
-/* Top bar */
-.top-bar{position:absolute;top:20px;right:24px;display:flex;align-items:center;gap:12px;z-index:10;}
-.lang{display:flex;gap:2px;}
-.lang a{font-size:11px;color:rgba(255,255,255,.2);padding:4px 6px;border-radius:4px;text-decoration:none;font-weight:500;transition:all .15s;}
-.lang a:hover{color:rgba(255,255,255,.5);}
-.lang a.active{color:rgba(255,255,255,.6);background:rgba(255,255,255,.05);}
-
-@media(max-width:640px){
-  .logo{height:52px;}
-}
+html,body{margin:0;padding:0;background:#09090b;color:#fafafa;font-family:system-ui,-apple-system,sans-serif;height:100%;}
+.fallback{display:flex;align-items:center;justify-content:center;height:100vh;gap:24px;font-size:14px;}
+.fallback a{color:#a5b4fc;text-decoration:none;padding:8px 16px;border:1px solid rgba(255,255,255,.1);border-radius:6px;transition:all .15s;}
+.fallback a:hover{color:#fff;border-color:rgba(255,255,255,.3);}
 </style>
 </head>
 <body>
-
-<div class="bg-orb bg-orb-1"></div>
-<div class="bg-orb bg-orb-2"></div>
-
-<div class="top-bar">
-  <div class="lang">
-    <a href="#" data-lang="de" class="active">DE</a>
-    <a href="#" data-lang="en">EN</a>
-  </div>
+<div class="fallback">
+  <a href="/de/">Deutsch</a>
+  <a href="/en/">English</a>
 </div>
-
-<div class="content">
-  <img src="logo.png" alt="RC-Tech Solutions" class="logo">
-
-  <h1 id="headline">hier entsteht <span>Grosses.</span></h1>
-
-</div>
-
-<div class="foot">&copy; 2026 RC-Tech Solutions GmbH — rc-tech-solutions.com</div>
-
-<script>
-var t={
-  de:{h:'hier entsteht <span>Grosses.</span>'},
-  en:{h:'something big is <span>coming.</span>'}
-};
-document.querySelectorAll('.lang a').forEach(function(a){
-  a.addEventListener('click',function(e){
-    e.preventDefault();
-    var l=this.dataset.lang;
-    document.getElementById('headline').innerHTML=t[l].h;
-    document.documentElement.lang=l;
-    document.querySelectorAll('.lang a').forEach(function(x){x.classList.remove('active');});
-    this.classList.add('active');
-  });
-});
-</script>
-
 </body>
 </html>
