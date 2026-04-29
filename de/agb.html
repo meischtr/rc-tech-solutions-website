@@ -278,5 +278,20 @@ footer .legal{display:flex;gap:24px;}
   </div>
 </footer>
 
+<script>
+(function(){
+  var logo=document.querySelector('.n-logo[href]');
+  if(!logo)return;
+  var href=logo.getAttribute('href');
+  if(!href||href==='#'||href.charAt(0)==='#')return;
+  logo.addEventListener('click',function(e){
+    if(window.scrollY<80)return;
+    e.preventDefault();
+    window.scrollTo({top:0,behavior:'smooth'});
+    setTimeout(function(){window.location.href=href;},340);
+  });
+})();
+</script>
+
 </body>
 </html>
