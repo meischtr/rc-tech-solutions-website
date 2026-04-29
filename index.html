@@ -47,13 +47,9 @@ h1 span{color:#6366f1;}
 .lang a{font-size:11px;color:rgba(255,255,255,.2);padding:4px 6px;border-radius:4px;text-decoration:none;font-weight:500;transition:all .15s;}
 .lang a:hover{color:rgba(255,255,255,.5);}
 .lang a.active{color:rgba(255,255,255,.6);background:rgba(255,255,255,.05);}
-.top-login{font-size:11px;color:rgba(255,255,255,.15);text-decoration:none;padding:4px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.06);transition:all .15s;display:flex;align-items:center;gap:4px;}
-.top-login:hover{color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.12);}
-.top-login svg{width:11px;height:11px;}
 
 @media(max-width:640px){
-  .logo{height:52px;}.btns{flex-direction:column;align-items:center;}
-  .btn-login{width:100%;justify-content:center;}
+  .logo{height:52px;}
 }
 </style>
 </head>
@@ -67,10 +63,6 @@ h1 span{color:#6366f1;}
     <a href="#" data-lang="de" class="active">DE</a>
     <a href="#" data-lang="en">EN</a>
   </div>
-  <a href="/de/login.html" class="top-login" id="loginBtn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg>
-    <span id="loginLabel">Login</span>
-  </a>
 </div>
 
 <div class="content">
@@ -84,16 +76,14 @@ h1 span{color:#6366f1;}
 
 <script>
 var t={
-  de:{h:'hier entsteht <span>Grosses.</span>',l:'Login',p:'/de/login.html'},
-  en:{h:'something big is <span>coming.</span>',l:'Login',p:'/en/login.html'}
+  de:{h:'hier entsteht <span>Grosses.</span>'},
+  en:{h:'something big is <span>coming.</span>'}
 };
 document.querySelectorAll('.lang a').forEach(function(a){
   a.addEventListener('click',function(e){
     e.preventDefault();
     var l=this.dataset.lang;
     document.getElementById('headline').innerHTML=t[l].h;
-    document.getElementById('loginLabel').textContent=t[l].l;
-    document.getElementById('loginBtn').setAttribute('href',t[l].p);
     document.documentElement.lang=l;
     document.querySelectorAll('.lang a').forEach(function(x){x.classList.remove('active');});
     this.classList.add('active');
